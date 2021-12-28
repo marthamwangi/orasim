@@ -1,5 +1,5 @@
 {
-    "name": "project_prototype",
+    "name": "orasim",
     "version": "1.0.0",
     "description": "real estate prototype for project one ANU",
     "main": "index.js",
@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/marthamwangi/project_prototype.git"
+        "url": "git+https://github.com/marthamwangi/orasim.git"
     },
     "keywords": [
         "real",
@@ -24,9 +24,9 @@
     "author": "Martha Mwangi",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/marthamwangi/project_prototype/issues"
+        "url": "https://github.com/marthamwangi/orsim/issues"
     },
-    "homepage": "https://github.com/marthamwangi/project_prototype#readme",
+    "homepage": "https://github.com/marthamwangi/orasim#readme",
     "devDependencies": {
         "@babel/cli": "^7.16.0",
         "@babel/core": "^7.16.0",

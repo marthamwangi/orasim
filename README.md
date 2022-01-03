@@ -13,3 +13,4 @@
 - Assertion Lib : Chai
 - Helper Lib : JSDOM
 - CI : Jenkins
+- HTTP Call Approach : Axios library

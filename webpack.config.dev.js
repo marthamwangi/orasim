@@ -6,9 +6,9 @@ export default
     devtool: "eval-source-map",
     entry: "./src/index.js",
     output:{
-        path: path.resolve(__dirname,"public/js"),
-        publicPath: "/",
-        filename: "bundle.js",
+        path: path.resolve(__dirname,"public"),
+        publicPath: "/public/",
+        filename: "js/bundle.js",
     },
     plugins:[],
     module:{

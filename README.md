@@ -14,3 +14,4 @@
 - Helper Lib : JSDOM
 - CI : Jenkins
 - HTTP Call Approach : Axios library
+- MYSQL 2

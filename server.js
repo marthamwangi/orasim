@@ -45,14 +45,10 @@ app.get("/create", (req, res) => {
     res.send(`Database created`);
   });
 });
-app.use(
-  "/css",
-  express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))
-);
-app.use(
-  "/js",
-  express.static(path.join(__dirname, "node_modules/bootstrap/dist/js"))
-);
-app.use("/js", express.static(path.join(__dirname, "node_modules/jquery/dist")));
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/")));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/")));
+app.use(express.static(path.join(__dirname, "node_modules/jquery/dist/")));
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap-icons/font/")));
 
 export { app };

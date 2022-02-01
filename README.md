@@ -12,6 +12,6 @@
 - Unit Testing : Mocha
 - Assertion Lib : Chai
 - Helper Lib : JSDOM
-- CI : Jenkins
+- CI : Travis CI
 - HTTP Call Approach : Axios library
 - MYSQL 2

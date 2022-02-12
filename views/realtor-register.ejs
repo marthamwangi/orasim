@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realtor | Registration</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/globals.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/bootstrap-icons.css" />
+
+
+
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Orasim Realtor Registration Form</h2>
+          </div>
+
+          <div class="row clearfix" style="align-items: center">
+            <!-- For Demo Purpose -->
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+              <img src="/img/undraw_profile.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+              <p class="font-italic text-muted mb-0">Create an account with Orasim to maximize your leads and
+                get
+                properties from Proprietors.
+              </p>
+              <p class="font-italic text-muted">Go back to <a href="/" class="text-muted">
+                  <u>Orasim</u></a>
+              </p>
+            </div>
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+              <% if(typeof msg !='undefined' ) { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <%= msg %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                </div>
+                <% } %>
+                  <% if(typeof error !='undefined' ) { %>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <%= error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                    </div>
+                    <% } %>
+                      <form action="" method="POST">
+                        <div class="input_field"> <span><i aria-hidden="true" class="bi bi-person"></i></span>
+                          <input type="text" id="agentName" name="name" placeholder="Full Name" required />
+                        </div>
+                        <div class="input_field"> <span><i aria-hidden="true" class="bi bi-envelope"></i></span>
+                          <input type="email" name="email" placeholder="Email" required />
+                        </div>
+                        <div class="input_field"> <span><i aria-hidden="true" class="bi bi-lock"></i></span>
+                          <input type="password" id="passInput" name="password" placeholder="Password" required />
+                          <span toggle="#password-field" class="bi bi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="input_field"> <span><i aria-hidden="true" class="bi bi-card-text"></i></span>
+                          <input type="number" name="licence" placeholder="Licence No." required />
+                        </div>
+                        <div class="input_field"> <span><i aria-hidden="true" class="bi bi-telephone"></i></span>
+                          <input type="tel" name="contact" placeholder="+254145678" required />
+                        </div>
+                        <div class="input_field"> <span><i aria-hidden="true"
+                              class="bi bi-person-lines-fill"></i></span>
+                          <input type="number" name="govid" placeholder="Identification No." required />
+                        </div>
+                        <input class="button" type="submit" value="Register" />
+                      </form>
+                      <!-- Already Registered -->
+                      <div class="text-center w-100">
+                        <p class="text-muted font-weight-bold">Already Registered? <a href="/realtor/login"
+                            class="text-login ml-2">Login</a></p>
+                      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <script src="bundle.js" charset="utf-8"></script>
+  <script src="/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>

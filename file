@@ -1,0 +1,121 @@
+//no...halt registration
+if (results.length == 0) {
+  console.log("------> Not registered as a Realtor");
+
+  await errors.push("You should register with EARB");
+
+} else {
+  //yes..Proceed to register user
+  await connection.query('SELECT * FROM realtor WHERE agentEmail = ' + connection.escape(newRealtor.agentEmail), async function (error, results, fields) {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    } else {
+      console.log("------> Search Results");
+      console.log(results.length);
+      if (results.length != 0) {
+        console.log('"-------> User already exists');
+        await errors.push("A user with that email alredy exists! Try to login");
+        console.log(errors);
+        result(newRealtor, null)
+      } else {
+        await connection.query('INSERT INTO realtor SET ?', newRealtor, function (error, results, fields) {
+          try {
+            console.log("--------> Created new Realtor");
+            console.log(results);
+            result(null, newRealtor)
+
+          } catch (error) {
+            throw error
+          }
+          result(null, {
+            id: results.insertId,
+            ...newRealtor
+          });
+
+        });
+      }
+    }
+  });
+}
+Realtor.login = (findRealtor, result) => {
+  dbConnect.getConnection(async function (err, connection) {
+    if (err) {
+      throw err
+    }
+    await connection.query('SELECT FROM realtor WHERE agentNationalId = ' + connection.escape(findRealtor.agentNationalId), async function (error, results, fields) {
+      connection.release();
+      if (err) {
+        console.log('error: ', err);
+        result(err, null);
+      }
+      if (result.length == 0) {
+        console.log('--------->User does not exist');
+        result.sendStatus(404);
+      } else {
+        const hashedPassword = result.password;
+        //get hashedPassword from result
+        await bcrypt.compare(findRealtor.agentPassword, hashedPassword, (err, isValid) => {
+          if (err) {
+            // handle error
+          }
+          console.log("--------> Valid Password");
+          result(null, {
+            ...findRealtor
+          });
+
+        })
+
+      }
+    })
+  });
+}
+console.log('SELECT * FROM user WHERE username = ' + connection.escape(username) + ' AND password = ' + connection.escape(password));
+
+
+await connection.query('SELECT * FROM realtor WHERE agentEmail = ' + connection.escape(realtor.agentEmail), async function (error, results, fields) {
+  if (error) { throw error; }
+  if (results.length !== 0) {
+    return res.render('realtor-register', {
+      error: 'This email already in use.',
+    });
+
+  } else {
+    await connection.query('INSERT INTO realtor SET ?', realtor, function (error, results, fields) {
+      if (error) { throw error; }
+      if (results.affectedRows === 0) {
+        console.log(results);
+        return res.render('realtor-register', {
+          error: 'Your registration has failed.'
+        });
+      }
+
+    });
+  }
+
+  res.render("realtor-register", {
+    msg: 'You have successfully registered.'
+  });
+});
+
+  });
+
+const realtorEarb = {
+  agentName: results.realtorName,
+  agentEmail: req.body.email,
+  agentPassword: password,
+  agentLicence: results.realtorLicence,
+  agentContact: req.body.contact,
+  agentNationalId: results.realtorNationalId,
+};
+await connection.query('INSERT INTO realtor SET ?', realtorEarb, function (error, results, fields) {
+  if (error) { throw error; }
+  if (results.affectedRows === 0) {
+    console.log(results);
+    return res.render('realtor-register', {
+      error: 'Your registration has failed.'
+    });
+  }
+
+});

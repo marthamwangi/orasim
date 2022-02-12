@@ -1,5 +1,4 @@
 const mysql = require('mysql');
-const bcrypt = require('bcrypt');
 require("dotenv").config()
 
 const DB_HOST = process.env.DB_HOST
@@ -16,8 +15,5 @@ const dbconnect = mysql.createPool({
   database: DB_DATABASE,
   port: DB_PORT
 });
-dbconnect.query('SELECT * FROM realtor ', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
+
 module.exports = dbconnect;

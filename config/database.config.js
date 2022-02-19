@@ -13,7 +13,8 @@ const dbconnect = mysql.createPool({
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_DATABASE,
-  port: DB_PORT
+  port: DB_PORT,
+  multipleStatements: true
 });
 
 module.exports = dbconnect;

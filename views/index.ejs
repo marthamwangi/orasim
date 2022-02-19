@@ -1,110 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('globals/head', { title: 'PORES ~ Professional Online Real Estate System' }); %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orasim</title>
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/globals.css" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <link rel="stylesheet" type="text/css" href="/bootstrap-icons.css" />
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-</head>
+        <div class="container-fluid">
+          <div style="justify-content:flex-end;">
+            <a class="navbar-brand" href="#"
+              style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+              PORES REALTY
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="justify-content: flex-end;">
+            <ul class="navbar-nav justify-content-center ">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <li class="nav-item">
+                <a class="nav-link" href="#">FAQs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dropdown <i class="bi bi-chevron-down"></i></a>
+              </li>
 
-      <div class="container-fluid">
-        <div style="justify-content:flex-end;">
-          <a class="navbar-brand" href="#"
-            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-            ORASIM REALTY
+            </ul>
+
+          </div>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="justify-content:flex-end;">
+            <ul class="navbar-nav justify-content-center ">
+              <li><a href="#" class="btn btn-outline-success">HOME</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h2 class="heading-start">What are you looking for? <span>
+        <% if (typeof client !='undefined' ) {%>
+          <%=client.client_name %>
+            <%} %>
+      </span><i class="chevron-down"></i></h2>
+    <div class="container">
+    </div>
+    <main>
+      <section>
+        <div class="container">
+
+          <a class="card2" href="/client/register">
+            <img class="card-img-top" src="/img/people_search.svg" alt="people_search">
+
+            <h3>Browse Orasim realtors</h3>
+            <p class="small">Card description with lots of great facts and interesting details.</p>
+
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                →
+              </div>
+            </div>
           </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="justify-content: flex-end;">
-          <ul class="navbar-nav justify-content-center ">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
+          <a class="card2" href="/client/register">
+            <img class="card-img-top" src="/img/house_search.svg" alt="house_search">
 
-            <li class="nav-item">
-              <a class="nav-link" href="#">FAQs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Dropdown <i class="bi bi-chevron-down"></i></a>
-            </li>
+            <h3>Search property Marketplace</h3>
+            <p class="small">Card description with lots of great facts and interesting details.</p>
 
-          </ul>
-
-        </div>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="justify-content:flex-end;">
-          <ul class="navbar-nav justify-content-center ">
-            <li><a href="#" class="btn btn-outline-success">HOME</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <h2 class="heading-start">What are you looking for? <i class="chevron-down"></i></h2>
-  <div class="container">
-  </div>
-  <main>
-    <section>
-      <div class="container">
-
-        <a class="card2" href="#">
-          <img class="card-img-top" src="/img/people_search.svg" alt="people_search">
-
-          <h3>Browse Orasim realtors</h3>
-          <p class="small">Card description with lots of great facts and interesting details.</p>
-
-          <div class="go-corner" href="#">
-            <div class="go-arrow">
-              →
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                →
+              </div>
             </div>
-          </div>
-        </a>
-        <a class="card2" href="#">
-          <img class="card-img-top" src="/img/house_search.svg" alt="house_search">
+          </a>
+          <a class="card2" href="/realtor/register">
+            <img class="card-img-top" src="/img/add_house.svg" alt="add_house">
 
-          <h3>Search property Marketplace</h3>
-          <p class="small">Card description with lots of great facts and interesting details.</p>
+            <h3>Add Listings to Marketplace </h3>
+            <p class="small">Card description with lots of great facts and interesting details.</p>
 
-          <div class="go-corner" href="#">
-            <div class="go-arrow">
-              →
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                →
+              </div>
             </div>
-          </div>
-        </a>
-        <a class="card2" href="/realtor/register">
-          <img class="card-img-top" src="/img/add_house.svg" alt="add_house">
-
-          <h3>Add Listings to Marketplace </h3>
-          <p class="small">Card description with lots of great facts and interesting details.</p>
-
-          <div class="go-corner" href="#">
-            <div class="go-arrow">
-              →
-            </div>
-          </div>
-        </a>
-    </section>
-  </main>
-
-
-  <script src="bundle.js" charset="utf-8"></script>
-  <script src="jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+          </a>
+      </section>
+    </main>
+    <%- include('globals/footer'); %>

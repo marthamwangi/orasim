@@ -119,3 +119,35 @@ await connection.query('INSERT INTO realtor SET ?', realtorEarb, function (error
   }
 
 });
+
+      <% if (typeof languages != 'undefined') {%>
+                          <% for (var i = 0; i < languages.length; i++) { %>
+                            <option>
+                              <%= languages[i] %>
+                            </option>
+                            <% } %>
+                              <%}%>
+
+
+               < !-- < div class="col-md-12 mt-4" >
+                      <label class="labels">Select Language</label>
+                      <select class="form-select" aria-label="Default select example" multiple>
+                        <% if (typeof languages !='undefined' ) {%>
+                          <% for(var i=0; i < languages.length; i++) { %>
+                            <option>
+                              <%= languages[i].languages%>
+                            </option>
+                            <% } %>
+                              <%}%>
+                      </select>
+                    </div > -->
+{
+  fieldname: 'profile',
+  originalname: '2044541.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'C:\\Users\\Martha\\Desktop\\Orasim\\public\\uploads\\profiles',
+  filename: 'profile-1645100551916.jpeg',
+  path: 'C:\\Users\\Martha\\Desktop\\Orasim\\public\\uploads\\profiles\\profile-1645100551916.jpeg',
+  size: 348131
+}

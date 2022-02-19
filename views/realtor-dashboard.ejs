@@ -1,453 +1,250 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head') %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realtor | Dashboard</title>
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/realtor-dashboard.css" />
-  <link rel="stylesheet" type="text/css" href="/bootstrap-icons.css" />
+  <body>
+    <%- include('partials/aside') %>
 
-<body>
-  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
-    <i class="bi-list close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
-    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
-      <img class="rounded-pill img-fluid" width="65" src="/img/male_avatar.svg" alt="">
-      <div class="ms-2">
-        <h5 class="fs-6 mb-0">
-          <a class="text-decoration-none" href="#">
-            <%=realtor.agentName %>
-          </a>
-        </h5>
-        <p class="mt-1 mb-0">Lorem ipsum dolor sit amet consectetur.</p>
-      </div>
-    </div>
+      <section id="wrapper">
+        <%- include('partials/header') %>
 
-    <ul class="categories list-unstyled">
-      <li class="">
-        <i class="bi bi-speedometer2"></i><a href="#"> Dashboard</a>
-      </li>
-      <li class="has-dropdown">
-        <i class="bi bi-house-door"></i><a href="#"> Listings</a>
-        <ul class="sidebar-dropdown list-unstyled">
-          <li><a href="#">Add Listing</a></li>
-          <li><a href="#">View Listings</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <i class="bi bi-envelope"></i><a href="#"> Mailbox</a>
-        <ul class="sidebar-dropdown list-unstyled">
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">ipsum dolor</a></li>
-          <li><a href="#">dolor ipsum</a></li>
-          <li><a href="#">amet consectetur</a></li>
-          <li><a href="#">ipsum dolor sit</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <i class="bi bi-gear"></i><a href="#"> Settings</a>
-        <ul class="sidebar-dropdown list-unstyled">
-          <li><a href="#">My Account</a></li>
-          <li><a href="#">Log out</a></li>
-        </ul>
-      </li>
-      <li><a href="/realtor/assignments">Terms of Service</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li style="margin-top: 100px;">
-        <i class=" bi bi-headset"></i><a href="#"> Customer Support</a>
-        <br>
-        <span class="customer">
-          Ask you query , place
-          requests or important
-          issues. Our support
-          team will contact 24/7
-          to you.
-        </span>
-        <button class="btnaccept">Connect now</button>
-      </li>
-
-
-    </ul>
-  </aside>
-
-  <section id="wrapper">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <div>
-            <p
-              style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-              Days to Certificate renewal
-            </p>
-            <h4 class="renewal">Days: 96</h4>
-          </div>
-          <div class=" navbar-collapse" style="justify-content:flex-end;">
-            <ul class="navbar-nav justify-content-end ">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="bi bi-chat-left-text"></i><span>23</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="bi bi-bell"></i><span>98</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i data-show="show-side-navigation1" class="bi bi-list show-side-btn"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="p-4">
-      <section class="statistics mt-4">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
-              <i class="bi bi-house-door fs-2 text-center bg-icon rounded-circle"></i>
-              <div class="ms-3">
-                <div class="d-flex align-items-center">
-                  <h3 class="mb-0">1,245</h3> <span class="d-block ms-2">Active Listings</span>
+          <div class="px-4">
+            <section class="statistics mt-4">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                    <i class="bi bi-house-door fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">1,245</h3> <span class="d-block ms-2">Active Listings</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
-              <i class="bi bi-house fs-2 text-center bg-icon rounded-circle"></i>
-              <div class="ms-3">
-                <div class="d-flex align-items-center">
-                  <h3 class="mb-0">34</h3> <span class="d-block ms-2">Closed Listings</span>
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                    <i class="bi bi-house fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">34</h3> <span class="d-block ms-2">Closed Listings</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
-              <i class="bi bi-hourglass-split fs-2 text-center bg-icon rounded-circle"></i>
-              <div class="ms-3">
-                <div class="d-flex align-items-center">
-                  <h3 class="mb-0">34</h3> <span class="d-block ms-2">Pending Listings</span>
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                    <i class="bi bi-hourglass-split fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">34</h3> <span class="d-block ms-2">Pending Listings</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="box d-flex rounded-2 align-items-center p-3">
-              <i class="bi bi-calendar3 fs-2 text-center bg-icon rounded-circle"></i>
-              <div class="ms-3">
-                <div class="d-flex align-items-center">
-                  <h3 class="mb-0">5,245</h3> <span class="d-block ms-2">Licence Expiry Date</span>
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center p-3">
+                    <i class="bi bi-calendar3 fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">5,245</h3> <span class="d-block ms-2">Licence Expiry Date</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="charts mt-4">
-        <div class="chart-container p-3">
-          <h3 class="fs-6 mb-3">Assigned Listings</h3>
-          <!--Assigned Listings show up here-->
-          <div class="assigned-listings">
-            <table cellpadding="0" cellspacing="0">
-              <tr class="tbl-header">
-                <th>Listings</th>
-                <th>Price</th>
-                <th>Commission</th>
-                <th>Owner</th>
-                <th>Looking For</th>
-                <th>Accept</th>
-                <th>Reject</th>
-              </tr>
-              <tr>
-                <td>
-                  <%=assignments.hire_title %>
-                    <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mideya Gardens <div> Kileleshwa</div>
-                </td>
-                <td>KSH. 8,000,000 </td>
-                <td>2%</td>
-                <td>John Doe
-                  <div>+254 - 0978345</div>
-                </td>
-                <td>Selling Agent</td>
-                <td><button class="accept">Accept</button></td>
-                <td><button class="reject">Reject</button></td>
-              </tr>
-              <tr>
-            </table>
-          </div>
-        </div>
-      </section>
+            </section>
+            <section class="charts mt-4">
+              <div class="chart-container p-3">
+                <h3 class="fs-6 mb-3">Assigned Listings</h3>
+                <!--Assigned Listings show up here-->
+                <div class="assigned-listings">
+                  <table cellpadding="0" cellspacing="0">
+                    <tr class="tbl-header">
+                      <th>Listings</th>
+                      <th>Price</th>
+                      <th>Commission</th>
+                      <th>Owner</th>
+                      <th>Looking For</th>
+                      <th>Accept</th>
+                      <th>Reject</th>
+                    </tr>
+                    <% if(typeof assignments !='undefined' ) {%>
+                      <%for (var i=0; i < assignments.length; i++){%>
+                        <tr>
+                          <td>
+                            <%= assignments[i].hire_title %>
+                              <div>
+                                <%=assignments[i].property_address %>
+                              </div>
+                          </td>
+                          <td>
+                            KSH. <%= assignments[i].property_price %>
+                          </td>
+                          <td>
+                            <%= assignments[i].property_comission %>
+                          </td>
+                          <td>
+                            <%= assignments[i].client_name %>
 
-      <section class="statis mt-4 text-center">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="box bg-primary p-3">
-              <i class="uil-eye"></i>
-              <h3>5,154</h3>
-              <p class="lead">Page views</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="box bg-danger p-3">
-              <i class="uil-user"></i>
-              <h3>245</h3>
-              <p class="lead">User registered</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-            <div class="box bg-warning p-3">
-              <i class="uil-shopping-cart"></i>
-              <h3>5,154</h3>
-              <p class="lead">Product sales</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box bg-success p-3">
-              <i class="uil-feedback"></i>
-              <h3>5,154</h3>
-              <p class="lead">Transactions</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="charts mt-4">
-        <script>
-          window.onload = function () {
+                              <div>
+                                <%= assignments[i].client_contact %>
+                              </div>
+                          </td>
+                          <td>
+                            <%= assignments[i].hires_reason %>
+                          </td>
+                          <td><button class="accept">Accept</button></td>
+                          <td><button class="reject">Reject</button></td>
+                        </tr>
 
-            var chart = new CanvasJS.Chart("chartContainer", {
-              animationEnabled: true,
-              theme: "light2",
-              axisX: {
-                valueFormatString: "DD MMM",
-                crosshair: {
-                  enabled: true,
-                  snapToDataPoint: true
+                        <% } %>
+                          <%}%>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section class="statis mt-4 text-center">
+              <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <div class="box bg-primary p-3">
+                    <i class="uil-eye"></i>
+                    <h3>5,154</h3>
+                    <p class="lead">Page views</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <div class="box bg-danger p-3">
+                    <i class="uil-user"></i>
+                    <h3>245</h3>
+                    <p class="lead">User registered</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                  <div class="box bg-warning p-3">
+                    <i class="uil-shopping-cart"></i>
+                    <h3>5,154</h3>
+                    <p class="lead">Product sales</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="box bg-success p-3">
+                    <i class="uil-feedback"></i>
+                    <h3>5,154</h3>
+                    <p class="lead">Transactions</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="charts mt-4">
+              <script>
+                window.onload = function () {
+
+                  var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2",
+                    axisX: {
+                      valueFormatString: "DD MMM",
+                      crosshair: {
+                        enabled: true,
+                        snapToDataPoint: true
+                      }
+                    },
+                    axisY: {
+                      title: "Listings",
+                      includeZero: true,
+                      crosshair: {
+                        enabled: true
+                      }
+                    },
+                    toolTip: {
+                      shared: true
+                    },
+                    legend: {
+                      cursor: "pointer",
+                      verticalAlign: "bottom",
+                      horizontalAlign: "left",
+                      dockInsidePlotArea: true,
+                      itemclick: toogleDataSeries
+                    },
+                    data: [{
+                      type: "line",
+                      showInLegend: true,
+                      name: "Clients",
+                      markerType: "square",
+                      xValueFormatString: "DD MMM, YYYY",
+                      color: "#F08080",
+                      dataPoints: [
+                        { x: new Date(2022, 0, 3), y: 650 },
+                        { x: new Date(2022, 0, 4), y: 700 },
+                        { x: new Date(2022, 0, 5), y: 710 },
+                        { x: new Date(2022, 0, 6), y: 658 },
+                        { x: new Date(2022, 0, 7), y: 734 },
+                        { x: new Date(2022, 0, 8), y: 963 },
+                        { x: new Date(2022, 0, 9), y: 847 },
+                        { x: new Date(2022, 0, 10), y: 853 },
+                        { x: new Date(2022, 0, 11), y: 869 },
+                        { x: new Date(2022, 0, 12), y: 943 },
+                        { x: new Date(2022, 0, 13), y: 970 },
+                        { x: new Date(2022, 0, 14), y: 869 },
+                        { x: new Date(2022, 0, 15), y: 890 },
+                        { x: new Date(2022, 0, 16), y: 930 }
+                      ]
+                    },
+                    {
+                      type: "line",
+                      showInLegend: true,
+                      name: "Listings",
+                      lineDashType: "dash",
+                      dataPoints: [
+                        { x: new Date(2022, 0, 3), y: 510 },
+                        { x: new Date(2022, 0, 4), y: 560 },
+                        { x: new Date(2022, 0, 5), y: 540 },
+                        { x: new Date(2022, 0, 6), y: 558 },
+                        { x: new Date(2022, 0, 7), y: 544 },
+                        { x: new Date(2022, 0, 8), y: 693 },
+                        { x: new Date(2022, 0, 9), y: 657 },
+                        { x: new Date(2022, 0, 10), y: 663 },
+                        { x: new Date(2022, 0, 11), y: 639 },
+                        { x: new Date(2022, 0, 12), y: 673 },
+                        { x: new Date(2022, 0, 13), y: 660 },
+                        { x: new Date(2022, 0, 14), y: 562 },
+                        { x: new Date(2022, 0, 15), y: 643 },
+                        { x: new Date(2022, 0, 16), y: 570 }
+                      ]
+                    }]
+                  });
+                  chart.render();
+
+                  function toogleDataSeries(e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                      e.dataSeries.visible = false;
+                    } else {
+                      e.dataSeries.visible = true;
+                    }
+                    chart.render();
+                  }
+
                 }
-              },
-              axisY: {
-                title: "Listings",
-                includeZero: true,
-                crosshair: {
-                  enabled: true
-                }
-              },
-              toolTip: {
-                shared: true
-              },
-              legend: {
-                cursor: "pointer",
-                verticalAlign: "bottom",
-                horizontalAlign: "left",
-                dockInsidePlotArea: true,
-                itemclick: toogleDataSeries
-              },
-              data: [{
-                type: "line",
-                showInLegend: true,
-                name: "Clients",
-                markerType: "square",
-                xValueFormatString: "DD MMM, YYYY",
-                color: "#F08080",
-                dataPoints: [
-                  { x: new Date(2022, 0, 3), y: 650 },
-                  { x: new Date(2022, 0, 4), y: 700 },
-                  { x: new Date(2022, 0, 5), y: 710 },
-                  { x: new Date(2022, 0, 6), y: 658 },
-                  { x: new Date(2022, 0, 7), y: 734 },
-                  { x: new Date(2022, 0, 8), y: 963 },
-                  { x: new Date(2022, 0, 9), y: 847 },
-                  { x: new Date(2022, 0, 10), y: 853 },
-                  { x: new Date(2022, 0, 11), y: 869 },
-                  { x: new Date(2022, 0, 12), y: 943 },
-                  { x: new Date(2022, 0, 13), y: 970 },
-                  { x: new Date(2022, 0, 14), y: 869 },
-                  { x: new Date(2022, 0, 15), y: 890 },
-                  { x: new Date(2022, 0, 16), y: 930 }
-                ]
-              },
-              {
-                type: "line",
-                showInLegend: true,
-                name: "Listings",
-                lineDashType: "dash",
-                dataPoints: [
-                  { x: new Date(2022, 0, 3), y: 510 },
-                  { x: new Date(2022, 0, 4), y: 560 },
-                  { x: new Date(2022, 0, 5), y: 540 },
-                  { x: new Date(2022, 0, 6), y: 558 },
-                  { x: new Date(2022, 0, 7), y: 544 },
-                  { x: new Date(2022, 0, 8), y: 693 },
-                  { x: new Date(2022, 0, 9), y: 657 },
-                  { x: new Date(2022, 0, 10), y: 663 },
-                  { x: new Date(2022, 0, 11), y: 639 },
-                  { x: new Date(2022, 0, 12), y: 673 },
-                  { x: new Date(2022, 0, 13), y: 660 },
-                  { x: new Date(2022, 0, 14), y: 562 },
-                  { x: new Date(2022, 0, 15), y: 643 },
-                  { x: new Date(2022, 0, 16), y: 570 }
-                ]
-              }]
-            });
-            chart.render();
+              </script>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="chart-container rounded-2 p-3">
+                    <h3 class="fs-6 mb-3">My Performance</h3>
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="chart-container rounded-2 p-3">
+                    <h3 class="fs-6 mb-3">Listings</h3>
 
-            function toogleDataSeries(e) {
-              if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                e.dataSeries.visible = false;
-              } else {
-                e.dataSeries.visible = true;
-              }
-              chart.render();
-            }
+                  </div>
+                </div>
+              </div>
+            </section>
 
-          }
-        </script>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="chart-container rounded-2 p-3">
-              <h3 class="fs-6 mb-3">My Performance</h3>
-              <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-            </div>
           </div>
-          <div class="col-lg-6">
-            <div class="chart-container rounded-2 p-3">
-              <h3 class="fs-6 mb-3">Listings</h3>
-
-            </div>
-          </div>
-        </div>
       </section>
-
-    </div>
-  </section>
-  <script src="../bundle.js" charset="utf-8"></script>
-  <script src="/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/realtor-dashboard.js"></script>
-  <script src="/js/canvasjs.min.js"></script>
-
-</body>
-
-</html>
+      <%- include('partials/footer') %>

@@ -15,22 +15,27 @@ a {
   box-sizing: border-box;
 }
 
-main{
+main {
   padding: 50px;
 }
-h2{
+
+h2 {
   text-align: center;
 }
-.heading-start{
+
+.heading-start {
   padding: 30px 0 10px 0;
 }
+
 .navbar-light .navbar-toggler {
   color: rgb(0 0 0 / 0%);
   border-color: rgba(0, 0, 0, .1);
 }
-li.nav-item{
+
+li.nav-item {
   padding: 0 30px
 }
+
 /*
 *
 * ==========================================

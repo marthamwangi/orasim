@@ -1,0 +1,66 @@
+<%- include('globals/head', { title: 'Client | Register' }); %>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="form_wrapper">
+          <div class="form_container">
+            <div class="title_container">
+              <h2>PORES Clients Registration Form</h2>
+            </div>
+
+            <div class="row clearfix" style="align-items: center">
+              <!-- For Demo Purpose -->
+              <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="/img/login_illustrator.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+                <p class="font-italic text-muted mb-0">Create an account with PORES to get the latest property
+                  information.
+                </p>
+                <p class="font-italic text-muted">Go back to <a href="/" class="text-muted">
+                    <u>PORES</u></a>
+                </p>
+              </div>
+              <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <% if(typeof msg !='undefined' ) { %>
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <%= msg %>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                  </div>
+                  <% } %>
+                    <% if(typeof error !='undefined' ) { %>
+                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <%= error %>
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                      </div>
+                      <% } %>
+                        <form action="" method="POST">
+                          <div class="input_field"> <span><i aria-hidden="true" class="bi bi-person"></i></span>
+                            <input type="text" id="client_name" name="name" placeholder="Full Name" required />
+                          </div>
+                          <div class="input_field"> <span><i aria-hidden="true" class="bi bi-envelope"></i></span>
+                            <input type="email" name="email" placeholder="Email" required />
+                          </div>
+                          <div class="input_field"> <span><i aria-hidden="true" class="bi bi-lock"></i></span>
+                            <input type="password" id="passInput" name="password" placeholder="Password" required />
+                            <span toggle="#password-field" class="bi bi-eye field-icon toggle-password"></span>
+                          </div>
+                          <div class="input_field"> <span><i aria-hidden="true" class="bi bi-telephone"></i></span>
+                            <input type="tel" name="contact" placeholder="+254145678" required />
+                          </div>
+                          <input class="button" style="background-color: #BC6C25" type="submit" value="Register" />
+                        </form>
+                        <!-- Already Registered -->
+                        <div class="text-center w-100">
+                          <p class="text-muted font-weight-bold">Already Registered? <a href="/client/login"
+                              class="text-login ml-2">Login</a></p>
+                        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <%- include('globals/footer'); %>

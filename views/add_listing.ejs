@@ -1,0 +1,163 @@
+<%- include('partials/head', { title: 'Add Listing' }); %>
+
+  <body>
+    <%- include('partials/aside') %>
+
+      <section id="wrapper">
+        <%- include('partials/header') %>
+          <div class="container listing">
+            <h4>ADD LISTING</h4>
+            <form class="row">
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="text">
+                    <label for="floatingInputGrid">Listing Title</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="text">
+                    <label for="floatingInputGrid">Listing Price</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="text">
+                    <label for="floatingInputGrid">Property Size</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="text">
+                    <label for="floatingInputGrid">No. Bedrooms</label>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Listing Status</option>
+                      <option value="sale">Sale</option>
+                      <option value="rent">Rent</option>
+                      <option value="sale-rent">Sale / Rent</option>
+                    </select>
+                    <label for="floatingSelectGrid">Listing Status</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Category</option>
+                      <option value="condo">One</option>
+                      <option value="ho">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                    <label for="floatingSelectGrid">Listing Category</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Listing Type</option>
+                      <option value="residential">Residential</option>
+                      <option value="commercial">Commercial</option>
+                      <option value="industrial">Industrial</option>
+                      <option value="land">Land</option>
+                    </select>
+                    <label for="floatingSelectGrid">Listing Type</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <label for="formFileMultiple" class="form-label"></label>
+                  <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+                <div style="margin-top:20px" class="files">
+                  <ul class="choose-image">
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+                    <li class="img-wrapper">
+                      <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1640681858035-5e62f72d90a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGpwZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                      <i class="bi bi-trash"></i>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                      style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Listing Description</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="text">
+                    <label for="floatingInputGrid">Email address</label>
+                  </div>
+                </div>
+              </div>
+              <hr style="margin-top: 20px;">
+              <div class="form-group">
+                <div class="col-sm-9">
+                  <button type="submit" class="btnaccept" style="margin-bottom: 20px;">Add
+                    Lisitng</button>
+                </div>
+              </div> <!-- form-group // -->
+            </form>
+
+
+          </div> <!-- container// -->
+
+      </section>
+      <%- include('partials/footer') %>

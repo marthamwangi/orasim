@@ -7,30 +7,38 @@ require('../server.js');
 const poresClient = require('../controller/client.controller');
 var router = require("express").Router();
 var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-//if logged in
+//if not logged in
 const ifNotLoggedin = (req, res, next) => {
   if (!req.session.userID) {
-    return res.render('index')
+    return res.redirect('/client/login');
   }
   next();
 }
-//go to dashboard
+// if logged in
 const ifLoggedin = (req, res, next) => {
   if (req.session.userID) {
-    return res.redirect('index')
+    return res.redirect('/');
   }
   next();
 }
-router.get("/hire_realtor", function (req, res) {
-  res.render('client_hire')
+//homepage
+router.get("/", ifNotLoggedin, function (req, res) {
+  res.render('index');
+});
+//logout
+router.get('/logout', (req, res, next) => {
+  req.session.destroy((err) => {
+    next(err);
+  });
+  res.redirect('/client/login');
 });
 //Register new user
 router
   .route("/register")
-  .get(function (req, res) {
+  .get(ifLoggedin, function (req, res) {
     res.render('client_register');
   })
-  .post([
+  .post(ifLoggedin, [
     check('name', 'Please provide your Full Name')
       .isLength({
         min: 5
@@ -55,7 +63,7 @@ router
   .get(ifLoggedin, function (req, res) {
     res.render('client_login')
   })
-  .post([
+  .post(ifLoggedin, [
     check('email', 'Please enter a valid Email')
       .isEmail(pattern)
       .normalizeEmail(),
@@ -66,6 +74,15 @@ router
         minUppercase: 1,
         minNumbers: 1
       }),
-  ], poresClient.loginClient)
+  ], poresClient.loginClient);
 
+//browse realtors
+router
+  .route('/browse-realtors')
+  .get(poresClient.getRealtor);
+
+//get single realtor
+router
+  .route('/get-realtor/:agentId')
+  .get(poresClient.getSingleRealtor);
 module.exports = router;

@@ -2,6 +2,24 @@
 * {
   transition: all 0.3s ease-out; }
 
+.text-hover:hover {
+  color: #BC6C25; }
+
+.text-earth-yellow {
+  color: #DDA15E; }
+
+.text-dark-olive-green {
+  color: #606C38; }
+
+.text-cornslick {
+  color: #FEFAE0; }
+
+.text-ruby-brown {
+  color: #BC6C25; }
+
+.stretched-link:hover {
+  color: #BC6C25; }
+
 .container {
   width: 100%;
   height: 100%;
@@ -55,7 +73,7 @@ p {
   display: block;
   top: 0px;
   position: relative;
-  max-width: 262px;
+  max-width: 280px;
   background-color: #606c3812;
   border-radius: 4px;
   padding: 32px 24px;
@@ -442,3 +460,444 @@ p {
   .title_container {
     display: none; } }
 
+.selectMultiple {
+  width: 240px;
+  position: relative; }
+  .selectMultiple select {
+    display: none; }
+  .selectMultiple > div {
+    position: relative;
+    z-index: 2;
+    padding: 8px 12px 2px 12px;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    min-height: 44px;
+    box-shadow: 0 4px 16px 0 rgba(22, 42, 90, 0.12);
+    transition: box-shadow .3s ease; }
+    .selectMultiple > div:hover {
+      box-shadow: 0 4px 24px -1px rgba(22, 42, 90, 0.16); }
+    .selectMultiple > div .arrow {
+      right: 1px;
+      top: 0;
+      bottom: 0;
+      cursor: pointer;
+      width: 28px;
+      position: absolute; }
+      .selectMultiple > div .arrow:before, .selectMultiple > div .arrow:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 2px;
+        height: 8px;
+        border-bottom: 8px solid #99A3BA;
+        top: 43%;
+        transition: all .3s ease; }
+      .selectMultiple > div .arrow:before {
+        right: 12px;
+        transform: rotate(-130deg); }
+      .selectMultiple > div .arrow:after {
+        left: 9px;
+        transform: rotate(130deg); }
+    .selectMultiple > div span {
+      color: #99A3BA;
+      display: block;
+      position: absolute;
+      left: 12px;
+      cursor: pointer;
+      top: 8px;
+      line-height: 28px;
+      transition: all .3s ease; }
+      .selectMultiple > div span.hide {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-4px, 0); }
+    .selectMultiple > div a {
+      position: relative;
+      padding: 0 24px 6px 8px;
+      line-height: 28px;
+      color: #1E2330;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 6px 0 0; }
+      .selectMultiple > div a em {
+        font-style: normal;
+        display: block;
+        white-space: nowrap; }
+      .selectMultiple > div a:before {
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 6px;
+        width: 100%;
+        position: absolute;
+        display: block;
+        background: rgba(228, 236, 250, 0.7);
+        z-index: -1;
+        border-radius: 4px; }
+      .selectMultiple > div a i {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 28px;
+        display: block; }
+        .selectMultiple > div a i:before, .selectMultiple > div a i:after {
+          content: '';
+          display: block;
+          width: 2px;
+          height: 10px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          background: #4D18FF;
+          border-radius: 1px; }
+        .selectMultiple > div a i:before {
+          transform: translate(-50%, -50%) rotate(45deg); }
+        .selectMultiple > div a i:after {
+          transform: translate(-50%, -50%) rotate(-45deg); }
+      .selectMultiple > div a.notShown {
+        opacity: 0;
+        transition: opacity .3s ease; }
+        .selectMultiple > div a.notShown:before {
+          width: 28px;
+          transition: width 0.45s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.2s; }
+        .selectMultiple > div a.notShown i {
+          opacity: 0;
+          transition: all .3s ease .3s; }
+        .selectMultiple > div a.notShown em {
+          opacity: 0;
+          transform: translate(-6px, 0);
+          transition: all .4s ease .3s; }
+        .selectMultiple > div a.notShown.shown {
+          opacity: 1; }
+          .selectMultiple > div a.notShown.shown:before {
+            width: 100%; }
+          .selectMultiple > div a.notShown.shown i {
+            opacity: 1; }
+          .selectMultiple > div a.notShown.shown em {
+            opacity: 1;
+            transform: translate(0, 0); }
+      .selectMultiple > div a.remove:before {
+        width: 28px;
+        transition: width 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0s; }
+      .selectMultiple > div a.remove i {
+        opacity: 0;
+        transition: all .3s ease 0s; }
+      .selectMultiple > div a.remove em {
+        opacity: 0;
+        transform: translate(-12px, 0);
+        transition: all .4s ease 0s; }
+      .selectMultiple > div a.remove.disappear {
+        opacity: 0;
+        transition: opacity .5s ease 0s; }
+  .selectMultiple > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 8px;
+    transform: translate(0, 20px) scale(0.8);
+    transform-origin: 0 0;
+    filter: drop-shadow(0 12px 20px rgba(22, 42, 90, 0.08));
+    transition: all 0.4s ease, transform 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44), filter 0.3s ease 0.2s; }
+    .selectMultiple > ul li {
+      color: #1E2330;
+      background: #fff;
+      padding: 12px 16px;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      transition: background .3s ease, color .3s ease, transform .3s ease .3s, opacity .5s ease .3s, border-radius .3s ease .3s; }
+      .selectMultiple > ul li:first-child {
+        border-radius: 8px 8px 0 0; }
+        .selectMultiple > ul li:first-child:last-child {
+          border-radius: 8px; }
+      .selectMultiple > ul li:last-child {
+        border-radius: 0 0 8px 8px; }
+        .selectMultiple > ul li:last-child:first-child {
+          border-radius: 8px; }
+      .selectMultiple > ul li:hover {
+        background: #4D18FF;
+        color: #fff; }
+      .selectMultiple > ul li:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%, -50%);
+        transform-origin: 50% 50%; }
+      .selectMultiple > ul li.beforeRemove {
+        border-radius: 0 0 8px 8px; }
+        .selectMultiple > ul li.beforeRemove:first-child {
+          border-radius: 8px; }
+      .selectMultiple > ul li.afterRemove {
+        border-radius: 8px 8px 0 0; }
+        .selectMultiple > ul li.afterRemove:last-child {
+          border-radius: 8px; }
+      .selectMultiple > ul li.remove {
+        transform: scale(0);
+        opacity: 0; }
+        .selectMultiple > ul li.remove:after {
+          animation: ripple .4s ease-out; }
+      .selectMultiple > ul li.notShown {
+        display: none;
+        transform: scale(0);
+        opacity: 0;
+        transition: transform .35s ease, opacity .4s ease; }
+        .selectMultiple > ul li.notShown.show {
+          transform: scale(1);
+          opacity: 1; }
+  .selectMultiple.open > div {
+    box-shadow: 0 4px 20px -1px rgba(22, 42, 90, 0.12); }
+    .selectMultiple.open > div .arrow:before {
+      transform: rotate(-50deg); }
+    .selectMultiple.open > div .arrow:after {
+      transform: rotate(50deg); }
+  .selectMultiple.open > ul {
+    transform: translate(0, 12px) scale(1);
+    opacity: 1;
+    visibility: visible;
+    filter: drop-shadow(0 16px 24px rgba(22, 42, 90, 0.16)); }
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1; }
+  25% {
+    transform: scale(30, 30);
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: scale(50, 50); } }
+
+.realtor-section .section {
+  padding: 50px 0;
+  position: relative; }
+
+.realtor-section .font-size38 {
+  font-size: 38px; }
+
+.realtor-section .realtor-single-text .section-heading h4,
+.realtor-section .section-heading h5 {
+  font-size: 36px; }
+
+.realtor-section .realtor-single-text .section-heading.half {
+  margin-bottom: 20px; }
+
+.realtor-section .realtor-single-img {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  max-width: 212px; }
+
+@media screen and (max-width: 1199px) {
+  .realtor-section .realtor-single-text .section-heading h4,
+  .realtor-section .section-heading h5 {
+    font-size: 32px; }
+  .realtor-section .realtor-single-text .section-heading.half {
+    margin-bottom: 15px; } }
+
+@media screen and (max-width: 991px) {
+  .realtor-section .realtor-single-text .section-heading h4,
+  .realtor-section .section-heading h5 {
+    font-size: 28px; }
+  .realtor-section .realtor-single-text .section-heading.half {
+    margin-bottom: 10px; } }
+
+@media screen and (max-width: 767px) {
+  .realtor-section .realtor-single-text .section-heading h4,
+  .realtor-section .section-heading h5 {
+    font-size: 24px; } }
+
+.realtor-section .realtor-single-icons ul li {
+  display: inline-block;
+  border: 1px solid #DDA15E;
+  border-radius: 50%;
+  color: #86bc42;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s; }
+
+.realtor-section .realtor-single-icons ul li a {
+  color: #BC6C25;
+  display: block;
+  font-size: 14px;
+  height: 25px;
+  line-height: 26px;
+  text-align: center;
+  width: 25px; }
+
+.realtor-section .realtor-single-icons ul li:hover {
+  background: #BC6C25;
+  border-color: #DDA15E; }
+
+.realtor-section .realtor-single-icons ul li:hover a {
+  color: #fff; }
+
+.realtor-section .realtor-social-icon li {
+  display: inline-block;
+  margin-right: 5px; }
+
+.realtor-section .realtor-social-icon li:last-child {
+  margin-right: 0; }
+
+.realtor-section .realtor-social-icon i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 50px; }
+
+.realtor-section .padding-30px-all {
+  padding: 30px; }
+
+.realtor-section .bg-light-gray {
+  background-color: #f7f7f7; }
+
+.realtor-section .text-center {
+  text-align: center !important; }
+
+.realtor-section img {
+  max-width: 100%;
+  height: auto; }
+
+.realtor-section .list-style9 {
+  list-style: none;
+  padding: 0; }
+
+.realtor-section .list-style9 li {
+  position: relative;
+  padding: 0 0 5px 0;
+  margin: 0 0 5px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1); }
+
+.realtor-section .list-style9 li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+.realtor-section .custom-progress {
+  height: 10px;
+  border-radius: 50px;
+  box-shadow: none;
+  margin-bottom: 25px; }
+
+.realtor-section .progress {
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: #e9ecef;
+  border-radius: .25rem; }
+
+.realtor-section .earth-yellow {
+  background-color: #DDA15E; }
+
+.realtor-section .dark-olive-green {
+  background-color: #606C38; }
+
+.realtor-section .cornslick {
+  background-color: #ddce68; }
+
+.realtor-section .ruby-brown {
+  background-color: #BC6C25; }
+
+.realtor-section .counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125); }
+
+.realtor-section .counter .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center; }
+
+.realtor-section .counter .count {
+  font-weight: 700;
+  color: #ddce68;
+  margin: 0 0 5px; }
+
+.realtor-section .counter p {
+  font-weight: 600;
+  margin: 0; }
+
+#hire-realtor {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+#signin-form {
+  border: 1px solid #f9fafb8c !important;
+  box-shadow: 2px 2px 2px 1px rgba(221, 162, 94, 0.405); }
+
+/*
+*
+* ==========================================
+* Footer
+* ==========================================
+*
+*/
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: #606C38;
+  padding: 1rem;
+  color: #fff; }
+  .footer a, .footer p {
+    color: #fff; }
+
+.btn-primary {
+  background-color: #BC6C25;
+  border-color: #DDA15E; }
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #DDA15E;
+    border-color: #DDA15E;
+    box-shadow: 0 0 0 0.2rem #DDA15E; }
+
+/*
+*
+* ==========================================
+* input type
+* ==========================================
+*
+*/
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: #DDA15E;
+  box-shadow: 0 0 0 0.01rem #DDA15E;
+  outline: 0 none;
+  background-color: white; }

@@ -11,7 +11,28 @@ $color5: #BC6C25;
 * {
   transition: all 0.3s ease-out;
 }
+.text-hover:hover{
+    color: $color5
 
+}
+.text-earth-yellow {
+  color: $color4
+}
+
+.text-dark-olive-green {
+  color:$color1
+}
+
+.text-cornslick {
+  color: $color3
+}
+
+.text-ruby-brown {
+  color: $color5
+}
+.stretched-link:hover{
+  color: $color5;
+}
 .container {
   width: 100%;
   height: 100%;
@@ -73,7 +94,7 @@ p {
   display: block;
   top: 0px;
   position: relative;
-  max-width: 262px;
+  max-width: 280px;
   background-color: #606c3812;
   border-radius: 4px;
   padding: 32px 24px;
@@ -974,4 +995,278 @@ $primary: #4D18FF;
     opacity: 0;
     transform: scale(50, 50);
   }
+}
+ .realtor-section{
+      .section {
+        padding: 50px 0;
+        position: relative;
+      }
+
+
+      .font-size38 {
+        font-size: 38px;
+      }
+
+      .realtor-single-text .section-heading h4,
+      .section-heading h5 {
+        font-size: 36px
+      }
+
+      .realtor-single-text .section-heading.half {
+        margin-bottom: 20px
+      }
+
+      .realtor-single-img {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        max-width: 212px;
+
+      }
+
+      @media screen and (max-width: 1199px) {
+
+        .realtor-single-text .section-heading h4,
+        .section-heading h5 {
+          font-size: 32px
+        }
+
+        .realtor-single-text .section-heading.half {
+          margin-bottom: 15px
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+
+        .realtor-single-text .section-heading h4,
+        .section-heading h5 {
+          font-size: 28px
+        }
+
+        .realtor-single-text .section-heading.half {
+          margin-bottom: 10px
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+
+        .realtor-single-text .section-heading h4,
+        .section-heading h5 {
+          font-size: 24px
+        }
+      }
+
+
+      .realtor-single-icons ul li {
+        display: inline-block;
+        border: 1px solid #DDA15E;
+        border-radius: 50%;
+        color: #86bc42;
+        margin-right: 8px;
+        margin-bottom: 5px;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s
+      }
+
+      .realtor-single-icons ul li a {
+        color: #BC6C25;
+        display: block;
+        font-size: 14px;
+        height: 25px;
+        line-height: 26px;
+        text-align: center;
+        width: 25px
+      }
+
+      .realtor-single-icons ul li:hover {
+        background: #BC6C25;
+        border-color: #DDA15E;
+      }
+
+      .realtor-single-icons ul li:hover a {
+        color: #fff
+      }
+
+      .realtor-social-icon li {
+        display: inline-block;
+        margin-right: 5px
+      }
+
+      .realtor-social-icon li:last-child {
+        margin-right: 0
+      }
+
+      .realtor-social-icon i {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 50px
+      }
+
+      .padding-30px-all {
+        padding: 30px;
+      }
+
+      .bg-light-gray {
+        background-color: #f7f7f7;
+      }
+
+      .text-center {
+        text-align: center !important;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+
+      .list-style9 {
+        list-style: none;
+        padding: 0
+      }
+
+      .list-style9 li {
+        position: relative;
+        padding: 0 0 5px 0;
+        margin: 0 0 5px 0;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1)
+      }
+
+      .list-style9 li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0
+      }
+
+
+
+      .custom-progress {
+        height: 10px;
+        border-radius: 50px;
+        box-shadow: none;
+        margin-bottom: 25px;
+      }
+
+      .progress {
+        display: -ms-flexbox;
+        display: flex;
+        height: 1rem;
+        overflow: hidden;
+        font-size: .75rem;
+        background-color: #e9ecef;
+        border-radius: .25rem;
+      }
+
+
+      .earth-yellow {
+        background-color: #DDA15E
+      }
+
+      .dark-olive-green {
+        background-color: #606C38
+      }
+
+      .cornslick {
+        background-color: #ddce68
+      }
+
+      .ruby-brown {
+        background-color: #BC6C25
+      }
+
+      .counter {
+        padding: 22px 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+      }
+
+      .counter .count-data {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .counter .count {
+        font-weight: 700;
+        color: #ddce68;
+        margin: 0 0 5px;
+      }
+
+      .counter p {
+        font-weight: 600;
+        margin: 0;
+      }
+ }
+#hire-realtor{
+      background-color: #fff;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+#signin-form{
+  border: 1px solid #f9fafb8c !important;
+box-shadow: 2px 2px 2px 1px rgba(221, 162, 94, 0.405);
+}
+/*
+*
+* ==========================================
+* Footer
+* ==========================================
+*
+*/
+
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: #606C38;
+  padding: 1rem;
+  color:  #fff;
+a, p{
+  color: #fff;
+}
+}
+.btn-primary{
+    background-color: $color5;
+    border-color: $color4;
+    &:hover, &:focus{
+    background-color: $color4;
+    border-color: $color4;
+           box-shadow: 0 0 0 0.2rem $color4;
+;
+    }
+
+}
+/*
+*
+* ==========================================
+* input type
+* ==========================================
+*
+*/
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: $color4;
+  box-shadow: 0 0 0 0.01rem $color4;
+  outline: 0 none;
+  background-color: white;
 }

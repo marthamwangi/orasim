@@ -2,7 +2,7 @@
   "name": "my-webpack-project",
   "version": "1.0.0",
   "description": "My webpack project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "npm-run-all --parallel server lint:watch test:watch sass build:dev ",
     "localtunnel": "lt --port 3000 --subdomain 17g01acs009",

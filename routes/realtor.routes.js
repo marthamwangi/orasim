@@ -9,7 +9,7 @@ var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 //if logged in
 const ifNotLoggedin = (req, res, next) => {
   if (!req.session.userID) {
-    return res.render('index')
+    return res.redirect('/realtor/login')
   }
   next();
 }
@@ -74,7 +74,7 @@ router
       .isNumeric(),
   ], realtor.loginRealtor);
 //logout
-router.get("/logout", ifLoggedin, (req, res, next) => {
+router.get("/logout", (req, res, next) => {
   req.session.destroy((err) => {
     next(err);
   });

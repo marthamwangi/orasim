@@ -1,0 +1,294 @@
+<%- include('globals/head', {title: 'Browse Realtors' }); %>
+  <%- include('globals/header_realtor'); %>
+    <%- include('globals/aside_realtor'); %>
+      <style>
+        @media screen and (min-width: 768px) {
+          .show {
+            width: 100%;
+          }
+        }
+      </style>
+      <section class=" realtor-section section " id="about">
+        <div class="container">
+          <% if(typeof realtor !='undefined' ) {%>
+            <div class="realtor-single">
+              <div class="row">
+                <div class="col-lg-4 col-md-5 xs-margin-30px-bottom">
+                  <div class="md-padding-25px-all sm-padding-20px-all text-center">
+                    <div class="counter">
+                      <div class="row">
+                        <div class="col">
+
+                          <div class="realtor-single-img">
+                            <img class="card-img-top rounded-circle" width="30" height="30"
+                              src="/uploads/profiles/<%=realtor.agentImage%>" alt="pores_realtor">
+                          </div>
+
+                          <h4 class="margin-10px-bottom font-size24 md-font-size22 sm-font-size20 font-weight-600"><i
+                              class="bi bi-patch-check-fill" style="color: #ddce68;"></i> Gold
+                            Realtor
+                          </h4>
+                        </div>
+                        <div class="mt-2 realtor-single-icons">
+                          <ul class="no-margin">
+                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+                            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                            <li><a href="#"><i class="bi bi-google"></i></a></li>
+                          </ul>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="count-data text-center">
+                            <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                            <p class="m-0px font-w-400">Happy Clients</p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="count-data text-center">
+                            <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                            <p class="m-0px font-w-400">Closed Listings</p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="count-data text-center">
+                            <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+                            <p class="m-0px font-w-400">Transactions</p>
+                          </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                          <div class="count-data text-center">
+                            <h6 class="count h2" data-to="190" data-speed="100">100</h6>
+                            <p class="m-0px font-w-400">Reviews</p>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn cornslick" data-bs-toggle="modal"
+                        data-bs-target="#hireModal">Hire Me</button>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="col-lg-8 col-md-7">
+                  <div class="realtor-single-text padding-50px-left sm-no-padding-left">
+                    <h4 class="font-size38 sm-font-size32 xs-font-size30">
+                      <%=realtor.agentName%>
+                    </h4>
+                    <p class="no-margin-bottom">
+                      <%=realtor.agentBio%>
+                    </p>
+                    <div class="contact-info-section margin-40px-tb">
+                      <ul class="list-style9 no-margin">
+                        <li>
+
+                          <div class="row">
+                            <div class="col-md-5 col-5">
+                              <i class="fas fa-graduation-cap"></i>
+                              <strong class="margin-10px-left">Degree:</strong>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              <p>Master's Degrees</p>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li>
+
+                          <div class="row">
+                            <div class="col-md-5 col-5">
+                              <i class="far fa-gem"></i>
+                              <strong class="margin-10px-left">Exp.:</strong>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              <p>4 Year in Real Estate</p>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li>
+
+                          <div class="row">
+                            <div class="col-md-5 col-5">
+                              <i class="far fa-file"></i>
+                              <strong class="margin-10px-left">Courses:</strong>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              <p>Diploma (Valuation and Estate Management), G.MISK</p>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li>
+
+                          <div class="row">
+                            <div class="col-md-5 col-5">
+                              <i class="fas fa-map-marker-alt "></i>
+                              <strong class="margin-10px-left">Address:</strong>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              <p>P.O. Box 30121 00100, Nairobi</p>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li>
+
+                          <div class="row">
+                            <div class="col-md-5 col-5">
+                              <i class="fas fa-mobile-alt"></i>
+                              <strong class="margin-10px-left xs-margin-four-left">Phone:</strong>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              <p>
+                                <%=realtor.agentContact%>
+                              </p>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li>
+                          <div class="row">
+                            <div class="col-md-5 col-5">
+                              <i class="fas fa-envelope"></i>
+                              <strong class="margin-10px-left xs-margin-four-left">Email:</strong>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              <p><a href="javascript:void(0)">
+                                  <%=realtor.agentEmail%>
+                                </a></p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <h5 class="font-size24 sm-font-size22 xs-font-size20">Professional Skills</h5>
+
+                    <div class="sm-no-margin">
+                      <div class="progress-text">
+                        <div class="row">
+                          <div class="col-7">Positive Behaviors</div>
+                          <div class="col-5 text-right">40%</div>
+                        </div>
+                      </div>
+                      <div class="custom-progress progress">
+                        <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                          style="width:40%" class="animated custom-bar progress-bar slideInLeft earth-yellow"></div>
+                      </div>
+                      <div class="progress-text">
+                        <div class="row">
+                          <div class="col-7">Teamworking Abilities</div>
+                          <div class="col-5 text-right">50%</div>
+                        </div>
+                      </div>
+                      <div class="custom-progress progress">
+                        <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                          style="width:50%" class="animated custom-bar progress-bar slideInLeft dark-olive-green"></div>
+                      </div>
+                      <div class="progress-text">
+                        <div class="row">
+                          <div class="col-7">Time Management </div>
+                          <div class="col-5 text-right">60%</div>
+                        </div>
+                      </div>
+                      <div class="custom-progress progress">
+                        <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                          style="width:60%" class="animated custom-bar progress-bar slideInLeft cornslick"></div>
+                      </div>
+                      <div class="progress-text">
+                        <div class="row">
+                          <div class="col-7">Excellent Communication</div>
+                          <div class="col-5 text-right">80%</div>
+                        </div>
+                      </div>
+                      <div class="custom-progress progress">
+                        <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                          style="width:80%" class="animated custom-bar progress-bar slideInLeft ruby-brown"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade  hire-realtor" id="hireModal" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="hireModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="hireModalLabel">Realtor Hire Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-md-12">
+                        <label for="specialtyDataList" class="form-label">Realtor Specialties</label>
+                        <input class="form-control" list="datalistOptions" id="specialtyDataList"
+                          placeholder="Type to search...">
+                        <datalist id="datalistOptions">
+                          <option value="Listing Agent">
+                          <option value="Selling Agent">
+                          <option value="Relocation">
+                          <option value="Property Management">
+                          <option value="Morgage Planning">
+                          <option value="Valuation Agent">
+                        </datalist>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label for="exampleFormControlTextarea1" class="form-label">Property Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputNumber4" class="form-label">Budget</label>
+                        <input type="number" class="form-control" id="inputNumber4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputNumber4" class="form-label">Comission</label>
+                        <input type="number" class="form-control" id="inputNumber4">
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Check me out
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn cornslick">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <%}%>
+
+
+        </div>
+      </section>
+      <%- include ('globals/footer'); %>

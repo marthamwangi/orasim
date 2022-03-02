@@ -151,3 +151,36 @@ await connection.query('INSERT INTO realtor SET ?', realtorEarb, function (error
   path: 'C:\\Users\\Martha\\Desktop\\Orasim\\public\\uploads\\profiles\\profile-1645100551916.jpeg',
   size: 348131
 }
+
+      <section>
+        <div class="container">
+
+          <a class="card2" href="#">
+            <img class="card-img-top" src="/img/people_search.svg" alt="people_search">
+
+            <h3>Browse Realtors</h3>
+            <p class="small" style="  line-height: 1.6;">
+              PORES REALTY® is dedicated to supporting its clients. Real estate agents represent
+              buyers and sellers throughout Kenya.</p>
+
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                →
+              </div>
+            </div>
+          </a>
+          <a class="card2" href="#">
+            <img class="card-img-top" src="/img/house_search.svg" alt="house_search">
+
+            <h3>Search Properties</h3>
+            <p class="small" style="  line-height: 1.6;">
+              Card description with lots of great facts and interesting details.</p>
+
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                →
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>

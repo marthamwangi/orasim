@@ -5,8 +5,13 @@ import {
 require('../server.js');
 
 const {
+  homePage,
   registerPage,
   registerUser,
+  loginPage,
+  loginUser,
+  browseRealtors,
+  searchRealtors
 } = require('../controller/user.controller');
 var router = require("express").Router();
 var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -24,6 +29,9 @@ const ifLoggedin = (req, res, next) => {
   }
   next();
 }
+router
+  .route('/')
+  .get(ifNotLoggedin, homePage)
 //Register new user
 router
   .route("/register")
@@ -50,4 +58,38 @@ router
       check('govid', 'Please enter a numeric type ID Number!')
         .isNumeric(),
     ], registerUser);
+
+//login
+router
+  .route('/login')
+  .get(ifLoggedin, loginPage)
+  .post(ifLoggedin, [
+    check('email', 'Please enter a valid Email')
+      .isEmail(pattern)
+      .normalizeEmail(),
+    check('password', 'Password must be greater than 8 characters and contain at least one uppercase letter, one lowercase letter, and one number')
+      .isLength({
+        min: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1
+      }),
+  ], loginUser);
+
+router
+  .route('/logout')
+  .get((req, res, next) => {
+    req.session.destroy((err) => {
+      next(err);
+    });
+    res.redirect('/login');
+  });
+
+router
+  .route('/browse-realtors')
+  .get(browseRealtors)
+router
+  .route('/browse-realtors/search')
+  .get(searchRealtors)
+
 module.exports = router;

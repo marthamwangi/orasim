@@ -61,6 +61,20 @@ p {
     font-size: 14px;
   }
 }
+.hero{
+  background-color: #606c3812;
+  margin-bottom: 30px;
+  background-image: url('/img/bg_1.jpg');
+    position: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+        opacity: 0.5;
+p{
+          color: #000;
+
+}
+}
 
 .card-img,
 .card-img-bottom,
@@ -1209,8 +1223,8 @@ $primary: #4D18FF;
       0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 #signin-form{
-  border: 1px solid #f9fafb8c !important;
-box-shadow: 2px 2px 2px 1px rgba(221, 162, 94, 0.405);
+  border: 1px solid #f9fafbbd !important;
+box-shadow: 2px 2px 2px 1px #606c3869;
 }
 /*
 *
@@ -1232,12 +1246,13 @@ a, p{
 }
 }
 .btn-primary{
+  width: 100px;
     background-color: $color5;
     border-color: $color4;
     &:hover, &:focus{
     background-color: $color4;
     border-color: $color4;
-           box-shadow: 0 0 0 0.2rem $color4;
+    box-shadow: 0 0 0 0.2rem $color4;
 ;
     }
 
@@ -1269,4 +1284,45 @@ input[type="color"]:focus,
   box-shadow: 0 0 0 0.01rem $color4;
   outline: 0 none;
   background-color: white;
+}
+ .social-list {
+   display: flex;
+   list-style: none;
+   justify-content: center;
+   padding: 0
+ }
+
+ .social-list li {
+   padding: 10px;
+   color: #BC6C25;
+   font-size: 19px
+ }
+
+ .social-list i:hover {
+   color: $color1;
+ }
+.hire-me,
+.hire-me:hover{
+  display: flex;
+justify-content: center;
+background-color: $color1;
+width: 50%;
+color: white;
+font-weight: 400;
+line-height: 1.5;
+text-align: center;
+text-decoration: none;
+vertical-align: middle;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+border: 1px solid transparent;
+padding: 0.375rem 0.75rem;
+font-size: 1rem;
+border-radius: 0.25rem;
+transition: color .15s ease-in-out,
+background-color .15s ease-in-out,
+border-color .15s ease-in-out,
+box-shadow .15s ease-in-out;
 }

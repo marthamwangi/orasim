@@ -48,10 +48,8 @@ app.use(express.static(path.join(__dirname, "node_modules/jquery/dist/")));
 app.use(express.static(path.join(__dirname, "node_modules/bootstrap-icons/font/")));
 
 
-app.get("/", function (req, res) {
-  res.render('index')
-});
-app.use('/pores', userRoutes);
+
+app.use(userRoutes);
 app.use('/realtor', realtorRoutes);
 app.use('/client', clientRoutes);
 

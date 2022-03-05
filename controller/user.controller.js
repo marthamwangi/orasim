@@ -4,7 +4,27 @@ import {
 } from 'express-validator';
 import bcrypt from 'bcrypt';
 import dbconnect from '../config/database.config';
+//HOMEPAGE
+const homePage = async (req, res, next) => {
+  try {
+    await dbconnect.getConnection(async (err, connection) => {
+      await connection.query('SELECT * FROM users_table WHERE id_user = ' + connection.escape(req.session.userID), function (error, user_result, fields) {
+        if (error) {
+          throw error
+        }
+        if (user_result.length !== 1) {
+          return res.redirect('/logout');
+        }
+        res.render('index', {
+          user: user_result[0]
+        })
+      })
+    })
+  } catch (error) {
 
+  }
+}
+//REGISTER
 const registerPage = (req, res, next) => {
   res.render("register")
 }
@@ -114,8 +134,96 @@ const registerUser = async (req, res) => {
   }
 
 }
+//LOGIN
+const loginPage = (req, res, next) => {
+  res.render("login")
+}
+const loginUser = (req, res) => {
+  const errors = validationResult(req);
+  const { body } = req;
+  if (!errors.isEmpty()) {
+    return res.render('login', {
+      error: errors.array()[0].msg
+    });
+  }
+  try {
+    dbconnect.getConnection(async function (err, connecton) {
+      if (err) {
+        throw err
+      }
+      await connecton.query('SELECT * FROM users_table WHERE user_email = ' + connecton.escape(body.email), async function (error, login_results, fields) {
+        if (error) {
+          throw error
+        }
+        if (login_results.length === 1) {
+          const comparePassword = await bcrypt.compare(body.password, login_results[0].user_password)
+          if (comparePassword === true && login_results[0].user_email === body.email) {
+            req.session.userID = login_results[0].id_user;
+            return res.redirect('/');
+          } else {
+            res.render('login', {
+              error: 'Check your credentials!'
+            });
+          }
+        } res.render('login', {
+          error: 'Check your credentials!'
+        });
 
+      })
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+//BROWSE REALTORS
+const browseRealtors = async (req, res) => {
+  dbconnect.getConnection(await
+    function (err, connection) {
+      if (err) {
+        throw err
+      }
+      connection.query("SELECT * FROM users_table WHERE id_user = " + connection.escape(req.session.userID), async function (error, user_result, fields) {
+        if (error) {
+          throw error
+        }
+        if (user_result.length !== 1) {
+          return res.redirect('/login');
+        }
+        await connection.query("SELECT * FROM users_table WHERE user_role = " + connection.escape(1), function (error, realtor_result, fields) {
+          if (error) {
+            throw error;
+          }
+          if (realtor_result.length === 0) {
+            res.render('browse-realtors', {
+              no_realtor: 'No realtors',
+
+            });
+          }
+          res.render('browse-realtors', {
+            yes_realtor: 'Yes realtors',
+            realtor: realtor_result,
+            user: user_result[0]
+          });
+        });
+      });
+    })
+}
+const searchRealtors = async (req, res) => {
+  const { realtor } = req.query
+  dbconnect.getConnection(await function (err, connection) {
+    if (err) {
+      throw err
+    }
+    connection.query('SELECT users_table ')
+  })
+}
 module.exports = {
+  homePage,
   registerPage,
-  registerUser
+  registerUser,
+  loginPage,
+  loginUser,
+  browseRealtors,
+  searchRealtors
+
 }

@@ -1,0 +1,67 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="container-fluid" style="justify-content: space-around;">
+      <div style="justify-content:flex-end;">
+        <a class="navbar-brand" href="#"
+          style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+          PORES REALTY®
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="justify-content: flex-end;">
+        <ul class="navbar-nav justify-content-center ">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="justify-content:flex-end; flex-direction: column-reverse; margin-left: 1.5rem;
+">
+        <%if (typeof user !='undefined' ){%>
+          <div class="dropdown ">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/img/male_avatar.svg" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+              <li><a class="dropdown-item" href="#">
+                  My Account
+                </a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+            </ul>
+          </div>
+          <%} else {%>
+            <div class="navbar-nav row g-3">
+              <div class="col">
+                <a href="/login" class="btn btn-primary"
+                  style="background-color: transparent; color: #BC6C25;">Login</a>
+              </div>
+              <div class="col">
+                <a href="/register" class="btn btn-primary col">Register</a>
+              </div>
+            </div>
+            <%}%>
+      </div>
+    </div>
+  </nav>
+</header>

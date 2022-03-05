@@ -1,1 +1,2 @@
-console.log('sgg')
+"use strict";
+console.log("Hello World!");

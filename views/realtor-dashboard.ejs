@@ -1,0 +1,250 @@
+<%- include('partials/head', { title: 'My Profile' }); %>
+
+  <body>
+    <%- include('partials/aside') %>
+
+      <section id="wrapper">
+        <%- include('partials/header') %>
+
+          <div class="px-4">
+            <section class="statistics mt-4">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                    <i class="bi bi-house-door fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">1,245</h3> <span class="d-block ms-2">Active Listings</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                    <i class="bi bi-house fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">34</h3> <span class="d-block ms-2">Closed Listings</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                    <i class="bi bi-hourglass-split fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">34</h3> <span class="d-block ms-2">Pending Listings</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="box d-flex rounded-2 align-items-center p-3">
+                    <i class="bi bi-calendar3 fs-2 text-center bg-icon rounded-circle"></i>
+                    <div class="ms-3">
+                      <div class="d-flex align-items-center">
+                        <h3 class="mb-0">5,245</h3> <span class="d-block ms-2">Licence Expiry Date</span>
+                      </div>
+                      <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="charts mt-4">
+              <div class="chart-container p-3">
+                <h3 class="fs-6 mb-3">Assigned Listings</h3>
+                <!--Assigned Listings show up here-->
+                <div class="assigned-listings">
+                  <table cellpadding="0" cellspacing="0">
+                    <tr class="tbl-header">
+                      <th>Listings</th>
+                      <th>Price</th>
+                      <th>Commission</th>
+                      <th>Owner</th>
+                      <th>Looking For</th>
+                      <th>Accept</th>
+                      <th>Reject</th>
+                    </tr>
+                    <% if(typeof assignments !='undefined' ) {%>
+                      <%for (var i=0; i < assignments.length; i++){%>
+                        <tr>
+                          <td>
+                            <%= assignments[i].hire_title %>
+                              <div>
+                                <%=assignments[i].property_address %>
+                              </div>
+                          </td>
+                          <td>
+                            KSH. <%= assignments[i].property_price %>
+                          </td>
+                          <td>
+                            <%= assignments[i].property_comission %>
+                          </td>
+                          <td>
+                            <%= assignments[i].client_name %>
+
+                              <div>
+                                <%= assignments[i].client_contact %>
+                              </div>
+                          </td>
+                          <td>
+                            <%= assignments[i].hires_reason %>
+                          </td>
+                          <td><button class="accept">Accept</button></td>
+                          <td><button class="reject">Reject</button></td>
+                        </tr>
+
+                        <% } %>
+                          <%}%>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section class="statis mt-4 text-center">
+              <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <div class="box bg-primary p-3">
+                    <i class="uil-eye"></i>
+                    <h3>5,154</h3>
+                    <p class="lead">Page views</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <div class="box bg-danger p-3">
+                    <i class="uil-user"></i>
+                    <h3>245</h3>
+                    <p class="lead">User registered</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                  <div class="box bg-warning p-3">
+                    <i class="uil-shopping-cart"></i>
+                    <h3>5,154</h3>
+                    <p class="lead">Product sales</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="box bg-success p-3">
+                    <i class="uil-feedback"></i>
+                    <h3>5,154</h3>
+                    <p class="lead">Transactions</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="charts mt-4">
+              <script>
+                window.onload = function () {
+
+                  var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2",
+                    axisX: {
+                      valueFormatString: "DD MMM",
+                      crosshair: {
+                        enabled: true,
+                        snapToDataPoint: true
+                      }
+                    },
+                    axisY: {
+                      title: "Listings",
+                      includeZero: true,
+                      crosshair: {
+                        enabled: true
+                      }
+                    },
+                    toolTip: {
+                      shared: true
+                    },
+                    legend: {
+                      cursor: "pointer",
+                      verticalAlign: "bottom",
+                      horizontalAlign: "left",
+                      dockInsidePlotArea: true,
+                      itemclick: toogleDataSeries
+                    },
+                    data: [{
+                      type: "line",
+                      showInLegend: true,
+                      name: "Clients",
+                      markerType: "square",
+                      xValueFormatString: "DD MMM, YYYY",
+                      color: "#F08080",
+                      dataPoints: [
+                        { x: new Date(2022, 0, 3), y: 650 },
+                        { x: new Date(2022, 0, 4), y: 700 },
+                        { x: new Date(2022, 0, 5), y: 710 },
+                        { x: new Date(2022, 0, 6), y: 658 },
+                        { x: new Date(2022, 0, 7), y: 734 },
+                        { x: new Date(2022, 0, 8), y: 963 },
+                        { x: new Date(2022, 0, 9), y: 847 },
+                        { x: new Date(2022, 0, 10), y: 853 },
+                        { x: new Date(2022, 0, 11), y: 869 },
+                        { x: new Date(2022, 0, 12), y: 943 },
+                        { x: new Date(2022, 0, 13), y: 970 },
+                        { x: new Date(2022, 0, 14), y: 869 },
+                        { x: new Date(2022, 0, 15), y: 890 },
+                        { x: new Date(2022, 0, 16), y: 930 }
+                      ]
+                    },
+                    {
+                      type: "line",
+                      showInLegend: true,
+                      name: "Listings",
+                      lineDashType: "dash",
+                      dataPoints: [
+                        { x: new Date(2022, 0, 3), y: 510 },
+                        { x: new Date(2022, 0, 4), y: 560 },
+                        { x: new Date(2022, 0, 5), y: 540 },
+                        { x: new Date(2022, 0, 6), y: 558 },
+                        { x: new Date(2022, 0, 7), y: 544 },
+                        { x: new Date(2022, 0, 8), y: 693 },
+                        { x: new Date(2022, 0, 9), y: 657 },
+                        { x: new Date(2022, 0, 10), y: 663 },
+                        { x: new Date(2022, 0, 11), y: 639 },
+                        { x: new Date(2022, 0, 12), y: 673 },
+                        { x: new Date(2022, 0, 13), y: 660 },
+                        { x: new Date(2022, 0, 14), y: 562 },
+                        { x: new Date(2022, 0, 15), y: 643 },
+                        { x: new Date(2022, 0, 16), y: 570 }
+                      ]
+                    }]
+                  });
+                  chart.render();
+
+                  function toogleDataSeries(e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                      e.dataSeries.visible = false;
+                    } else {
+                      e.dataSeries.visible = true;
+                    }
+                    chart.render();
+                  }
+
+                }
+              </script>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="chart-container rounded-2 p-3">
+                    <h3 class="fs-6 mb-3">My Performance</h3>
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="chart-container rounded-2 p-3">
+                    <h3 class="fs-6 mb-3">Listings</h3>
+
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+      </section>
+      <%- include('partials/footer') %>

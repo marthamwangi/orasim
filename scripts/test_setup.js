@@ -1,2 +1,3 @@
-require ("@babel/register")();
-require[".css"] = function(){};
+require('@babel/register');
+require[".css"] = function () { };
+

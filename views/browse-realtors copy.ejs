@@ -1,0 +1,82 @@
+<%- include('globals/head', {title: 'Browse Realtors' }); %>
+  <%- include('globals/header'); %>
+    <!--Container Main start-->
+    <main>
+      <style>
+        .form-control:not(select) {
+          padding: 0.5rem 0.5rem;
+        }
+      </style>
+      <section>
+        <div class="row">
+          <div class="col">
+            <form>
+              <div class="input-group"> <input type="text" class="form-control input-text"
+                  placeholder="Enter name, address, badge e.g gold, silver...">
+                <div class="input-group-append"> <button class="btn btn-primary btn-lg" style="width: fit-content;"
+                    type="button"><i class="bi bi-search"></i></button> </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <% if(typeof no_realtor !='undefined' ) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= no_realtor %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+          <section>
+            <div class="container">
+              <% if(typeof realtor !='undefined' ) {%>
+                <% for (var i=0; i < realtor.length; i++ ){%>
+                  <card class="card2">
+                    <a href="/client/get-realtor/<%=realtor[i].agentId%>">
+                      <img class="card-img-top rounded-circle" width="30" height="30"
+                        src="/uploads/profiles/<%=realtor[i].agentImage%>" alt="pores_realtor">
+
+                      <div class="card-title">
+                        <h3 style="color: #BC6C25;" class="small">
+                          <%= realtor[i].user_name %>
+                        </h3>
+                        <h3 style="color: #BC6C25;" class="small">
+                          <%= realtor[i].user_contact %>
+                        </h3>
+                        <p> <i class="bi bi-patch-check-fill" style="color: #62CCD3;"></i> Silver Realtor</p>
+
+                      </div>
+
+                      <p
+                        style="display: -webkit-box;padding: 3px 0px;max-width: 200px; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">
+                        <%=realtor[i].user_name %>
+                      </p>
+                      <div class="card-body">
+                        <p class="small">Experience<span>12 years</span></p>
+                        <p class="small">Closed Listings<span>120</span></p>
+                        <p class="small">Active Listings<span>11</span></p>
+                      </div>
+                      <ul class="social-list">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="#"><i class="bi bi-google"></i></a></li>
+                      </ul>
+                      <div class="go-corner" href="#">
+                        <div class="go-arrow">
+                          →
+                        </div>
+                      </div>
+
+                    </a>
+
+
+                  </card>
+                  <%}%>
+                    <%}%>
+
+            </div>
+
+          </section>
+    </main>
+    <%- include ('globals/footer'); %>

@@ -1,0 +1,163 @@
+<%- include('partials/head', { title: 'My Profile' }); %>
+
+  <body>
+    <%- include('partials/aside') %>
+
+      <section id="wrapper">
+        <%- include('partials/header') %>
+          <div class="container rounded bg-white mt-0 mb-5">
+            <div class="row">
+              <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                  <form action="" enctype="multipart/form-data" method="post">
+                    <div class="profile-pic">
+                      <label class="-label" for="file">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <span>Change Image</span>
+                      </label>
+                      <input id="file" type="file" class="form-control-file" name="profile" accept='image/*'
+                        onchange="loadFile(event)" />
+                      <img src="/uploads/profiles/<% if (typeof realtor !='undefined'){%><%=realtor.agentImage%><%}%>"
+                        id="output" width="200" />
+                    </div>
+                    <span class="fw-bolder text-uppercase fs-4">
+                      <% if (typeof realtor !='undefined' ) {%>
+                        <%=realtor.agentName %>
+                          <%} %>
+                    </span>
+                    <div id="licence">
+                      <hr />
+                      <span class="text-black-100">
+                        Licence Number:
+                        <span class="badge licence">
+                          <% if (typeof realtor !='undefined' ) {%>
+                            <%=realtor.agentLicence %>
+                              <%} %>
+                        </span>
+                      </span>
+                      <hr />
+                      <span class="text-black-100">
+                        ID Number:
+                        <span class="badge licence">
+                          <% if (typeof realtor !='undefined' ) {%>
+                            <%=realtor.agentNationalId %>
+                              <%} %>
+                        </span>
+                      </span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                  </div>
+                  <% if(typeof error !='undefined' ) { %>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <%=error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <% } %>
+                      <div class="row mt-3">
+                        <div class="col-md-12 mt-4">
+                          <label class="labels">Email</label><input name="email" type="text" class="form-control"
+                            value="<%if(typeof realtor !='undefined'){%><%-realtor.agentEmail %><%} %>"
+                            placeholder=" Email" />
+                        </div>
+                        <div class="col-md-12 mt-4">
+                          <label class="labels">PhoneNumber</label><input name="contact" type="text"
+                            class="form-control"
+                            value="<%if(typeof realtor !='undefined'){%><%-realtor.agentContact%><%}%>"
+                            placeholder="Phone Number" />
+                        </div>
+                        <div class="col-md-12 mt-4">
+                          <label class="labels">Bio</label>
+                          <textarea maxlength="255" name="bio" type="text" class="form-control" rows="2"
+                            value="<%if(typeof realtor !='undefined'){%><%-realtor.agentBio%><%}%>"
+                            placeholder="Tell Clients about yourself..."></textarea>
+                        </div>
+                        <!-- <div class="col-md-12 mt-3">
+                          <label class="labels">Specialties</label>
+                          <p class="mt-3 fst-italic">Not all real estate transactions are the same. Choose your
+                            Specialties here.
+                          </p>
+                          <div class="mt-3">
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]"
+                                  value="Property Leasing" id="flexCheckDefault-1" />
+                                <label class="pl form-check-label" for="flexCheckDefault-1">
+                                  Property Leasing
+                                </label>
+                              </div>
+                            </div>
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]" value="Property Sale"
+                                  id="flexCheckDefault-1" />
+                                <label class="ps form-check-label" for="flexCheckDefault-1">
+                                  Property Sale
+                                </label>
+                              </div>
+                            </div>
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]"
+                                  value="Morgage Planning" id="flexCheckDefault-1" />
+                                <label class="mp form-check-label" for="flexCheckDefault-1">
+                                  Morgage Planning
+                                </label>
+                              </div>
+                            </div>
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]" value="Relocation"
+                                  id="flexCheckDefault-1" />
+                                <label class="relocation form-check-label" for="flexCheckDefault-1">
+                                  Relocation
+                                </label>
+                              </div>
+                            </div>
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]"
+                                  value="Property Management" id="flexCheckDefault-2" />
+                                <label class="pm form-check-label" for="flexCheckDefault-2">
+                                  Property Management
+                                </label>
+                              </div>
+                            </div>
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]" value="Valuation"
+                                  id="flexCheckDefault-3" />
+                                <label class="valuation form-check-label" for="flexCheckDefault-3">
+                                  Valuation
+                                </label>
+                              </div>
+                            </div>
+                            <div class="p-2 rounded checkbox-form">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="specialty[]" value="Caretaker"
+                                  id="flexCheckDefault-4" />
+                                <label class="caretaker form-check-label" for="flexCheckDefault-4">
+                                  Caretaker
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                        <div class="text-center mt-4">
+                          <button class="btn btnaccept" type="submit">
+                            Save Profile
+                          </button>
+                        </div>
+                      </div>
+                      </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <%- include('partials/footer') %>
+  </body>

@@ -1,0 +1,464 @@
+<%- include('dashboardPartials/head') %>
+  <!-- ========== HEADER ========== -->
+  <%- include('dashboardPartials/header') %>
+    <!-- ========== HEADER ========== -->
+    <!-- Navbar Vertical -->
+    <%- include('dashboardPartials/aside') %>
+
+      <!-- End Navbar Vertical -->
+      <main id="content" role="main" class="main">
+        <!-- Content -->
+        <div class="content container-fluid">
+
+          <div class="row">
+            <div class="col-lg-3">
+              <!-- Navbar -->
+              <div class="navbar-expand-lg navbar-vertical mb-3 mb-lg-5" style="position:fixed; padding:80px">
+                <!-- Navbar Toggle -->
+                <!-- Navbar Toggle -->
+                <div class="d-grid">
+                  <button type="button" class="navbar-toggler btn btn-white mb-3" data-bs-toggle="collapse"
+                    data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false"
+                    aria-controls="navbarVerticalNavMenu">
+                    <span class="d-flex justify-content-between align-items-center">
+                      <span class="text-dark">Menu</span>
+
+                      <span class="navbar-toggler-default">
+                        <i class="bi-list"></i>
+                      </span>
+
+                      <span class="navbar-toggler-toggled">
+                        <i class="bi-x"></i>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+                <!-- End Navbar Toggle -->
+                <!-- Navbar Collapse -->
+                <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+                  <ul id="navbarSettings" style="padding: 10px 50px"
+                    class="js-sticky-block js-scrollspy card card-navbar-nav nav nav-tabs nav-lg nav-vertical"
+                    data-hs-sticky-block-options="{
+                         &quot;parentSelector&quot;: &quot;#navbarVerticalNavMenu&quot;,
+                         &quot;targetSelector&quot;: &quot;#header&quot;,
+                         &quot;breakpoint&quot;: &quot;lg&quot;,
+                         &quot;startPoint&quot;: &quot;#navbarVerticalNavMenu&quot;,
+                         &quot;endPoint&quot;: &quot;#stickyBlockEndPoint&quot;,
+                         &quot;stickyOffsetTop&quot;: 20
+                       }">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#content">
+                        <i class="bi-person nav-icon"></i> Basic information
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#passwordSection">
+                        <i class="bi-key nav-icon"></i> Password
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#socialAccountsSection">
+                        <i class="bi-instagram nav-icon"></i> Social accounts
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#deleteAccountSection">
+                        <i class="bi-trash nav-icon"></i> Delete account
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- End Navbar Collapse -->
+              </div>
+              <!-- End Navbar -->
+            </div>
+
+            <div class="col-lg-9">
+              <div class="d-grid gap-3 gap-lg-5">
+                <!-- Card -->
+                <div class="card">
+                  <!-- Profile Cover -->
+                  <div class="profile-cover">
+
+                  </div>
+                  <!-- End Profile Cover -->
+
+                  <!-- Avatar -->
+                  <label class="avatar avatar-xxl avatar-circle avatar-uploader profile-cover-avatar"
+                    for="editAvatarUploaderModal">
+                    <img id="editAvatarImgModal" class="avatar-img" src="/img/male_avatar.svg" alt="Image Description">
+
+                    <input type="file" class="js-file-attach avatar-uploader-input" id="editAvatarUploaderModal"
+                      data-hs-file-attach-options="{
+                                &quot;textTarget&quot;: &quot;#editAvatarImgModal&quot;,
+                                &quot;mode&quot;: &quot;image&quot;,
+                                &quot;targetAttr&quot;: &quot;src&quot;,
+                                &quot;allowTypes&quot;: [&quot;.png&quot;, &quot;.jpeg&quot;, &quot;.jpg&quot;]
+                             }">
+
+                    <span class="avatar-uploader-trigger">
+                      <i class="bi-pencil-fill avatar-uploader-icon shadow-sm"></i>
+                    </span>
+                  </label>
+                  <!-- End Avatar -->
+
+
+                </div>
+                <!-- End Card -->
+
+                <!-- Card -->
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="card-title h4">Basic information</h2>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body">
+                    <!-- Form -->
+                    <form>
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Full name <i
+                            class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="" data-bs-original-title="Displayed on public forums, such as pores."
+                            aria-label="Displayed on public forums, such as pores."></i></label>
+
+                        <div class="col-sm-9">
+                          <div class="input-group input-group-sm-vertical">
+                            <input type="text" class="form-control" name="firstName" id="firstNameLabel"
+                              placeholder="Your first name" aria-label="Your first name" value="Mark">
+                            <input type="text" class="form-control" name="lastName" id="lastNameLabel"
+                              placeholder="Your last name" aria-label="Your last name" value="Williams">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
+
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" name="email" id="emailLabel" placeholder="Email"
+                            aria-label="Email" value="mark@site.com">
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone <span
+                            class="form-label-secondary">(Optional)</span></label>
+
+                        <div class="col-sm-9">
+                          <input type="text" class="js-input-mask form-control" name="phone" id="phoneLabel"
+                            placeholder="+x(xxx)xxx-xx-xx" aria-label="+x(xxx)xxx-xx-xx" value="+1 (609) 972-22-22"
+                            data-hs-mask-options="{
+                                   &quot;mask&quot;: &quot;+0(000)000-00-00&quot;
+                                 }">
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="organizationLabel" class="col-sm-3 col-form-label form-label">Organization</label>
+
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="organization" id="organizationLabel"
+                            placeholder="Your organization" aria-label="Your organization" value="">
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="departmentLabel" class="col-sm-3 col-form-label form-label">Department</label>
+
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="department" id="departmentLabel"
+                            placeholder="Your department" aria-label="Your department">
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div id="accountType" class="row mb-4">
+                        <label class="col-sm-3 col-form-label form-label">Account type</label>
+
+                        <div class="col-sm-9">
+                          <div class="input-group input-group-sm-vertical">
+                            <!-- Radio Check -->
+                            <label class="form-control" for="userAccountTypeRadio1">
+                              <span class="form-check">
+                                <input type="radio" class="form-check-input" name="userAccountTypeRadio"
+                                  id="userAccountTypeRadio1" checked="">
+                                <span class="form-check-label">Individual</span>
+                              </span>
+                            </label>
+                            <!-- End Radio Check -->
+
+                            <!-- Radio Check -->
+                            <label class="form-control" for="userAccountTypeRadio2">
+                              <span class="form-check">
+                                <input type="radio" class="form-check-input" name="userAccountTypeRadio"
+                                  id="userAccountTypeRadio2">
+                                <span class="form-check-label">Company</span>
+                              </span>
+                            </label>
+                            <!-- End Radio Check -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </form>
+                    <!-- End Form -->
+                  </div>
+                  <!-- End Body -->
+                </div>
+                <!-- End Card -->
+
+
+
+                <!-- Card -->
+                <div id="passwordSection" class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Change your password</h4>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body">
+                    <!-- Form -->
+                    <form id="changePasswordForm">
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="currentPasswordLabel" class="col-sm-3 col-form-label form-label">Current
+                          password</label>
+
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" name="currentPassword" id="currentPasswordLabel"
+                            placeholder="Enter current password" aria-label="Enter current password">
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="newPassword" class="col-sm-3 col-form-label form-label">New password</label>
+
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" name="newPassword" id="newPassword"
+                            placeholder="Enter new password" aria-label="Enter new password">
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <!-- Form -->
+                      <div class="row mb-4">
+                        <label for="confirmNewPasswordLabel" class="col-sm-3 col-form-label form-label">Confirm new
+                          password</label>
+
+                        <div class="col-sm-9">
+                          <div class="mb-3">
+                            <input type="password" class="form-control" name="confirmNewPassword"
+                              id="confirmNewPasswordLabel" placeholder="Confirm your new password"
+                              aria-label="Confirm your new password">
+                          </div>
+
+                          <h5>Password requirements:</h5>
+
+                          <p class="fs-6 mb-2">Ensure that these requirements are met:</p>
+
+                          <ul class="fs-6">
+                            <li>Minimum 8 characters long - the more, the better</li>
+                            <li>At least one lowercase character</li>
+                            <li>At least one uppercase character</li>
+                            <li>At least one number, symbol, or whitespace character</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- End Form -->
+
+                      <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                      </div>
+                    </form>
+                    <!-- End Form -->
+                  </div>
+                  <!-- End Body -->
+                </div>
+                <!-- End Card -->
+
+
+
+
+
+
+                <!-- Card -->
+                <div id="socialAccountsSection" class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Social accounts</h4>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body">
+                    <form>
+                      <div class="list-group list-group-lg list-group-flush list-group-no-gutters">
+                        <!-- Item -->
+                        <div class="list-group-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0">
+                              <i class="bi-twitter list-group-icon"></i>
+                            </div>
+
+                            <div class="flex-grow-1">
+                              <div class="row align-items-center">
+                                <div class="col-sm mb-2 mb-sm-0">
+                                  <h4 class="mb-0">Twitter</h4>
+                                  <a class="fs-5" href="#">www.twitter.com/</a>
+                                </div>
+                                <!-- End Col -->
+
+                                <div class="col-sm-auto">
+                                  <a class="btn btn-white btn-sm" href="javascript:;">Disconnect</a>
+                                </div>
+                                <!-- End Col -->
+                              </div>
+                              <!-- End Row -->
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="list-group-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0">
+                              <i class="bi-facebook list-group-icon"></i>
+                            </div>
+
+                            <div class="flex-grow-1">
+                              <div class="row align-items-center">
+                                <div class="col-sm mb-2 mb-sm-0">
+                                  <h4 class="mb-0">Facebook</h4>
+                                  <a class="fs-5" href="#">www.facebook.com/</a>
+                                </div>
+                                <!-- End Col -->
+
+                                <div class="col-sm-auto">
+                                  <a class="btn btn-white btn-sm" href="javascript:;">Disconnect</a>
+                                </div>
+                                <!-- End Col -->
+                              </div>
+                              <!-- End Row -->
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End Item -->
+
+
+
+                        <!-- Item -->
+                        <div class="list-group-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0">
+                              <i class="bi-linkedin list-group-icon"></i>
+                            </div>
+
+                            <div class="flex-grow-1">
+                              <div class="row align-items-center">
+                                <div class="col-sm mb-2 mb-sm-0">
+                                  <h4 class="mb-0">Linkedin</h4>
+                                  <a class="fs-5" href="#">www.linkedin.com/</a>
+                                </div>
+                                <!-- End Col -->
+
+                                <div class="col-sm-auto">
+                                  <a class="btn btn-white btn-sm" href="javascript:;">Disconnect</a>
+                                </div>
+                                <!-- End Col -->
+                              </div>
+                              <!-- End Row -->
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="list-group-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0">
+                              <i class="bi-google list-group-icon"></i>
+                            </div>
+
+                            <div class="flex-grow-1">
+                              <div class="row align-items-center">
+                                <div class="col-sm mb-2 mb-sm-0">
+                                  <h4 class="mb-0">Google</h4>
+                                  <p class="fs-5 text-body mb-0">Not connected</p>
+                                </div>
+                                <!-- End Col -->
+
+                                <div class="col-sm-auto">
+                                  <a class="btn btn-white btn-sm" href="javascript:;">Connect</a>
+                                </div>
+                                <!-- End Col -->
+                              </div>
+                              <!-- End Row -->
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End Item -->
+                      </div>
+                    </form>
+                  </div>
+                  <!-- End Body -->
+                </div>
+                <!-- End Card -->
+
+                <!-- Card -->
+                <div id="deleteAccountSection" class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Delete your account</h4>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body">
+                    <p class="card-text">When you delete your account, you lose access to pores account services, and we
+                      permanently delete your personal data. You can cancel the deletion for 14 days.</p>
+
+                    <div class="mb-4">
+                      <!-- Form Check -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="deleteAccountCheckbox">
+                        <label class="form-check-label" for="deleteAccountCheckbox">
+                          Confirm that I want to delete my account.
+                        </label>
+                      </div>
+                      <!-- End Form Check -->
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-3">
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                  <!-- End Body -->
+                </div>
+                <!-- End Card -->
+              </div>
+
+              <!-- Sticky Block End Point -->
+              <div id="stickyBlockEndPoint"></div>
+            </div>
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Content -->
+
+
+      </main>
+      <%- include('dashboardPartials/footer'); %>

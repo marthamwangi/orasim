@@ -60,14 +60,14 @@ const realtorDashboard = async (req, res, next) => {
       if (err) {
         throw err
       }
-      connection.query("SELECT * FROM realtor WHERE agentId = " + connection.escape(req.session.userID), async function (error, realtor_result, fields) {
+      connection.query("SELECT * FROM users_table WHERE id_user = " + connection.escape(req.session.userID), async function (error, realtor_result, fields) {
         if (error) {
           throw error;
         }
         if (realtor_result.length !== 1) {
-          return res.redirect('/realtor/login');
+          return res.redirect('/login');
         }
-        await connection.query('SELECT * FROM hires_table WHERE assigned_realtor=' + connection.escape(req.session.userID), function (error, assisgnments_results, fields) {
+        await connection.query('SELECT * FROM hires_table WHERE realtor_id=' + connection.escape(req.session.userID), function (error, assisgnments_results, fields) {
           if (error) {
             throw error
           };

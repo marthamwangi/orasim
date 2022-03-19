@@ -1,0 +1,199 @@
+<!-- Footer -->
+
+<div class="footer">
+  <div class="row justify-content-between align-items-center">
+    <div class="col">
+      <p class="fs-6 mb-0">&copy; PORES <span class="d-none d-sm-inline-block">2022.</span></p>
+    </div>
+    <!-- End Col -->
+
+
+  </div>
+  <!-- End Row -->
+</div>
+
+<!-- End Footer -->
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+<!-- ONLY DEV -->
+
+<!-- Builder -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBuilder" aria-labelledby="offcanvasBuilderLabel">
+  <div class="offcanvas-body">
+    <!-- Form Switch -->
+    <label class="row form-check form-switch mb-3" for="builderFluidSwitch">
+      <span class="col-10 ms-0">
+        <span class="d-block h4 mb-1">Header Layout Options</span>
+        <span class="d-block fs-5">Toggle to container-fluid layout</span>
+      </span>
+      <span class="col-2 text-end">
+        <input type="checkbox" class="form-check-input" id="builderFluidSwitch">
+      </span>
+    </label>
+    <!-- End Form Switch -->
+
+
+  </div>
+</div>
+
+<!-- End Builder -->
+
+<div class="d-none js-build-layouts">
+  <div class="js-build-layout-header-double">
+    <!-- Double Header -->
+    <header id="header" class="navbar navbar-expand-lg navbar-bordered navbar-spacer-y-0 flex-lg-column">
+    </header>
+    <!-- End Double Header -->
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script src="/js/demo.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="/js/vendor2.min.js"></script>
+
+<!-- JS Front -->
+<script src="/js/theme2.min.js"></script>
+
+
+<!-- JS Plugins Init. -->
+<script>
+
+  // INITIALIZATION OF DATATABLES
+  // =======================================================
+  HSCore.components.HSDatatables.init($('#datatable'), {
+    select: {
+      style: 'multi',
+      selector: 'td:first-child input[type="checkbox"]',
+      classMap: {
+        checkAll: '#datatableCheckAll',
+        counter: '#datatableCounter',
+        counterInfo: '#datatableCounterInfo'
+      }
+    },
+    language: {
+      zeroRecords: `<div class="text-center p-4">
+              <img class="mb-3" src="/img/oc-error.svg" alt="Image Description" style="width: 10rem;" data-hs-theme-appearance="default">
+              <img class="mb-3" src="/img/oc-error-light.svg" alt="Image Description" style="width: 10rem;" data-hs-theme-appearance="dark">
+            <p class="mb-0">No data to show</p>
+            </div>`
+    }
+  });
+
+  const datatable = HSCore.components.HSDatatables.getItem(0)
+
+  document.querySelectorAll('.js-datatable-filter').forEach(function (item) {
+    item.addEventListener('change', function (e) {
+      const elVal = e.target.value,
+        targetColumnIndex = e.target.getAttribute('data-target-column-index'),
+        targetTable = e.target.getAttribute('data-target-table');
+
+      HSCore.components.HSDatatables.getItem(targetTable).column(targetColumnIndex).search(elVal !== 'null' ? elVal : '').draw()
+    })
+  })
+</script>
+
+<!-- JS Plugins Init. -->
+<script>
+    (function () {
+      window.onload = function () {
+
+
+        // INITIALIZATION OF NAVBAR VERTICAL ASIDE
+        // =======================================================
+        new HSSideNav('.js-navbar-vertical-aside').init()
+
+
+        // INITIALIZATION OF FORM SEARCH
+        // =======================================================
+        const HSFormSearchInstance = new HSFormSearch('.js-form-search')
+
+        if (HSFormSearchInstance.collection.length) {
+          HSFormSearchInstance.getItem(1).on('close', function (el) {
+            el.classList.remove('top-0')
+          })
+
+          document.querySelector('.js-form-search-mobile-toggle').addEventListener('click', e => {
+            let dataOptions = JSON.parse(e.currentTarget.getAttribute('data-hs-form-search-options')),
+              $menu = document.querySelector(dataOptions.dropMenuElement)
+
+            $menu.classList.add('top-0')
+            $menu.style.left = 0
+          })
+        }
+
+
+        // INITIALIZATION OF BOOTSTRAP DROPDOWN
+        // =======================================================
+        HSBsDropdown.init()
+
+
+
+
+        // INITIALIZATION OF SELECT
+        // =======================================================
+        HSCore.components.HSTomSelect.init('.js-select')
+
+
+        // INITIALIZATION OF CLIPBOARD
+        // =======================================================
+        HSCore.components.HSClipboard.init('.js-clipboard')
+        // INITIALIZATION OF STEP FORM
+        // =======================================================
+        new HSStepForm('.js-step-form', {
+          finish: () => {
+            document.getElementById("addUserStepFormProgress").style.display = 'none'
+            document.getElementById("addUserStepProfile").style.display = 'none'
+            document.getElementById("addUserStepConfirmation").style.display = 'none'
+            document.getElementById("successMessageContent").style.display = 'block'
+            scrollToTop('#header');
+            const formContainer = document.getElementById('formContainer')
+          },
+          onNextStep: function () {
+            scrollToTop()
+          },
+          onPrevStep: function () {
+            scrollToTop()
+          }
+        })
+
+        function scrollToTop(el = '.js-step-form') {
+          el = document.querySelector(el)
+          window.scrollTo({
+            top: (el.getBoundingClientRect().top + window.scrollY) - 30,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
+
+
+        // INITIALIZATION OF ADD FIELD
+        // =======================================================
+        new HSAddField('.js-add-field', {
+          addedField: field => {
+            HSCore.components.HSTomSelect.init(field.querySelector('.js-select-dynamic'))
+            HSCore.components.HSMask.init(field.querySelector('.js-input-mask'))
+          }
+        })
+
+
+        // INITIALIZATION OF SELECT
+        // =======================================================
+        HSCore.components.HSTomSelect.init('.js-select', {
+          render: {
+            'option': function (data, escape) {
+              return data.optionTemplate || `<div>${data.text}</div>>`
+            },
+            'item': function (data, escape) {
+              return data.optionTemplate || `<div>${data.text}</div>>`
+            }
+          }
+        })
+
+      }
+    })()
+</script>
+</body>
+
+</html>

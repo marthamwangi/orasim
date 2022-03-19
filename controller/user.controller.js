@@ -21,7 +21,7 @@ const homePage = async (req, res, next) => {
       })
     })
   } catch (error) {
-
+    next(error)
   }
 }
 //REGISTER
@@ -42,92 +42,39 @@ const registerUser = async (req, res) => {
       if (err) {
         throw err;
       }
-      var LookupRealtor = 'SELECT * FROM earb WHERE realtorNationalId = ?';
       var findEmail = 'SELECT * FROM users_table WHERE user_email = ?';
       var insertUser = 'INSERT INTO users_table SET ?'
-      var updateRole = 'UPDATE users_table SET user_role = ?'
-      await connection.query(LookupRealtor, [body.govid], async (error, realtor_result, fields) => {
+      await connection.query(findEmail, [body.email], async (error, email_result, fields) => {
         if (error) {
           throw error;
         }
-        if (realtor_result.length === 1) {
-          const realtor = {
-            user_name: realtor_result[0].realtorName,
-            user_email: body.email,
-            user_password: password,
-            user_contact: body.contact,
-            user_govid: realtor_result[0].realtorNationalId,
-          };
-
-          await connection.query(findEmail, [body.email], async (error, email_result, fields) => {
-            if (error) {
-              throw error;
-            }
-            if (email_result.length !== 0) {
-              return res.render('register', {
-                error: 'This email already in use. If this is you Login',
-              });
-            }
-            await connection.query(insertUser, realtor, function (error, results, fields) {
-              if (error) {
-                throw error;
-              }
-              if (results.affectedRows === 0) {
-                console.log(results);
-                return res.render('register', {
-                  error: 'Your registration has failed.'
-                });
-              }
-              connection.query(updateRole, [1], function (error, update_realtor, fields) {
-                if (error) {
-                  throw error;
-                }
-                if (update_realtor.affectedRows === 0) {
-                  return res.render('register', {
-                    error: 'Registration failed'
-                  });
-                }
-                return res.render('register', {
-                  msg: 'You have successfully registered.'
-                });
-              })
-            });
+        if (email_result.length !== 0) {
+          return res.render('register', {
+            error: 'This email already in use. If this is you Login',
           });
         }
-        if (realtor_result.length === 0) {
-          await connection.query(findEmail, [body.email], async (error, email_result, fields) => {
-            if (error) {
-              throw error;
-            }
-            if (email_result.length !== 0) {
-              return res.render('register', {
-                error: 'This email already in use. If this is you Login',
-              });
-            }
-            const client = {
-              user_name: body.name,
-              user_email: body.email,
-              user_password: password,
-              user_contact: body.contact,
-              user_govid: body.govid,
-            };
 
-            await connection.query(insertUser, client, function (error, results, fields) {
-              if (error) {
-                throw error;
-              }
-              if (results.affectedRows === 0) {
-                return res.render('register', {
-                  error: 'Your registration has failed.'
-                });
-              }
-              return res.render('register', {
-                msg: 'You have successfully registered.'
-              });
+        const user = {
+          user_name: body.name,
+          user_email: body.email,
+          user_password: password,
+          user_contact: body.contact,
+        };
+
+        await connection.query(insertUser, user, function (error, results, fields) {
+          if (error) {
+            throw error;
+          }
+          if (results.affectedRows === 0) {
+            return res.render('register', {
+              error: 'Your registration has failed.'
             });
+          }
+          return res.render('register', {
+            msg: 'You have successfully registered.'
           });
-        }
-      })
+        });
+      });
     }) //end dbconnect
   } catch (error) {
     next(error)
@@ -155,20 +102,135 @@ const loginUser = (req, res) => {
         if (error) {
           throw error
         }
-        if (login_results.length === 1) {
-          const comparePassword = await bcrypt.compare(body.password, login_results[0].user_password)
-          if (comparePassword === true && login_results[0].user_email === body.email) {
-            req.session.userID = login_results[0].id_user;
-            return res.redirect('/');
-          } else {
-            res.render('login', {
-              error: 'Check your credentials!'
-            });
-          }
-        } res.render('login', {
-          error: 'Check your credentials!'
-        });
+        if (login_results.length === 0) {
+          return res.render('login', {
+            error: 'Invalid email address'
+          });
+        }
+        const comparePassword = await bcrypt.compare(body.password, login_results[0].user_password);
+        if (comparePassword === true && login_results[0].user_role == 0) {
+          req.session.userID = login_results[0].id_user;
+          return res.redirect('/admin');
 
+        } else if (comparePassword === true && login_results[0].user_role != 0) {
+          req.session.userID = login_results[0].id_user;
+          return res.redirect('/');
+        }
+        res.render('login', {
+          error: 'Invalid password!'
+        });
+      });
+    })
+
+  } catch (error) {
+    next(error)
+  }
+}
+const resetPasswordPage = (req, res, next) => {
+  res.render("reset-password")
+}
+const resetPassword = async (req, res, next) => {
+  const { body } = req;
+  try {
+    dbconnect.getConnection(async function (err, connecton) {
+      if (err) {
+        throw err
+      }
+      await connecton.query('SELECT * FROM users_table WHERE user_email = ' + connecton.escape(body.email), async function (error, email_results, fields) {
+        if (error) {
+          throw error
+        }
+        if (email_results.length === 0) {
+          return res.render('reset-password', {
+            error: 'This email does not exist for a PORES user'
+          });
+        }
+        res.render('reset-password', {
+          msg: 'We have sent a reset password email in your accout.'
+        });
+      });
+    })
+
+  } catch (error) {
+    next(error)
+  }
+}
+//SETTING
+const profileSettingPage = (req, res, next) => {
+  res.render("profile")
+}
+//ADMIN
+const adminDashboard = async (req, res) => {
+  try {
+    await dbconnect.getConnection(async (err, connection) => {
+      await connection.query('SELECT * FROM users_table WHERE id_user = ' + connection.escape(req.session.userID), async function (error, user_result, fields) {
+        if (error) {
+          throw error
+        }
+        if (user_result.length !== 1) {
+          return res.redirect('/logout');
+        }
+        await connection.query('SELECT * FROM users_table WHERE id_user != ' + connection.escape(req.session.userID), async function (error, all_users, fields) {
+          if (error) {
+            throw error
+          }
+          if (user_result) {
+            return res.render('admin', {
+              user: user_result,
+              all_users: all_users,
+              success: 'User Updated successfully'
+            })
+          }
+        })
+      })
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+const addUser = (req, res, next) => {
+  res.render('add-user')
+}
+const getUser = async (req, res) => {
+  console.log('i was called')
+  try {
+    await dbconnect.getConnection(async (err, connection) => {
+      await connection.query('SELECT * FROM users_table WHERE id_user = ' + connection.escape(req.params.id), async function (error, get_user, fields) {
+        if (error) {
+          throw error
+        }
+        console.log(get_user);
+        res.json(get_user)
+      })
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+const deleteUser = async (req, res) => {
+  try {
+    await dbconnect.getConnection(async (err, connection) => {
+      await connection.query('DELETE FROM users_table WHERE id_user = ' + connection.escape(req.params.id), async function (error, delete_user, fields) {
+        if (error) {
+          throw error
+        }
+        // console.log(delete_user);
+        res.send({ message: `user was deleted successfully!` });
+      })
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+const updateUser = async (req, res) => {
+  try {
+    await dbconnect.getConnection(async (err, connection) => {
+      await connection.query('UPDATE users_table SET user_name = ' + connection.escape(req.body.editFullNameModal) + ', user_email = ' + connection.escape(req.body.editEmailModal) + ', user_contact = ' + connection.escape(req.body.editPhoneModal) + ', user_role = ' + connection.escape(req.body.editUserModalRoleModalRadio) + ' WHERE id_user = ' + connection.escape(req.params.id), async function (error, updated_user, fields) {
+        if (error) {
+          throw error
+        }
+        // console.log(updated_user.affectedRows);
+        res.redirect('/admin')
       })
     })
   } catch (error) {
@@ -189,18 +251,11 @@ const browseRealtors = async (req, res) => {
         if (user_result.length !== 1) {
           return res.redirect('/login');
         }
-        await connection.query("SELECT * FROM users_table WHERE user_role = " + connection.escape(1), function (error, realtor_result, fields) {
+        await connection.query("SELECT * FROM users_table WHERE user_role = " + connection.escape(1) + " AND license_status = 1 ", function (error, realtor_result, fields) {
           if (error) {
             throw error;
           }
-          if (realtor_result.length === 0) {
-            res.render('browse-realtors', {
-              no_realtor: 'No realtors',
-
-            });
-          }
           res.render('browse-realtors', {
-            yes_realtor: 'Yes realtors',
             realtor: realtor_result,
             user: user_result[0]
           });
@@ -208,22 +263,120 @@ const browseRealtors = async (req, res) => {
       });
     })
 }
-const searchRealtors = async (req, res) => {
-  const { realtor } = req.query
-  dbconnect.getConnection(await function (err, connection) {
-    if (err) {
-      throw err
-    }
-    connection.query('SELECT users_table ')
-  })
+const postListingPage = (req, res, next) => {
+  try {
+    dbconnect.getConnection(async (err, connection) => {
+      await connection.query('SELECT * FROM users_table WHERE id_user = ' + connection.escape(req.session.userID), function (error, user_result, fields) {
+        if (error) {
+          throw error
+        }
+        if (user_result.length !== 1) {
+          return res.redirect('/logout');
+        }
+        res.render('post-listing', {
+          user: user_result[0]
+        })
+      })
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+const postListing = async (req, res, next) => {
+
+}
+const browseProperties = (req, res, next) => {
+  res.render("browse-properties")
+}
+const propertyOverview = (req, res, next) => {
+  res.render("property-overview")
+}
+const getSingleRealtor = async (req, res) => {
+  dbconnect.getConnection(await
+    async function (err, connection) {
+      if (err) {
+        throw err
+      }
+      await connection.query("SELECT * FROM users_table WHERE id_user = " + connection.escape(req.session.userID), async function (error, user_result, fields) {
+        if (error) {
+          throw error
+        }
+        if (user_result.length !== 1) {
+          return res.redirect('/login');
+        }
+        connection.query("SELECT * FROM users_table WHERE id_user = " + connection.escape(req.params.realtorId), function (error, fetch_realtor, fields) {
+          if (error) {
+            throw error
+          }
+          if (fetch_realtor.length !== 1) {
+            return res.redirect('/browse-realtors');
+          }
+          res.render('hire-realtor', {
+            user: user_result[0],
+            realtor: fetch_realtor[0]
+          });
+
+        });
+      })
+    })
+}
+const hireRealtor = async (req, res) => {
+  const { body } = req;
+  dbconnect.getConnection(await
+    async function (err, connection) {
+      if (err) {
+        throw err
+      }
+      await connection.query("SELECT * FROM users_table WHERE id_user = " + connection.escape(req.session.userID), async function (error, user_result, fields) {
+        if (error) {
+          throw error
+        }
+        if (user_result.length !== 1) {
+          return res.redirect('/login');
+        }
+        const requirement = {
+          specialty: body.specialty,
+          region: body.region,
+          property_type: body.propertyType,
+          beds: body.beds,
+          baths: body.baths,
+          min_price: body.minPrice,
+          max_price: body.maxPrice,
+          description: body.description,
+          realtor_id: req.params.realtorId,
+          client_id: req.session.userID
+        }
+        await connection.query("INSERT INTO hires_table SET ?", requirement, function (error, results, fields) {
+          if (error) {
+            throw error;
+          }
+          return res.render('hire-realtor', {
+            msg: 'Successful.'
+          });
+        })
+      })
+    })
 }
 module.exports = {
   homePage,
+  profileSettingPage,
+  adminDashboard,
   registerPage,
   registerUser,
   loginPage,
   loginUser,
+  resetPasswordPage,
+  resetPassword,
+  postListingPage,
+  postListing,
   browseRealtors,
-  searchRealtors
+  propertyOverview,
+  browseProperties,
+  addUser,
+  getUser,
+  getSingleRealtor,
+  hireRealtor,
+  deleteUser,
+  updateUser
 
 }

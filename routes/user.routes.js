@@ -10,8 +10,21 @@ const {
   registerUser,
   loginPage,
   loginUser,
+  resetPasswordPage,
+  resetPassword,
+  postListingPage,
+  postListing,
   browseRealtors,
-  searchRealtors
+  browseProperties,
+  propertyOverview,
+  adminDashboard,
+  addUser,
+  getUser,
+  getSingleRealtor,
+  profileSettingPage,
+  deleteUser,
+  updateUser,
+  hireRealtor
 } = require('../controller/user.controller');
 var router = require("express").Router();
 var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -32,7 +45,22 @@ const ifLoggedin = (req, res, next) => {
 router
   .route('/')
   .get(ifNotLoggedin, homePage)
-//Register new user
+router
+  .route('/reset-password')
+  .get(ifLoggedin, resetPasswordPage)
+  .post(ifLoggedin, [
+    check('email', 'Please enter a valid Email')
+      .isEmail(pattern)
+      .normalizeEmail(),
+  ], resetPassword);
+//admin
+router
+  .route('/admin')
+  .get(ifNotLoggedin, adminDashboard)
+router
+  .route('/post-listing')
+  .get(ifNotLoggedin, postListingPage)
+  .post(ifNotLoggedin, postListing);//Register new user
 router
   .route("/register")
   .get(ifLoggedin, registerPage)
@@ -54,9 +82,7 @@ router
           minNumbers: 1
         }),
       check('contact', 'Please enter a valid Phone Number!')
-        .isMobilePhone(),
-      check('govid', 'Please enter a numeric type ID Number!')
-        .isNumeric(),
+        .isMobilePhone()
     ], registerUser);
 
 //login
@@ -89,7 +115,35 @@ router
   .route('/browse-realtors')
   .get(browseRealtors)
 router
-  .route('/browse-realtors/search')
-  .get(searchRealtors)
-
+  .route('/browse-properties')
+  .get(browseProperties)
+router
+  .route('/property-overview')
+  .get(propertyOverview);
+router
+  .route('/users/users-add-user')
+  .get(addUser)
+  .post()
+router
+  .route('/edit-user/:id')
+  .get(getUser)
+  .post()
+router
+  .route('/update-user/:id')
+  .get(updateUser)
+  .post(updateUser)
+router
+  .route('/delete-user/:id')
+  .get(deleteUser)
+  .post()
+router
+  .route('/hire-realtor/:realtorId')
+  .get(getSingleRealtor)
+  .post(hireRealtor);
+router
+  .route('/setting')
+  .get(profileSettingPage);
+router
+  .route('/properties')
+  .get(profileSettingPage);
 module.exports = router;

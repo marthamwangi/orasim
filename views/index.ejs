@@ -1,72 +1,645 @@
-<%- include('globals/head', { title: 'PORES ~ Professional Online Real Estate System' }); %>
-  <style>
-    h3 {
-      text-align: center;
-    }
-  </style>
-
-  <body>
-    <%- include('globals/header') %>
+<%- include('globals/head') %>
+  <!-- ========== HEADER ========== -->
+  <%- include('globals/header') %>
+    <!-- ========== HEADER ========== -->
+    <main id="content" role="main">
       <!--hero section-->
-      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center hero">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-          <h1 class="display-4 fw-normal">PORES REALTY®</h1>
-          <p class="lead fw-normal lh-base">Our range of real estate professionals and estate agents offer both
-            long term and long term experience to support your real estate investment or loan plans.</p>
-          <a class="btn btn-primary" href="/register">Join Us</a>
-        </div>
-      </div>
-      <main>
-        <div class="container">
-          <div class="row mb-2">
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-ruby-brown">Realtors</strong>
-                  <div class="mb-1 text-muted">140 Active Realtors</div>
-                  <p class="card-text mb-auto lh-base">PORES REALTY® is dedicated to supporting its clients. Real estate
-                    agents
-                    represent
-                    buyers and sellers throughout Kenya.</p>
-                  <a href="/browse-realtors" class="stretched-link">View all Realtors</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                  <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
-                    aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <image width="100%" height="100%" href="/img/people_search.svg"></image>
-                  </svg>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-ruby-brown">Properties</strong>
-                  <div class="mb-1 text-muted">1040 Active Properties</div>
-                  <p class="mb-auto lh-base">House available for sale and rent in Kenya more then 1000+ Listings. Only
-                    approved
-                    listings are listed only. Plots, Houses, Apartments in Kenya.
-                  </p>
-                  <a href="#" class="stretched-link">View all Properties</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                  <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
-                    aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <image width="100%" height="100%" href="/img/house_search.svg"></image>
-
-                  </svg>
-
-                </div>
-              </div>
-            </div>
+      <div class="position-relative bg-img-start" style="background-image: url(/img/bg_1.jpg);">
+        <div class="container content-space-t-3 content-space-t-lg-5 content-space-b-2 position-relative zi-2">
+          <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+            <h1>PORES REALTY</h1>
+            <p>Meet Professional Real Estate Agents</p>
           </div>
 
+          <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <!-- Card -->
+              <div class="card h-100">
+                <div class="card-body">
+                  <span class="svg-icon text-primary mb-3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.5 3C5.67157 3 5 3.67157 5 4.5V6H3.5C2.67157 6 2 6.67157 2 7.5C2 8.32843 2.67157 9 3.5 9H5V19.5C5 20.3284 5.67157 21 6.5 21C7.32843 21 8 20.3284 8 19.5V9H20.5C21.3284 9 22 8.32843 22 7.5C22 6.67157 21.3284 6 20.5 6H8V4.5C8 3.67157 7.32843 3 6.5 3Z"
+                        fill="#035A4B"></path>
+                      <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M20.5 11H10V17.5C10 18.3284 10.6716 19 11.5 19H15.5C17.3546 19 19.0277 18.2233 20.2119 16.9775C20.1436 16.9922 20.0727 17 20 17C19.4477 17 19 16.5523 19 16V13C19 12.4477 19.4477 12 20 12C20.5523 12 21 12.4477 21 13V15.9657C21.6334 14.9626 22 13.7741 22 12.5C22 11.6716 21.3284 11 20.5 11Z"
+                        fill="#035A4B"></path>
+                    </svg>
+
+                  </span>
+                  <h4 class="card-title">Find homes for sale</h4>
+                  <p class="card-text">Over 1 million+ homes for sale available on the website.</p>
+                  <a class="card-link" href="/browse-properties">Properties for sale <i
+                      class="bi-chevron-right small ms-1"></i></a>
+                </div>
+              </div>
+              <!-- End Card -->
+            </div>
+            <!-- End Col -->
+
+            <div class="col-md-4 mb-3 mb-md-0">
+              <!-- Card -->
+              <div class="card h-100">
+                <div class="card-body">
+                  <span class="svg-icon text-primary mb-3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M21.7 18.9L18.6 15.8C17.9 16.9 16.9 17.9 15.8 18.6L18.9 21.7C19.3 22.1 19.9 22.1 20.3 21.7L21.7 20.3C22.1 19.9 22.1 19.3 21.7 18.9Z"
+                        fill="#035A4B"></path>
+                      <path opacity="0.3"
+                        d="M11 20C6 20 2 16 2 11C2 6 6 2 11 2C16 2 20 6 20 11C20 16 16 20 11 20ZM11 4C7.1 4 4 7.1 4 11C4 14.9 7.1 18 11 18C14.9 18 18 14.9 18 11C18 7.1 14.9 4 11 4ZM8 11C8 9.3 9.3 8 11 8C11.6 8 12 7.6 12 7C12 6.4 11.6 6 11 6C8.2 6 6 8.2 6 11C6 11.6 6.4 12 7 12C7.6 12 8 11.6 8 11Z"
+                        fill="#035A4B"></path>
+                    </svg>
+
+                  </span>
+                  <h4 class="card-title">Find rental properties</h4>
+                  <p class="card-text">Find a home or apartment with 35+ filters and custom keyword search.</p>
+                  <a class="card-link" href="/browse-properties">Properties for rent <i
+                      class="bi-chevron-right small ms-1"></i></a>
+                </div>
+              </div>
+              <!-- End Card -->
+            </div>
+            <!-- End Col -->
+
+            <div class="col-md-4">
+              <!-- Card -->
+              <div class="card h-100">
+                <div class="card-body">
+                  <span class="svg-icon text-primary mb-3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
+                        fill="#035A4B"></path>
+                    </svg>
+
+                  </span>
+                  <h4 class="card-title">View Realtors</h4>
+                  <p class="card-text">Looking for qualified realtor Committed to providing top-notch Real Estate
+                    services?</p>
+                  <a class="card-link" href="/browse-realtors">Browse realtors <i
+                      class="fas bi-chevron-right small ms-1"></i></a>
+                </div>
+              </div>
+              <!-- End Card -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
         </div>
-      </main>
+
+        <!-- Shape -->
+        <div class="shape shape-bottom zi-1">
+          <svg width="3000" height="500" viewBox="0 0 3000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 500H3000V0L0 500Z" fill="#fff"></path>
+          </svg>
+        </div>
+        <!-- End Shape -->
+      </div>
+      <!-- Card Grid -->
+      <div class="container content-space-t-1 content-space-b-2 content-space-b-lg-3">
+        <!-- Heading -->
+        <div class="mb-5">
+          <div class="row align-items-center">
+            <div class="col-sm mb-3 mb-sm-0">
+              <span class="d-block">128 Listings</span>
+              <h1 class="h2 mb-0">Property for sale in Nairobi</h1>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-sm-auto">
+              <!-- Select -->
+              <select class="form-select form-select-sm">
+                <option value="mostRecent" selected>Most recent</option>
+                <option value="HighestPrice">Highest price</option>
+                <option value="LowestPrice">Lowest price</option>
+                <option value="mostReduced">Most reduced</option>
+                <option value="mostPopular">Most popular</option>
+              </select>
+              <!-- End Select -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Heading -->
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5">
+          <div class="col mb-3">
+            <!-- Card -->
+            <div class="card card-flush shadow-none h-100">
+              <a class="card-pinned" href="/property-overview" data-fslightbox="propertyGridGallery1">
+                <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+                <div class="card-pinned-top-start">
+                  <span class="badge bg-success">New</span>
+                </div>
+
+                <div class="card-pinned-bottom-end">
+                  <span class="btn btn-light btn-xs btn-icon">
+                    <i class="bi-images"></i>
+                  </span>
+                </div>
+              </a>
+
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery1"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery1"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery1"></a>
+
+              <!-- Body -->
+              <a class="card-body" href="#">
+                <span class="card-subtitle text-body">For sale</span>
+
+                <div class="row align-items-center mb-3">
+                  <div class="col">
+                    <h4 class="card-title text-inherit">Borrett Close, Muthaiga</h4>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <h3 class="card-title text-primary">KES 689,000</h3>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <ul class="list-inline list-separator text-body small">
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                      </svg>
+                    </span>
+                    3 bed
+                  </li>
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path
+                          d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                      </svg>
+                    </span>
+                    2 bath
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="bi-rulers text-muted me-1"></i> 1,428 sqft
+                  </li>
+                </ul>
+              </a>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col mb-3">
+            <!-- Card -->
+            <div class="card card-flush shadow-none h-100">
+              <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery2">
+                <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+                <div class="card-pinned-bottom-end">
+                  <span class="btn btn-light btn-xs btn-icon">
+                    <i class="bi-images"></i>
+                  </span>
+                </div>
+              </a>
+
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery2"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery2"></a>
+
+              <!-- Body -->
+              <a class="card-body" href="#">
+                <span class="card-subtitle text-body">For sale</span>
+
+                <div class="row align-items-center mb-3">
+                  <div class="col">
+                    <h4 class="card-title text-inherit">The Drive, Ilford</h4>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <h3 class="card-title text-primary">KES 999,000</h3>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <ul class="list-inline list-separator text-body small">
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                      </svg>
+                    </span>
+                    2 bed
+                  </li>
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path
+                          d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                      </svg>
+                    </span>
+                    1 bath
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="bi-rulers text-muted me-1"></i> 2,123 sqft
+                  </li>
+                </ul>
+              </a>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </div>
+
+          <div class="col mb-3">
+            <!-- Card -->
+            <div class="card card-flush shadow-none h-100">
+              <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery3">
+                <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+                <div class="card-pinned-bottom-end">
+                  <span class="btn btn-light btn-xs btn-icon">
+                    <i class="bi-images"></i>
+                  </span>
+                </div>
+              </a>
+
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery3"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery3"></a>
+
+              <!-- Body -->
+              <a class="card-body" href="#">
+                <span class="card-subtitle text-body">For sale</span>
+
+                <div class="row align-items-center mb-3">
+                  <div class="col">
+                    <h4 class="card-title text-inherit">Alderney House, Enfield</h4>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <h3 class="card-title text-primary">KES 725,000</h3>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <ul class="list-inline list-separator text-body small">
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                      </svg>
+                    </span>
+                    1 bed
+                  </li>
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path
+                          d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                      </svg>
+                    </span>
+                    1 bath
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="bi-rulers text-muted me-1"></i> 1,791 sqft
+                  </li>
+                </ul>
+              </a>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </div>
+        </div>
+        <div class="mb-5">
+          <div class="row align-items-center">
+            <div class="col-sm mb-3 mb-sm-0">
+              <span class="d-block">111 Listings</span>
+              <h1 class="h2 mb-0">Property for Rent in Nairobi</h1>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-sm-auto">
+              <!-- Select -->
+              <select class="form-select form-select-sm">
+                <option value="mostRecent" selected>Most recent</option>
+                <option value="HighestPrice">Highest price</option>
+                <option value="LowestPrice">Lowest price</option>
+                <option value="mostReduced">Most reduced</option>
+                <option value="mostPopular">Most popular</option>
+              </select>
+              <!-- End Select -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5">
 
 
+          <div class="col mb-3">
+            <!-- Card -->
+            <div class="card card-flush shadow-none h-100">
+              <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4">
+                <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
 
-      <%- include('globals/footer'); %>
+                <div class="card-pinned-bottom-end">
+                  <span class="btn btn-light btn-xs btn-icon">
+                    <i class="bi-images"></i>
+                  </span>
+                </div>
+              </a>
+
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4"></a>
+
+              <!-- Body -->
+              <a class="card-body" href="#">
+                <span class="card-subtitle text-body">For rent</span>
+
+                <div class="row align-items-center mb-3">
+                  <div class="col">
+                    <h4 class="card-title text-inherit">Burns Way, Hounslow</h4>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <h3 class="card-title text-primary">KES 2,500</h3>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <ul class="list-inline list-separator text-body small">
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                      </svg>
+                    </span>
+                    3 bed
+                  </li>
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path
+                          d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                      </svg>
+                    </span>
+                    2 bath
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="bi-rulers text-muted me-1"></i> 2,182 sqft
+                  </li>
+                </ul>
+              </a>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </div>
+
+          <div class="col mb-3">
+            <!-- Card -->
+            <div class="card card-flush shadow-none h-100">
+              <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5">
+                <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+                <div class="card-pinned-top-start">
+                  <span class="badge bg-success">New</span>
+                </div>
+
+                <div class="card-pinned-bottom-end">
+                  <span class="btn btn-light btn-xs btn-icon">
+                    <i class="bi-images"></i>
+                  </span>
+                </div>
+              </a>
+
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5"></a>
+
+              <!-- Body -->
+              <a class="card-body" href="#">
+                <span class="card-subtitle text-body">For rent</span>
+
+                <div class="row align-items-center mb-3">
+                  <div class="col">
+                    <h4 class="card-title text-inherit">14 Oakridge, Dr Unit</h4>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <h3 class="card-title text-primary">KES 999</h3>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <ul class="list-inline list-separator text-body small">
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                      </svg>
+                    </span>
+                    1 bed
+                  </li>
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path
+                          d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                      </svg>
+                    </span>
+                    1 bath
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="bi-rulers text-muted me-1"></i> 1,254 sqft
+                  </li>
+                </ul>
+              </a>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </div>
+
+          <div class="col mb-3">
+            <!-- Card -->
+            <div class="card card-flush shadow-none h-100">
+              <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery6">
+                <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+                <div class="card-pinned-top-start">
+                  <span class="badge bg-primary">New build</span>
+                </div>
+
+                <div class="card-pinned-bottom-end">
+                  <span class="btn btn-light btn-xs btn-icon">
+                    <i class="bi-images"></i>
+                  </span>
+                </div>
+              </a>
+
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery6"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery6"></a>
+              <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery6"></a>
+
+              <!-- Body -->
+              <a class="card-body" href="#">
+                <span class="card-subtitle text-body">For rent</span>
+
+                <div class="row align-items-center mb-3">
+                  <div class="col">
+                    <h4 class="card-title text-inherit">6 Milne Avenue, Matraville</h4>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <h3 class="card-title text-primary">KES 1,257</h3>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <ul class="list-inline list-separator text-body small">
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                      </svg>
+                    </span>
+                    1 bed
+                  </li>
+                  <li class="list-inline-item">
+                    <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                        <path
+                          d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                      </svg>
+                    </span>
+                    1 bath
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="bi-rulers text-muted me-1"></i> 937 sqft
+                  </li>
+                </ul>
+              </a>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </div>
+        </div>
+        <!-- End Row -->
+
+      </div>
+      <!-- End Card Grid -->
+    </main>
+    <script src="/js/vendor.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="/js/theme.min.js"></script>
+    <script>
+      (function () {
+        // INITIALIZATION OF HEADER
+        // =======================================================
+        new HSHeader('#header').init()
+
+
+        // INITIALIZATION OF MEGA MENU
+        // =======================================================
+        new HSMegaMenu('.js-mega-menu', {
+          desktop: {
+            position: 'left'
+          }
+        })
+
+
+        // INITIALIZATION OF SHOW ANIMATIONS
+        // =======================================================
+        new HSShowAnimation('.js-animation-link')
+
+
+        // INITIALIZATION OF BOOTSTRAP VALIDATION
+        // =======================================================
+        HSBsValidation.init('.js-validate', {
+          onSubmit: data => {
+            data.event.preventDefault()
+            alert('Submited')
+          }
+        })
+
+
+        // INITIALIZATION OF BOOTSTRAP DROPDOWN
+        // =======================================================
+        HSBsDropdown.init()
+
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
+        new HSGoTo('.js-go-to')
+
+
+        // INITIALIZATION OF AOS
+        // =======================================================
+        AOS.init({
+          duration: 650,
+          once: true
+        });
+
+
+        // INITIALIZATION OF TEXT ANIMATION (TYPING)
+        // =======================================================
+        HSCore.components.HSTyped.init('.js-typedjs')
+
+
+        // INITIALIZATION OF SWIPER
+        // =======================================================
+        var sliderThumbs = new Swiper('.js-swiper-thumbs', {
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+          history: false,
+          breakpoints: {
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+          },
+          on: {
+            'afterInit': function (swiper) {
+              swiper.el.querySelectorAll('.js-swiper-pagination-progress-body-helper')
+                .forEach($progress => $progress.style.transitionDuration = `${swiper.params.autoplay.delay}ms`)
+            }
+          }
+        });
+
+        var sliderMain = new Swiper('.js-swiper-main', {
+          effect: 'fade',
+          autoplay: true,
+          loop: true,
+          thumbs: {
+            swiper: sliderThumbs
+          }
+        })
+      })()
+    </script>
+
+    <%- include('globals/footer'); %>

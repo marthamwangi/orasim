@@ -1,82 +1,318 @@
 <%- include('globals/head', {title: 'Browse Realtors' }); %>
+
   <%- include('globals/header'); %>
-    <!--Container Main start-->
-    <main>
-      <style>
-        .form-control:not(select) {
-          padding: 0.5rem 0.5rem;
-        }
-      </style>
-      <section>
-        <div class="row">
-          <div class="col">
+    <style>
+      .container {
+        justify-content: flex-start;
+        flex-direction: column
+      }
+
+      figcaption .form-check-label {
+        color: #606C38;
+        font-weight: 600;
+        font-size: small;
+      }
+
+      figcaption .badge {
+        font-size: small;
+      }
+
+      i,
+      em {
+        font-style: normal;
+      }
+
+      .form-control:not(select) {
+        padding: 0.5rem 0.5rem;
+      }
+
+      main {
+        padding: 0px;
+      }
+
+      .page-link,
+      .page-link:hover {
+        color: #DDA15E;
+      }
+
+      .page-item.active .page-link {
+        background-color: #BC6C25;
+        border-color: transparent;
+      }
+
+      .form-check-input:checked {
+        border-color: #FEFAE0;
+        background-color: #FEFAE0;
+        outline: #FEFAE0;
+      }
+
+      .badge {
+        color: #606C38;
+
+      }
+
+      p {
+        padding: 0;
+      }
+
+      ul.list-menu {
+        list-style-type: none;
+      }
+
+      .list-menu li>a:hover {
+        background-color: #606C38;
+        color: #FEFAE0;
+        border-radius: 0.25rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      }
+
+      .list-menu li>a {
+        padding: 0.375rem 0.75rem;
+
+        display: block;
+        color: #51585e;
+        font-size: 1rem;
+
+        text-decoration: none;
+      }
+    </style>
+
+    <body>
+      <div class="card">
+        <!-- Header -->
+        <div class="card-header card-header-content-md-between">
+          <div class="mb-2 mb-md-0">
             <form>
-              <div class="input-group"> <input type="text" class="form-control input-text"
-                  placeholder="Enter name, address, badge e.g gold, silver...">
-                <div class="input-group-append"> <button class="btn btn-primary btn-lg" style="width: fit-content;"
-                    type="button"><i class="bi bi-search"></i></button> </div>
+              <!-- Search -->
+              <div class="input-group input-group-merge input-group-flush">
+                <div class="input-group-prepend input-group-text">
+                  <i class="bi-search"></i>
+                </div>
+                <input id="datatableSearch" type="search" class="form-control" placeholder="Search users"
+                  aria-label="Search users">
               </div>
+              <!-- End Search -->
             </form>
           </div>
         </div>
-      </section>
-      <% if(typeof no_realtor !='undefined' ) { %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <%= no_realtor %>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <% } %>
-          <section>
-            <div class="container">
-              <% if(typeof realtor !='undefined' ) {%>
-                <% for (var i=0; i < realtor.length; i++ ){%>
-                  <card class="card2">
-                    <a href="/client/get-realtor/<%=realtor[i].agentId%>">
-                      <img class="card-img-top rounded-circle" width="30" height="30"
-                        src="/uploads/profiles/<%=realtor[i].agentImage%>" alt="pores_realtor">
+      </div>
+      <!-- ============== SECTION CONTENT ============== -->
+      <section class="padding-y mt-3">
+        <div class="container">
+          <div class="row">
+            <aside class="col-lg-3">
+              <!-- ===== Card for sidebar filter ===== -->
+              <div id="aside_filter" class="collapse card d-lg-block mb-5">
 
-                      <div class="card-title">
-                        <h3 style="color: #BC6C25;" class="small">
-                          <%= realtor[i].user_name %>
-                        </h3>
-                        <h3 style="color: #BC6C25;" class="small">
-                          <%= realtor[i].user_contact %>
-                        </h3>
-                        <p> <i class="bi bi-patch-check-fill" style="color: #62CCD3;"></i> Silver Realtor</p>
-
-                      </div>
-
-                      <p
-                        style="display: -webkit-box;padding: 3px 0px;max-width: 200px; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">
-                        <%=realtor[i].user_name %>
-                      </p>
-                      <div class="card-body">
-                        <p class="small">Experience<span>12 years</span></p>
-                        <p class="small">Closed Listings<span>120</span></p>
-                        <p class="small">Active Listings<span>11</span></p>
-                      </div>
-                      <ul class="social-list">
-                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                        <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
-                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                        <li><a href="#"><i class="bi bi-google"></i></a></li>
-                      </ul>
-                      <div class="go-corner" href="#">
-                        <div class="go-arrow">
-                          →
-                        </div>
-                      </div>
-
+                <article class="filter-group">
+                  <header class="card-header">
+                    <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside1">
+                      <i class="icon-control bi bi-chevron-down"></i>Top Specialties
                     </a>
+                  </header>
+                  <div class="collapse show" id="collapse_aside1">
+                    <div class="card-body">
+                      <ul class="list-menu">
+                        <li><a href="#">Property Management </a></li>
+                        <li><a href="#">Developers </a></li>
+                        <li><a href="#">Appraisers</a></li>
+                        <li><a href="#">Leasers</a></li>
+                        <li><a href="#">Brokerage </a></li>
+                      </ul>
+                    </div> <!-- card-body.// -->
+                  </div> <!-- collapse.// -->
+                </article> <!-- filter-group // -->
+
+                <article class="filter-group">
+                  <header class="card-header">
+                    <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_brands">
+                      <i class="icon-control bi bi-chevron-down"></i> Realtors
+                    </a>
+                  </header>
+                  <div class="collapse show" id="collapse_aside_brands">
+                    <div class="card-body">
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label"> Buyer's Agent </span>
+                        <b class="badge rounded-pill  bg-light float-end">120</b>
+                      </label> <!-- form-check end.// -->
+
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label"> Leasing Agent </span>
+                        <b class="badge rounded-pill  bg-light float-end">15</b>
+                      </label> <!-- form-check end.// -->
+
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label"> Relocation Agent </span>
+                        <b class="badge rounded-pill  bg-light float-end">35</b>
+                      </label> <!-- form-check end.// -->
+
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label"> Morgage Planning </span>
+                        <b class="badge rounded-pill  bg-light float-end">89</b>
+                      </label> <!-- form-check end.// -->
+
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label"> Valuation Agent </span>
+                        <b class="badge rounded-pill  bg-light float-end">30</b>
+                      </label> <!-- form-check end.// -->
+
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label"> Caretaker</span>
+                        <b class="badge rounded-pill  bg-light float-end">30</b>
+                      </label> <!-- form-check end.// -->
+                    </div> <!-- card-body .// -->
+                  </div> <!-- collapse.// -->
+                </article>
+
+                <article class="filter-group">
+                  <header class="card-header">
+                    <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside4">
+                      <i class="icon-control bi bi-chevron-down"></i> Badges
+                    </a>
+                  </header>
+                  <div class="collapse show" id="collapse_aside4">
+                    <div class="card-body">
+
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label">
+                          <i class="bi bi-patch-check-fill" style="color: #BC6C25;"></i> Platinum Realtor
+                        </span>
+                      </label> <!-- form-check end.// -->
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label">
+                          <i class="bi bi-patch-check-fill" style="color: #DDA15E;"></i> Gold Realtor
+                        </span>
+                      </label> <!-- form-check end.// -->
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label">
+                          <i class="bi bi-patch-check-fill" style="color: #A8A9AD;"></i> Silver Realtor
+                        </span>
+                      </label> <!-- form-check end.// -->
+                      <label class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <span class="form-check-label">
+                          <i class="bi bi-patch-check-fill" style="color: #606C38;"></i> Bronze Realtor
+                        </span>
+                      </label> <!-- form-check end.// -->
 
 
-                  </card>
-                  <%}%>
+                    </div> <!-- card-body.// -->
+                  </div> <!-- collapse.// -->
+                </article> <!-- filter-group // -->
+
+              </div> <!-- card.// -->
+              <!-- ===== Card for sidebar filter .// ===== -->
+
+            </aside> <!-- col .// -->
+            <main class="col-lg-9">
+
+              <form action="#" class="mb-1">
+                <div class="input-group">
+                  <input type="search" name='realtor' class="form-control" style="width:55%"
+                    placeholder="Enter name, address, badge e.g gold, silver...">
+                  <div class="input-group-append"> <input class="btn btn-primary btn-lg" style="width: fit-content;"
+                      type="submit" value="search"> </div>
+                </div> <!-- input-group end.// -->
+              </form>
+              <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
+                <strong class="d-block py-2">32 Realtors found <i style="float: right;"
+                    class="bi bi-filter-square d-lg-none " data-bs-toggle="collapse"
+                    data-bs-target="#aside_filter"></i></strong>
+              </header>
+
+              <!-- ========= content items ========= -->
+              <div class="row">
+                <% if(typeof realtor !='undefined' ) {%>
+                  <% for (var i=0; i < realtor.length; i++ ){%>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                      <figure class="card px-2">
+                        <div class="img-wrap p-2">
+                          <img class="rounded-circle mx-auto d-block" src="/uploads/profiles/<%=realtor[i].avatar%>">
+                        </div>
+                        <figcaption class="info-wrap border-top p-2">
+                          <p class="lh-lg">
+                            <i class="bi bi-patch-check-fill " style="color: #A8A9AD;"> Silver Realtor</i><br>
+                            <strong class="text text-uppercase">
+                              <%=realtor[i].user_name %>
+                            </strong>
+                            <br>
+                            <em>
+                              <%=realtor[i].user_email %>
+                            </em>
+                            <br>
+                            <i class="bi bi-telephone" style="color: #606C38;">
+                              <%=realtor[i].user_contact%>
+                            </i> <br>
+                          </p>
+                          <p>
+                            <span class="form-check-label"> Experience</span>
+                            <b class="badge rounded-pill  bg-light float-end">1 Year</b>
+                          </p>
+                          <p>
+                            <span class="form-check-label"> Active Listings </span>
+                            <b class="badge rounded-pill  bg-light float-end">12 Listings</b>
+                          </p>
+                          <p>
+                            <span class="form-check-label"> Closed Listings </span>
+                            <b class="badge rounded-pill  bg-light float-end">12 Listings</b>
+                          </p>
+                          <ul class="social-list">
+                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+                            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                            <li><a href="#"><i class="bi bi-google"></i></a></li>
+                          </ul>
+                          <div class="mx-auto d-flex justify-content-center">
+                            <a href="#" class="hire-me "> <i class="bi bi-briefcase"> Hire me</i>
+                            </a>
+                          </div>
+                        </figcaption>
+                      </figure>
+                    </div> <!-- col end.// -->
                     <%}%>
+                      <%}%>
 
-            </div>
 
-          </section>
-    </main>
-    <%- include ('globals/footer'); %>
+              </div> <!-- row end.// -->
+
+              <hr>
+
+              <footer class="d-flex mt-4">
+                <div>
+                  <a href="javascript: history.back()" class="btn btn-light"> &laquo; Go back</a>
+                </div>
+                <nav class="ms-3">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                      <span class="page-link">2</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </footer>
+
+              <!-- ========= content items .// ========= -->
+
+
+
+            </main> <!-- col .// -->
+          </div> <!-- row .// -->
+
+        </div> <!-- container .//  -->
+      </section>
+      <!-- ============== SECTION CONTENT END// ============== -->
+      <%- include ('globals/footer'); %>

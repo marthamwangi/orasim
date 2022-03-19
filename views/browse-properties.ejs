@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>PORES Properties</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/css/vendor.min.css">
+  <link rel="stylesheet" href="/bootstrap-icons.css">
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="/css/theme.min.css?v=1.0">
+</head>
+<style>
+  .bg-success {
+    background-color: #606C38 !important;
+  }
+
+  .bg-primary,
+  .btn-primary {
+    background-color: #BC6C25 !important;
+    border-color: #BC6C25;
+  }
+
+  .bg-primary:hover,
+  .btn-primary:hover {
+    color: white !important;
+  }
+
+  .text-primary {
+    color: #BC6C25 !important;
+  }
+
+  a:hover .text-inherit {
+    color: #BC6C25 !important;
+  }
+
+  a:hover {
+    color: #BC6C25 !important;
+  }
+</style>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-light">
+    <div class="container">
+      <nav class="js-mega-menu navbar-nav-wrap">
+        <!-- Default Logo -->
+        <a class="navbar-brand" href="/" aria-label="Front">
+          <img class="navbar-brand-logo" src="/img/pores_logo.png" alt="Logo">
+        </a>
+        <!-- End Default Logo -->
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-default">
+            <i class="bi-list"></i>
+          </span>
+          <span class="navbar-toggler-toggled">
+            <i class="bi-x"></i>
+          </span>
+        </button>
+        <!-- End Toggler -->
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="hs-has-sub-menu nav-item">
+              <a id="listingsDropdown" class="hs-mega-menu-invoker nav-link dropdown-toggle " href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"><img src="/img/male_avatar.svg" alt="mdo" width="32"
+                  height="32" class="rounded-circle">
+              </a>
+              <div class="hs-sub-menu dropdown-menu" aria-labelledby="listingsDropdown" style="min-width: 14rem;">
+                <a class="dropdown-item " href="#">My Acccount</a>
+                <a class="dropdown-item " href="#">Settings</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" href="/logout">Sign out</a>
+              </div>
+            </li>
+            <!-- End Dropdown -->
+          </ul>
+        </div>
+        <!-- End Collapse -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main">
+    <!-- Filter Form -->
+    <div class="container content-space-t-3 content-space-t-lg-4">
+      <form>
+        <div class="row gx-2">
+          <div class="col-lg mb-2 mb-lg-0">
+            <!-- Form -->
+            <label for="searchPropertyFilterForm" class="visually-hidden form-label">Search property</label>
+            <div class="input-group input-group-merge">
+              <span class="input-group-prepend input-group-text">
+                <i class="bi-search"></i>
+              </span>
+              <input type="text" class="form-control form-control-sm" id="searchPropertyFilterForm"
+                placeholder="Search property" aria-label="Search property" value="Nairobi, Kenya">
+            </div>
+            <!-- End Form -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-auto mb-2 mb-lg-0">
+            <!-- Dropdown -->
+            <div class="dropdown">
+              <a class="btn btn-white btn-sm dropdown-toggle" href="#" id="priceFilterFormDropdown" role="button"
+                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Price</a>
+
+              <div class="dropdown-menu dropdown-menu-end dropdown-card" aria-labelledby="priceFilterFormDropdown"
+                style="min-width: 21rem;">
+                <!-- Card -->
+                <div class="card card-sm">
+                  <div class="card-body">
+                    <!-- Bar Chart -->
+                    <div class="position-relative overflow-hidden" style="height: 6rem; width: 18rem;">
+                      <div class="position-absolute w-100 overflow-hidden">
+                        <div style="height: 6rem; width: 18rem;">
+                          <canvas class="js-chart" data-hs-chartjs-options='{
+                                    "type": "bar",
+                                    "data": {
+                                      "labels": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+                                      "datasets": [{
+                                        "data": [2, 3, 5, 7, 8, 5, 3, 2, 3, 6, 5, 4, 7, 5, 4, 3, 2],
+                                        "backgroundColor": "#BC6C25",
+                                        "borderColor": "#BC6C25"
+                                      }]
+                                    },
+                                    "options": {
+                                      "responsive": true,
+                                      "scales": {
+                                        "yAxes": [{
+                                          "display": false,
+                                          "gridLines": {
+                                            "display": false,
+                                            "drawBorder": false
+                                          },
+                                          "ticks": {
+                                            "beginAtZero": true
+                                          }
+                                        }],
+                                        "xAxes": [{
+                                          "display": false,
+                                          "gridLines": {
+                                            "display": false,
+                                            "drawBorder": false
+                                          }
+                                        }]
+                                      },
+                                      "tooltips": {
+                                        "custom": false
+                                      }
+                                    }
+                                  }'></canvas>
+                        </div>
+                      </div>
+
+                      <div id="foregroundBarChartDoubleResult" class="position-absolute overflow-hidden">
+                        <div style="height: 6rem; width: 18rem;">
+                          <canvas class="js-chart" data-hs-chartjs-options='{
+                                    "type": "bar",
+                                    "data": {
+                                      "labels": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+                                      "datasets": [{
+                                        "data": [2, 3, 5, 7, 8, 5, 3, 2, 3, 6, 5, 4, 7, 5, 4, 3, 2],
+                                        "backgroundColor": "#BC6C25",
+                                        "borderColor": "#BC6C25"
+                                      }]
+                                    },
+                                    "options": {
+                                      "scales": {
+                                        "yAxes": [{
+                                          "display": false,
+                                          "gridLines": {
+                                            "display": false,
+                                            "drawBorder": false
+                                          },
+                                          "ticks": {
+                                            "beginAtZero": true
+                                          }
+                                        }],
+                                        "xAxes": [{
+                                          "display": false,
+                                          "gridLines": {
+                                            "display": false,
+                                            "drawBorder": false
+                                          }
+                                        }]
+                                      },
+                                      "tooltips": {
+                                        "custom": false
+                                      }
+                                    }
+                                  }'></canvas>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Bar Chart -->
+
+                    <div class="range-slider">
+                      <div class="js-nouislider" data-hs-nouislider-options='{
+                               "range": {
+                                 "min": 0,
+                                 "max": 1000
+                               },
+                               "start": [250, 750],
+                               "result_min_target_el": "#rangeSliderExampleDouble4MinResult",
+                               "result_max_target_el": "#rangeSliderExampleDouble4MaxResult",
+                               "foreground_target_el": "#foregroundBarChartDoubleResult"
+                             }'>
+                      </div>
+                    </div>
+
+                    <div class="row justify-content-center mt-5">
+                      <div class="col">
+                        <span class="d-block small mb-1">Min price:</span>
+                        <input type="text" class="form-control form-control-sm" id="rangeSliderExampleDouble4MinResult">
+                      </div>
+                      <!-- End Col -->
+
+                      <div class="col">
+                        <span class="d-block small mb-1">Max price:</span>
+                        <input type="text" class="form-control form-control-sm" id="rangeSliderExampleDouble4MaxResult">
+                      </div>
+                      <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                  </div>
+
+                  <div class="card-footer border-top">
+                    <div class="d-flex justify-content-end gap-2">
+                      <a class="btn btn-white btn-sm" href="#">Clear</a>
+                      <a class="btn btn-primary btn-sm" href="#">Save</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Card -->
+              </div>
+            </div>
+            <!-- End Dropdown -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-auto mb-2 mb-lg-0">
+            <!-- Dropdown -->
+            <div class="dropdown">
+              <a class="btn btn-white btn-sm dropdown-toggle" href="#" id="bedsFilterFormDropdown" role="button"
+                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All beds</a>
+
+              <div class="dropdown-menu dropdown-menu-end dropdown-card" aria-labelledby="bedsFilterFormDropdown"
+                style="min-width: 25rem;">
+                <!-- Card -->
+                <div class="card card-sm">
+                  <div class="card-body">
+                    <!-- Radio Button Group -->
+                    <div class="btn-group btn-group-segment d-flex" role="group" aria-label="Beds radio button group">
+                      <input type="radio" class="btn-check flex-fill" name="bedsBtnRadio" id="bedsBtnRadioStudio"
+                        autocomplete="off" checked>
+                      <label class="btn btn-sm" for="bedsBtnRadioStudio">Studio</label>
+
+                      <input type="radio" class="btn-check flex-fill" name="bedsBtnRadio" id="bedsBtnRadio1"
+                        autocomplete="off">
+                      <label class="btn btn-sm" for="bedsBtnRadio1">1+</label>
+
+                      <input type="radio" class="btn-check flex-fill" name="bedsBtnRadio" id="bedsBtnRadio2"
+                        autocomplete="off">
+                      <label class="btn btn-sm" for="bedsBtnRadio2">2+</label>
+
+                      <input type="radio" class="btn-check flex-fill" name="bedsBtnRadio" id="bedsBtnRadio3"
+                        autocomplete="off">
+                      <label class="btn btn-sm" for="bedsBtnRadio3">3+</label>
+
+                      <input type="radio" class="btn-check flex-fill" name="bedsBtnRadio" id="bedsBtnRadio4"
+                        autocomplete="off">
+                      <label class="btn btn-sm" for="bedsBtnRadio4">4+</label>
+                    </div>
+                    <!-- End Radio Button Group -->
+                  </div>
+                </div>
+                <!-- End Card -->
+              </div>
+            </div>
+            <!-- End Dropdown -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-auto mb-2 mb-lg-0">
+            <!-- Dropdown -->
+            <div class="dropdown">
+              <a class="btn btn-white btn-sm dropdown-toggle" href="#" id="propertyTypeFilterFormDropdown" role="button"
+                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Property type</a>
+
+              <div class="dropdown-menu dropdown-menu-end dropdown-card"
+                aria-labelledby="propertyTypeFilterFormDropdown" style="min-width: 20rem;">
+                <!-- Card -->
+                <div class="card card-sm">
+                  <div class="card-body">
+                    <div class="d-grid gap-2">
+                      <!-- Check -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="propertyTypeHouseCheckbox" checked>
+                        <label class="form-check-label" for="propertyTypeHouseCheckbox">
+                          House
+                          <span class="d-block small text-muted">Find a cozy place</span>
+                        </label>
+                      </div>
+                      <!-- End Check -->
+
+                      <!-- Check -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="propertyTypeFlatsCheckbox">
+                        <label class="form-check-label" for="propertyTypeFlatsCheckbox">
+                          Flats
+                          <span class="d-block small text-muted">Flats for sale or to rent</span>
+                        </label>
+                      </div>
+                      <!-- End Check -->
+
+                      <!-- Check -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="propertyTypeMultiFamilyCheckbox"
+                          checked>
+                        <label class="form-check-label" for="propertyTypeMultiFamilyCheckbox">
+                          Multi-family
+                          <span class="d-block small text-muted">Multi-family houses or flats</span>
+                        </label>
+                      </div>
+                      <!-- End Check -->
+
+                      <!-- Check -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="propertyTypeFarmsLandCheckbox">
+                        <label class="form-check-label" for="propertyTypeFarmsLandCheckbox">
+                          Farms/land
+                          <span class="d-block small text-muted">Own a property for farming</span>
+                        </label>
+                      </div>
+                      <!-- End Check -->
+                    </div>
+                  </div>
+
+                  <div class="card-footer border-top">
+                    <div class="d-flex justify-content-end gap-2">
+                      <a class="btn btn-white btn-sm" href="#">Clear</a>
+                      <a class="btn btn-primary btn-sm" href="#">Save</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Card -->
+              </div>
+            </div>
+            <!-- End Dropdown -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-auto mb-2 mb-lg-0">
+            <a class="btn btn-white btn-sm" href="#" data-bs-toggle="modal"
+              data-bs-target="#realEstateMoreFiltersModal">
+              <i class="bi-sliders me-2"></i> More
+            </a>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </form>
+    </div>
+    <!-- End Filter Form -->
+
+    <!-- Card Grid -->
+    <div class="container content-space-t-1 content-space-b-2 content-space-b-lg-3">
+      <!-- Heading -->
+      <div class="mb-5">
+        <div class="row align-items-center">
+          <div class="col-sm mb-3 mb-sm-0">
+            <span class="d-block">128 Listings</span>
+            <h1 class="h2 mb-0">Property for sale in Nairobi</h1>
+          </div>
+          <!-- End Col -->
+
+          <div class="col-sm-auto">
+            <!-- Select -->
+            <select class="form-select form-select-sm">
+              <option value="mostRecent" selected>Most recent</option>
+              <option value="HighestPrice">Highest price</option>
+              <option value="LowestPrice">Lowest price</option>
+              <option value="mostReduced">Most reduced</option>
+              <option value="mostPopular">Most popular</option>
+            </select>
+            <!-- End Select -->
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+      <!-- End Heading -->
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5">
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/property-overview" data-fslightbox="propertyGridGallery1">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-top-start">
+                <span class="badge bg-success">New</span>
+              </div>
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery1"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery1"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery1"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For sale</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">Borrett Close, Muthaiga</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 689,000</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  3 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  2 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 1,428 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Col -->
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery2">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery2"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery2"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For sale</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">The Drive, Ilford</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 999,000</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  2 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  1 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 2,123 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery3">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery3"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery3"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For sale</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">Alderney House, Enfield</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 725,000</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  1 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  1 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 1,791 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery4"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For rent</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">Burns Way, Hounslow</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 2,500</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  3 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  2 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 2,182 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-top-start">
+                <span class="badge bg-success">New</span>
+              </div>
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery5"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For rent</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">14 Oakridge, Dr Unit</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 999</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  1 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  1 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 1,254 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery6">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-top-start">
+                <span class="badge bg-primary">New build</span>
+              </div>
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/img20.jpg" data-fslightbox="propertyGridGallery6"></a>
+            <a class="d-none" href="/img/img18.jpg" data-fslightbox="propertyGridGallery6"></a>
+            <a class="d-none" href="/img/img11.jpg" data-fslightbox="propertyGridGallery6"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For rent</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">6 Milne Avenue, Matraville</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 1,257</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  1 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  1 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 937 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery7">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery7"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery7"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery7"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For rent</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">Oliver Jaques, SE16</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 1,465,500</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  4 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  3 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 4,641 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery8">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery8"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery8"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery8"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For rent</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">Brickworks, N7</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 9,999,999</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  4 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  2 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 3,641 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+
+        <div class="col mb-3">
+          <!-- Card -->
+          <div class="card card-flush shadow-none h-100">
+            <a class="card-pinned" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery9">
+              <img class="card-img" src="/img/bg_1.jpg" alt="Image Description">
+
+              <div class="card-pinned-top-start">
+                <span class="badge bg-primary">New build</span>
+              </div>
+
+              <div class="card-pinned-bottom-end">
+                <span class="btn btn-light btn-xs btn-icon">
+                  <i class="bi-images"></i>
+                </span>
+              </div>
+            </a>
+
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery9"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery9"></a>
+            <a class="d-none" href="/img/bg_1.jpg" data-fslightbox="propertyGridGallery9"></a>
+
+            <!-- Body -->
+            <a class="card-body" href="#">
+              <span class="card-subtitle text-body">For rent</span>
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+                  <h4 class="card-title text-inherit">Cromwells Estate Agents Ltd</h4>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                  <h3 class="card-title text-primary">KES 2,000</h3>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+
+              <ul class="list-inline list-separator text-body small">
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M22,19.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V16H4v3.5a.5.5,0,0,1-.5.5h-1a.5.5,0,0,1-.5-.5V4.5A.5.5,0,0,1,2.5,4h1a.5.5,0,0,1,.5.5V13H21a1,1,0,0,1,1,1ZM20,8H12a2,2,0,0,0-2,2v1.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V10A2,2,0,0,0,20,8ZM5.5,12h3a.5.5,0,0,0,.5-.5V11a2,2,0,0,0-4,0v.5A.5.5,0,0,0,5.5,12Z" />
+                    </svg>
+                  </span>
+                  1 bed
+                </li>
+                <li class="list-inline-item">
+                  <span class="svg-icon svg-icon-xs svg-inline text-muted me-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M304,320a16,16,0,1,0,16,16A16,16,0,0,0,304,320Zm32-96a16,16,0,1,0,16,16A16,16,0,0,0,336,224Zm32,64a16,16,0,1,0-16-16A16,16,0,0,0,368,288Zm-32,32a16,16,0,1,0-16-16A16,16,0,0,0,336,320Zm-32-64a16,16,0,1,0,16,16A16,16,0,0,0,304,256Zm128-32a16,16,0,1,0-16-16A16,16,0,0,0,432,224Zm-48,16a16,16,0,1,0,16-16A16,16,0,0,0,384,240Zm-16-48a16,16,0,1,0,16,16A16,16,0,0,0,368,192Zm96,32a16,16,0,1,0,16,16A16,16,0,0,0,464,224Zm32-32a16,16,0,1,0,16,16A16,16,0,0,0,496,192Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,432,256Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,400,288Zm-64,64a16,16,0,1,0,16,16A16,16,0,0,0,336,352Zm-32,32a16,16,0,1,0,16,16A16,16,0,0,0,304,384Zm64-64a16,16,0,1,0,16,16A16,16,0,0,0,368,320Zm21.65-218.35-11.3-11.31a16,16,0,0,0-22.63,0L350.05,96A111.19,111.19,0,0,0,272,64c-19.24,0-37.08,5.3-52.9,13.85l-10-10A121.72,121.72,0,0,0,123.44,32C55.49,31.5,0,92.91,0,160.85V464a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V158.4c0-30.15,21-58.2,51-61.93a58.38,58.38,0,0,1,48.93,16.67l10,10C165.3,138.92,160,156.76,160,176a111.23,111.23,0,0,0,32,78.05l-5.66,5.67a16,16,0,0,0,0,22.62l11.3,11.31a16,16,0,0,0,22.63,0L389.65,124.28A16,16,0,0,0,389.65,101.65Z" />
+                    </svg>
+                  </span>
+                  1 bath
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi-rulers text-muted me-1"></i> 854 sqft
+                </li>
+              </ul>
+            </a>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+      <!-- End Row -->
+
+      <!-- Pagination -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">
+                <i class="bi-chevron-double-left small"></i>
+              </span>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">
+                <i class="bi-chevron-double-right small"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End Pagination -->
+    </div>
+    <!-- End Card Grid -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <%- include('globals/footer'); %>
+
+
+    <!-- ========== SECONDARY CONTENTS ========== -->
+    <!-- Real Estate More Filters Modal -->
+    <div class="modal fade" id="realEstateMoreFiltersModal" tabindex="-1"
+      aria-labelledby="realEstateMoreFiltersModalLabel" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header">
+            <h3 class="modal-title" id="realEstateMoreFiltersModalLabel">More filters</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!-- End Header -->
+
+          <!-- Body -->
+          <div class="modal-body">
+            <label class="input-label">Status</label>
+
+            <!-- Radio Button Group -->
+            <div class="btn-group btn-group-segment d-flex mb-4" role="group" aria-label="Status radio button group">
+              <input type="radio" class="btn-check flex-fill" name="statusBtnRadioMoreFilters"
+                id="statusBtnRadioBuyMoreFilters" autocomplete="off" checked>
+              <label class="btn btn-sm" for="statusBtnRadioBuyMoreFilters">Buy</label>
+
+              <input type="radio" class="btn-check flex-fill" name="statusBtnRadioMoreFilters"
+                id="statusBtnRadioRentMoreFilters" autocomplete="off">
+              <label class="btn btn-sm" for="statusBtnRadioRentMoreFilters">Rent</label>
+
+              <input type="radio" class="btn-check flex-fill" name="statusBtnRadioMoreFilters"
+                id="statusBtnRadioSoldMoreFilters" autocomplete="off">
+              <label class="btn btn-sm" for="statusBtnRadioSoldMoreFilters">Sold</label>
+            </div>
+            <!-- End Radio Button Group -->
+
+            <div class="mb-4">
+              <label for="featuresLabelMoreFilters" class="form-label">Features</label>
+
+              <!-- Select -->
+              <select id="featuresLabelMoreFilters" class="js-select form-select" multiple data-hs-tom-select-options='{
+                      "hideSearch": true
+                    }'>
+                <option value="bedValueAny" selected>Any</option>
+                <option value="Pets allowed">Pets allowed</option>
+                <option value="Parking lot">Parking lot</option>
+                <option value="Balcony">Balcony</option>
+                <option value="Garden">Garden</option>
+                <option value="Laundry">Laundry</option>
+                <option value="Heating">Heating</option>
+                <option value="AC">AC</option>
+              </select>
+              <!-- End Select -->
+            </div>
+
+            <div class="row gx-3">
+              <div class="col-6">
+                <div class="mb-4">
+                  <label for="bedsLabelMoreFilters" class="form-label">Beds</label>
+
+                  <!-- Select -->
+                  <select id="bedsLabelMoreFilters" class="js-select form-select" data-hs-tom-select-options='{
+                          "hideSearch": true
+                        }'>
+                    <option value="bedValueAny" selected>Any</option>
+                    <option value="bedValueMin1">1</option>
+                    <option value="bedValueMin2">2</option>
+                    <option value="bedValueMin3">3</option>
+                    <option value="bedValueMin4">4</option>
+                    <option value="bedValueMin5">5</option>
+                  </select>
+                  <!-- End Select -->
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="col-6">
+                <div class="mb-4">
+                  <label for="bathLabelMoreFilters" class="form-label">Baths</label>
+
+                  <!-- Select -->
+                  <select id="bathLabelMoreFilters" class="js-select form-select" data-hs-tom-select-options='{
+                          "hideSearch": true
+                        }'>
+                    <option value="bedValueAny" selected>Any</option>
+                    <option value="bedValueMax1">1</option>
+                    <option value="bedValueMax2">2</option>
+                    <option value="bedValueMax3">3</option>
+                    <option value="bedValueMax4">4</option>
+                    <option value="bedValueMax5">5</option>
+                  </select>
+                  <!-- End Select -->
+                </div>
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+
+            <label for="squareFeetLabelMoreFilters" class="form-label">Square feet</label>
+
+            <div class="row gx-3">
+              <div class="col-6">
+                <div class="mb-4">
+                  <input type="text" class="form-control" id="squareFeetLabelMoreFilters" placeholder="No min">
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="col-6">
+                <div class="mb-4">
+                  <input type="text" class="form-control" placeholder="No max">
+                </div>
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+
+            <div class="mb-4">
+              <label for="lotSizeLabelMoreFilters" class="form-label">Lot size</label>
+
+              <!-- Select -->
+              <select id="lotSizeLabelMoreFilters" class="js-select form-select" data-hs-tom-select-options='{
+                      "hideSearch": true
+                    }'>
+                <option value="No Min">No Min</option>
+                <option value="2000+ sqft">2000+ sqft</option>
+                <option value="3000+ sqft">3000+ sqft</option>
+                <option value="4000+ sqft">4000+ sqft</option>
+                <option value="5000+ sqft">5000+ sqft</option>
+                <option value="7500+ sqft">7500+ sqft</option>
+                <option value="0.25+ acre / 10890+ sqft">0.25+ acre / 10890+ sqft</option>
+                <option value="0.5+ acre / 21780+ sqft">0.5+ acre / 21780+ sqft</option>
+                <option value="1+ acre">1+ acre</option>
+                <option value="2+ acre">2+ acre</option>
+                <option value="5+ acre">5+ acre</option>
+                <option value="10+ acre">10+ acre</option>
+              </select>
+              <!-- End Select -->
+            </div>
+
+            <div class="mb-4">
+              <label for="yearBuiltLabelMoreFilters" class="form-label">Year built</label>
+
+              <div class="row gx-3">
+                <div class="col-6">
+                  <input type="text" class="form-control" id="yearBuiltLabelMoreFilters" placeholder="Min year">
+                </div>
+                <!-- End Col -->
+
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="Max year">
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </div>
+          </div>
+          <!-- End Body -->
+
+          <div class="card-footer border-top">
+            <div class="d-flex justify-content-end gap-3">
+              <a class="btn btn-white" href="#">Clear</a>
+              <a class="btn btn-primary" href="#">Show 100+ homes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Go To -->
+    <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+      <i class="bi-chevron-up"></i>
+    </a>
+    <!-- ========== END SECONDARY CONTENTS ========== -->
+
+
+    <!-- JS Implementing Plugins -->
+    <script src="../assets/js/vendor.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="../assets/js/theme.min.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+      (function () {
+        // INITIALIZATION OF MEGA MENU
+        // =======================================================
+        new HSMegaMenu('.js-mega-menu', {
+          desktop: {
+            position: 'left'
+          }
+        })
+
+
+        // INITIALIZATION OF BOOTSTRAP VALIDATION
+        // =======================================================
+        HSBsValidation.init('.js-validate', {
+          onSubmit: data => {
+            data.event.preventDefault()
+            alert('Submited')
+          }
+        })
+
+
+        // INITIALIZATION OF BOOTSTRAP DROPDOWN
+        // =======================================================
+        HSBsDropdown.init()
+
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
+        new HSGoTo('.js-go-to')
+
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
+        document.querySelectorAll('.js-chart').forEach(item => {
+          HSCore.components.HSChartJS.init(item)
+        })
+
+        var rangeReady = false
+
+        document.querySelector('#priceFilterFormDropdown').addEventListener('shown.bs.dropdown', el => {
+          if (!rangeReady) {
+            HSCore.components.HSNoUISlider.init('.js-nouislider')
+          }
+
+          return rangeReady = true
+        })
+
+
+        // INITIALIZATION OF SELECT
+        // =======================================================
+        HSCore.components.HSTomSelect.init('.js-select')
+      })()
+    </script>
+</body>
+
+</html>

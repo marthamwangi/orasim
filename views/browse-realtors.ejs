@@ -1,300 +1,570 @@
 <%- include('globals/head', {title: 'Browse Realtors' }); %>
   <%- include('globals/header'); %>
-    <style>
-      .container {
-        justify-content: flex-start;
-        flex-direction: column
-      }
-
-      figcaption .form-check-label {
-        color: #606C38;
-        font-weight: 600;
-        font-size: small;
-      }
-
-      figcaption .badge {
-        font-size: small;
-      }
-
-      i,
-      em {
-        font-style: normal;
-      }
-
-      .form-control:not(select) {
-        padding: 0.5rem 0.5rem;
-      }
-
-      main {
-        padding: 0px;
-      }
-
-      .page-link,
-      .page-link:hover {
-        color: #DDA15E;
-      }
-
-      .page-item.active .page-link {
-        background-color: #BC6C25;
-        border-color: transparent;
-      }
-
-      .form-check-input:checked {
-        border-color: #FEFAE0;
-        background-color: #FEFAE0;
-        outline: #FEFAE0;
-      }
-
-      .badge {
-        color: #606C38;
-
-      }
-
-      p {
-        padding: 0;
-      }
-
-      ul.list-menu {
-        list-style-type: none;
-      }
-
-      .list-menu li>a:hover {
-        background-color: #606C38;
-        color: #FEFAE0;
-        border-radius: 0.25rem;
-        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-      }
-
-      .list-menu li>a {
-        padding: 0.375rem 0.75rem;
-
-        display: block;
-        color: #51585e;
-        font-size: 1rem;
-
-        text-decoration: none;
-      }
-    </style>
 
     <body>
-
+      <style>
+        .content-space-2 {
+          padding-top: 5rem !important;
+          padding-bottom: 0 !important;
+        }
+      </style>
       <!-- ============== SECTION CONTENT ============== -->
-      <section class="padding-y mt-3">
-        <div class="container">
-          <div class="row">
-            <aside class="col-lg-3">
-              <!-- ===== Card for sidebar filter ===== -->
-              <div id="aside_filter" class="collapse card d-lg-block mb-5">
-
-                <article class="filter-group">
-                  <header class="card-header">
-                    <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside1">
-                      <i class="icon-control bi bi-chevron-down"></i>Top Specialties
-                    </a>
-                  </header>
-                  <div class="collapse show" id="collapse_aside1">
-                    <div class="card-body">
-                      <ul class="list-menu">
-                        <li><a href="#">Property Management </a></li>
-                        <li><a href="#">Developers </a></li>
-                        <li><a href="#">Appraisers</a></li>
-                        <li><a href="#">Leasers</a></li>
-                        <li><a href="#">Brokerage </a></li>
-                      </ul>
-                    </div> <!-- card-body.// -->
-                  </div> <!-- collapse.// -->
-                </article> <!-- filter-group // -->
-
-                <article class="filter-group">
-                  <header class="card-header">
-                    <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_brands">
-                      <i class="icon-control bi bi-chevron-down"></i> Realtors
-                    </a>
-                  </header>
-                  <div class="collapse show" id="collapse_aside_brands">
-                    <div class="card-body">
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label"> Buyer's Agent </span>
-                        <b class="badge rounded-pill  bg-light float-end">120</b>
-                      </label> <!-- form-check end.// -->
-
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label"> Leasing Agent </span>
-                        <b class="badge rounded-pill  bg-light float-end">15</b>
-                      </label> <!-- form-check end.// -->
-
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label"> Relocation Agent </span>
-                        <b class="badge rounded-pill  bg-light float-end">35</b>
-                      </label> <!-- form-check end.// -->
-
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label"> Morgage Planning </span>
-                        <b class="badge rounded-pill  bg-light float-end">89</b>
-                      </label> <!-- form-check end.// -->
-
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label"> Valuation Agent </span>
-                        <b class="badge rounded-pill  bg-light float-end">30</b>
-                      </label> <!-- form-check end.// -->
-
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label"> Caretaker</span>
-                        <b class="badge rounded-pill  bg-light float-end">30</b>
-                      </label> <!-- form-check end.// -->
-                    </div> <!-- card-body .// -->
-                  </div> <!-- collapse.// -->
-                </article>
-
-                <article class="filter-group">
-                  <header class="card-header">
-                    <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside4">
-                      <i class="icon-control bi bi-chevron-down"></i> Badges
-                    </a>
-                  </header>
-                  <div class="collapse show" id="collapse_aside4">
-                    <div class="card-body">
-
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label">
-                          <i class="bi bi-patch-check-fill" style="color: #BC6C25;"></i> Platinum Realtor
-                        </span>
-                      </label> <!-- form-check end.// -->
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label">
-                          <i class="bi bi-patch-check-fill" style="color: #DDA15E;"></i> Gold Realtor
-                        </span>
-                      </label> <!-- form-check end.// -->
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label">
-                          <i class="bi bi-patch-check-fill" style="color: #A8A9AD;"></i> Silver Realtor
-                        </span>
-                      </label> <!-- form-check end.// -->
-                      <label class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" value="">
-                        <span class="form-check-label">
-                          <i class="bi bi-patch-check-fill" style="color: #606C38;"></i> Bronze Realtor
-                        </span>
-                      </label> <!-- form-check end.// -->
-
-
-                    </div> <!-- card-body.// -->
-                  </div> <!-- collapse.// -->
-                </article> <!-- filter-group // -->
-
-              </div> <!-- card.// -->
-              <!-- ===== Card for sidebar filter .// ===== -->
-
-            </aside> <!-- col .// -->
-            <main class="col-lg-9">
-
-              <form action="#" class="mb-1">
-                <div class="input-group">
-                  <input type="search" name='realtor' class="form-control" style="width:55%"
-                    placeholder="Enter name, address, badge e.g gold, silver...">
-                  <div class="input-group-append"> <input class="btn btn-primary btn-lg" style="width: fit-content;"
-                      type="submit" value="search"> </div>
-                </div> <!-- input-group end.// -->
-              </form>
-              <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-                <strong class="d-block py-2">32 Realtors found <i style="float: right;"
-                    class="bi bi-filter-square d-lg-none " data-bs-toggle="collapse"
-                    data-bs-target="#aside_filter"></i></strong>
-              </header>
-
-              <!-- ========= content items ========= -->
-              <div class="row">
-                <% if(typeof realtor !='undefined' ) {%>
-                  <% for (var i=0; i < realtor.length; i++ ){%>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                      <figure class="card px-2">
-                        <div class="img-wrap p-2">
-                          <img class="rounded-circle mx-auto d-block" src="/uploads/profiles/<%=realtor[i].avatar%>">
-                        </div>
-                        <figcaption class="info-wrap border-top p-2">
-                          <p class="lh-lg">
-                            <i class="bi bi-patch-check-fill " style="color: #A8A9AD;"> Silver Realtor</i><br>
-                            <strong class="text text-uppercase">
-                              <%=realtor[i].user_name %>
-                            </strong>
-                            <br>
-                            <em>
-                              <%=realtor[i].user_email %>
-                            </em>
-                            <br>
-                            <i class="bi bi-telephone" style="color: #606C38;">
-                              <%=realtor[i].user_contact%>
-                            </i> <br>
-                          </p>
-                          <p>
-                            <span class="form-check-label"> Experience</span>
-                            <b class="badge rounded-pill  bg-light float-end">1 Year</b>
-                          </p>
-                          <p>
-                            <span class="form-check-label"> Active Listings </span>
-                            <b class="badge rounded-pill  bg-light float-end">12 Listings</b>
-                          </p>
-                          <p>
-                            <span class="form-check-label"> Closed Listings </span>
-                            <b class="badge rounded-pill  bg-light float-end">12 Listings</b>
-                          </p>
-                          <ul class="social-list">
-                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
-                            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                            <li><a href="#"><i class="bi bi-google"></i></a></li>
-                          </ul>
-                          <div class="mx-auto d-flex justify-content-center">
-                            <a href="#" class="hire-me "> <i class="bi bi-briefcase"> Hire me</i>
-                            </a>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div> <!-- col end.// -->
-                    <%}%>
-                      <%}%>
-
-
-              </div> <!-- row end.// -->
-
-              <hr>
-
-              <footer class="d-flex mt-4">
-                <div>
-                  <a href="javascript: history.back()" class="btn btn-light"> &laquo; Go back</a>
+      <main id="content" role="main">
+        <!-- Hero -->
+        <div class="">
+          <div class="container content-space-2">
+            <form>
+              <!-- Input Card -->
+              <div class="input-card input-card-sm mb-3">
+                <div class="input-card-form">
+                  <label for="realtorSearchForm" class="form-label visually-hidden">Search realtor by name</label>
+                  <div class="input-group input-group-merge">
+                    <span class="input-group-prepend input-group-text">
+                      <i class="bi-search"></i>
+                    </span>
+                    <input type="text" class="form-control" id="realtorSearchForm" onkeyup="searchRealtor()"
+                      placeholder="Search realtor by name" aria-label="Search realtor by name">
+                  </div>
                 </div>
-                <nav class="ms-3">
-                  <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active" aria-current="page">
-                      <span class="page-link">2</span>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">Next</a>
-                    </li>
-                  </ul>
-                </nav>
-              </footer>
 
-              <!-- ========= content items .// ========= -->
-
+                <!-- <div class="input-card-form">
+                  <label for="cityForm" class="form-label visually-hidden">City, state, or zip</label>
+                  <div class="input-group input-group-merge">
+                    <span class="input-group-prepend input-group-text">
+                      <i class="bi-geo-alt"></i>
+                    </span>
+                    <input type="text" class="form-control" id="cityForm" placeholder="City, state, or zip"
+                      aria-label="City, state, or zip">
+                  </div>
+                </div> -->
+              </div>
+              <!-- End Input Card -->
+            </form>
 
 
-            </main> <!-- col .// -->
-          </div> <!-- row .// -->
+          </div>
+        </div>
+        <!-- End Hero -->
 
-        </div> <!-- container .//  -->
-      </section>
+        <!-- Card Grid -->
+        <div class="container content-space-t-1 content-space-t-md-2 content-space-b-2 content-space-b-lg-3">
+          <div class="row">
+            <% if(typeof realtor !='undefined' ) {%>
+
+              <div class="col-lg-3 order-lg-2">
+                <!-- Navbar -->
+                <div class="navbar-expand-lg mb-5">
+                  <!-- Navbar Toggle -->
+                  <div class="d-grid">
+                    <button type="button" class="navbar-toggler btn btn-white mb-3" data-bs-toggle="collapse"
+                      data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false"
+                      aria-controls="navbarVerticalNavMenu">
+                      <span class="d-flex justify-content-between align-items-center">
+                        <span class="text-dark">Filter</span>
+
+                        <span class="navbar-toggler-default">
+                          <i class="bi-list"></i>
+                        </span>
+
+                        <span class="navbar-toggler-toggled">
+                          <i class="bi-x"></i>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+                  <!-- End Navbar Toggle -->
+
+                  <!-- Navbar Collapse -->
+                  <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+                    <div class="w-100">
+                      <!-- Form -->
+                      <form>
+                        <div class="mb-5">
+                          <h5 class="mb-3">Years of experience</h5>
+
+                          <div class="d-grid gap-2" id="experience">
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorYearExperienceValue1"
+                                id="realtorYearExperienceCheckbox1" name="realtorYearExperience">
+                              <label class="form-check-label d-flex" for="realtorYearExperienceCheckbox1">0-2 years
+                                <span class="ms-auto">
+                                  4
+                                </span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorYearExperienceValue2"
+                                id="realtorYearExperienceCheckbox2" name="realtorYearExperience">
+                              <label class="form-check-label d-flex" for="realtorYearExperienceCheckbox2">3-5 years
+                                <span class="ms-auto">3</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorYearExperienceValue3"
+                                id="realtorYearExperienceCheckbox3" name="realtorYearExperience">
+                              <label class="form-check-label d-flex" for="realtorYearExperienceCheckbox3">6-10 years
+                                <span class="ms-auto">73</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorYearExperienceValue4"
+                                id="realtorYearExperienceCheckbox4" name="realtorYearExperience">
+                              <label class="form-check-label d-flex" for="realtorYearExperienceCheckbox4">More than 10
+                                years
+                                <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                          </div>
+                        </div>
+                        <style>
+                          .rating {
+                            margin-right: 5px;
+
+                          }
+
+                          .rating-color {
+                            color: #fbc634 !important;
+                            margin-right: 5px;
+                          }
+                        </style>
+                        <div class="mb-5">
+                          <h5 class="mb-3">Rating</h5>
+
+                          <div class="d-grid gap-2">
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorRating1"
+                                id="realtorRatingCheckbox1" name="realtorRating">
+                              <label class="form-check-label d-flex" for="realtorRatingCheckbox1">
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"> </i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <span class="ms-auto">6</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorRating2"
+                                id="realtorRatingCheckbox2" name="realtorRating">
+                              <label class="form-check-label d-flex" for="realtorRatingCheckbox2">
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"> </i>
+                                <i class="bi bi-star "></i> <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorRating3"
+                                id="realtorRatingCheckbox3" name="realtorRating">
+                              <label class="form-check-label d-flex" for="realtorRatingCheckbox3">
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star rating"> </i>
+                                <i class="bi bi-star rating "></i> <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorRating4"
+                                id="realtorRatingCheckbox4" name="realtorRating">
+                              <label class="form-check-label d-flex" for="realtorRatingCheckbox4">
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star rating"></i>
+                                <i class="bi bi-star rating"> </i>
+                                <i class="bi bi-star rating "></i> <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorRating5"
+                                id="realtorRatingCheckbox5" name="realtorRating">
+                              <label class="form-check-label d-flex" for="realtorRatingCheckbox5">
+                                <i class="bi bi-star-fill rating-color"></i>
+                                <i class="bi bi-star rating"></i>
+                                <i class="bi bi-star rating"></i>
+                                <i class="bi bi-star rating"> </i>
+                                <i class="bi bi-star rating "></i> <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                          </div>
+                        </div>
+                        <div class="mb-5">
+                          <h5 class="mb-3">Badge</h5>
+
+                          <div class="d-grid gap-2">
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorBadge1"
+                                id="realtorBadgeCheckbox1" name="realtorBadge">
+                              <label class="form-check-label d-flex" for="realtorBadgeCheckbox1">Platinum <i
+                                  class="bi bi-patch-check-fill platinum ms-1"></i>
+
+                                <span class="ms-auto">6</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorBadge2"
+                                id="realtorBadgeCheckbox2" name="realtorBadge">
+                              <label class="form-check-label d-flex" for="realtorBadgeCheckbox2">Gold <i
+                                  class="bi bi-patch-check-fill gold ms-1"></i><span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorBadge3"
+                                id="realtorBadgeCheckbox3" name="realtorBadge">
+                              <label class="form-check-label d-flex" for="realtorBadgeCheckbox3">Silver<i
+                                  class="bi bi-patch-check-fill silver ms-1"></i> <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorBadge4"
+                                id="realtorBadgeCheckbox4" name="realtorBadge">
+                              <label class="form-check-label d-flex" for="realtorBadgeCheckbox4">Bronze<i
+                                  class="bi bi-patch-check-fill bronze ms-1"></i> <span class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                            <!-- Checkboxes -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="realtorBadge5"
+                                id="realtorBadgeCheckbox5" name="realtorBadge">
+                              <label class="form-check-label d-flex" for="realtorBadgeCheckbox5">No Badge<span
+                                  class="ms-auto">1</span></label>
+                            </div>
+                            <!-- End Checkboxes -->
+                          </div>
+                        </div>
+
+                        <div class="d-grid">
+                          <button type="button" class="btn btn-white btn-transition">Clear all</button>
+                        </div>
+                      </form>
+                      <!-- End Form -->
+                    </div>
+                  </div>
+                  <!-- End Navbar Collapse -->
+                </div>
+                <!-- End Navbar -->
+              </div>
+              <!-- End Col -->
+              <%}%>
+                <div class="col-lg-9">
+                  <div class="row align-items-center mb-5">
+                    <div class="col-sm mb-3 mb-sm-0">
+                      <div class="d-md-flex align-items-md-center text-center text-md-start">
+                        <span class="d-block me-md-3 mb-2 mb-md-1">Tags:</span>
+                        <a class="btn btn-soft-secondary btn-xs rounded-pill m-1" href="javascript:;">All Realtors</a><a
+                          class="btn btn-soft-secondary btn-xs rounded-pill m-1" href="javascript:;">Buying
+                          Realtors</a>
+                        <a class="btn btn-soft-secondary btn-xs rounded-pill m-1" href="javascript:;">Selling
+                          Realtors</a>
+                        <a class="btn btn-soft-secondary btn-xs rounded-pill m-1" href="javascript:;">Dual Realtors</a>
+                        <a class="btn btn-soft-secondary btn-xs rounded-pill m-1" href="javascript:;">Valuer</a>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-auto">
+                      <div class="d-sm-flex justify-content-sm-end align-items-center">
+
+
+                        <!-- Select -->
+                        <div class="mb-2 mb-sm-0 me-sm-2">
+                          <select class="form-select form-select-sm" id="sort">
+                            <option value="alphabeticalOrderSelect0" selected="">Sort</option>
+                            <option value="alphabeticalOrderSelect1">A-to-Z
+                            </option>
+                            <option value="alphabeticalOrderSelect2">Z-to-A</option>
+                          </select>
+                        </div>
+                        <!-- End Select -->
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Row -->
+                  <script>
+                    function searchRealtor() {
+                      var input, filter, realtor, card, username, i, textValue;
+                      input = document.getElementById("realtorSearchForm");
+                      filter = input.value.toUpperCase();
+                      realtor = document.getElementById("realtors");
+                      card = realtor.getElementsByClassName("card-realtor");
+                      for (i = 0; i < card.length; i++) {
+                        username = card[i].getElementsByTagName("a")[1];
+                        textValue = username.textContent || username.innerText;
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                          card[i].style.display = "block";
+                        } else {
+                          card[i].style.display = "none";
+                        }
+
+                      }
+
+                    }
+                    document.getElementById('sort').onchange = sortRealtor;
+                    function sortRealtor() {
+                      var value = this.value;
+                      var list, i, sorting, sortRealtorCard, shouldSort;
+                      list = document.getElementById("realtors");
+                      sorting = true;
+                      while (sorting) {
+                        sorting = false;
+                        sortRealtorCard = list.getElementsByClassName("card-realtor");
+                        if (value == 'alphabeticalOrderSelect1') {
+                          for (i = 0; i < (sortRealtorCard.length - 1); i++) {
+                            shouldSort = false;
+                            if (sortRealtorCard[i].innerHTML.toLowerCase() > sortRealtorCard[i + 1].innerHTML.toLowerCase()) {
+                              shouldSort = true;
+                              break;
+                            }
+                          }
+                        } else if (value == 'alphabeticalOrderSelect2') {
+                          for (i = 0; i < (sortRealtorCard.length - 1); i++) {
+                            shouldSort = false;
+                            if (sortRealtorCard[i].innerHTML.toLowerCase() < sortRealtorCard[i + 1].innerHTML.toLowerCase()) {
+                              shouldSort = true;
+                              break;
+                            }
+                          }
+                        } else if (value == 'alphabeticalOrderSelect0') {
+                          location.reload();
+                        }
+                        if (shouldSort) {
+                          sortRealtorCard[i].parentNode.insertBefore(sortRealtorCard[i + 1], sortRealtorCard[i]);
+                          sorting = true;
+                        }
+                      }
+                    }
+
+                  </script>
+                  <div class="row row-cols-1 row-cols-sm-2 mb-5" id="realtors">
+
+                    <% if(typeof realtor !='undefined' ) {%>
+                      <% for (var i=0; i < realtor.length; i++ ){%>
+                        <div class="col mb-5 card-realtor
+                        <% if(realtor[i].realtor_experience <= 2 ) {%>
+                                  realtorYearExperienceValue1
+                                    <%} else if (realtor[i].realtor_experience <=5) {%>
+                                    realtorYearExperienceValue2
+                                    <%} else if (realtor[i].realtor_experience <=10) {%>
+                                      realtorYearExperienceValue3
+                                    <%} else {%>
+                                      realtorYearExperienceValue4
+                                            <%}%>
+
+                                              <% if(realtor[i].badge === 1 ) {%>
+                                                realtorBadge1
+                                                <%} else if (realtor[i].badge === 2 ) {%>
+                                                  realtorBadge2
+                                                  <%} else if (realtor[i].badge === 3) {%>
+                                                    realtorBadge3
+                                                    <%} else if (realtor[i].badge === 4) {%>
+                                                    realtorBadge4
+                                                    <%} else {%>
+                                                      realtorBadge5
+                                                      <%}%>
+
+                                                          <% if(realtor[i].realtor_rating===5 ) {%>
+                                                            realtorRating1
+                                                            <%} else if (realtor[i].realtor_rating===4 ) {%>
+                                                              realtorRating2
+                                                              <%} else if (realtor[i].realtor_rating===3) {%>
+                                                                realtorRating3
+                                                                <%} else if (realtor[i].realtor_rating===2) {%>
+                                                                  realtorRating4
+                                                                  <%} else {%>
+                                                                    realtorRating5
+                                                                    <%}%>
+
+                                                 ">
+                          <!-- Card -->
+                          <div class=" card card-bordered h-100">
+                            <!-- Card Body -->
+                            <div class="card-body">
+                              <div class="row mb-3">
+                                <div class="col">
+                                  <!-- Media -->
+                                  <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                      <img class=" rounded-circle avatar avatar-sm avatar-4x3"
+                                        src="/uploads/profiles/<%=realtor[i].avatar%>" alt="<%=realtor[i].user_name %>">
+                                    </div>
+
+                                    <div class="flex-grow-1 ms-3">
+                                      <h6 class="card-title">
+                                        <i class="bi bi-envelope"></i>
+                                        <a class="text-dark" href="mailto:<%=realtor[i].user_email %>">
+                                          <%=realtor[i].user_email %>
+                                        </a>
+                                      </h6>
+                                    </div>
+                                  </div>
+                                  <!-- End Media -->
+                                </div>
+                              </div>
+                              <!-- End Row -->
+
+                              <h4 class="card-title username">
+                                <a class="text-dark">
+                                  <%=realtor[i].user_name %>
+                                </a>
+                                <% if(realtor[i].badge===1) {%>
+                                  <i class="bi bi-patch-check-fill fst-normal platinum"></i>
+                                  <%} else if(realtor[i].badge===2){%>
+                                    <i class="bi bi-patch-check-fill fst-normal gold"></i>
+
+                                    <%} else if(realtor[i].badge===3){%>
+                                      <i class="bi bi-patch-check-fill fst-normal silver"></i>
+
+                                      <%} else if(realtor[i].badge===4){%>
+                                        <i class="bi bi-patch-check-fill fst-normal bronze"></i>
+                                        <%} else {%>
+                                          <i class="fst-normal "></i>
+                                          <%}%>
+                                            <small class="float-end rating-color px-3">
+                                              <i class="bi bi-star-fill rating-color">
+                                                <%=realtor[i].realtor_rating %>.0
+                                              </i>
+                                            </small>
+
+                              </h4>
+                              <span class="d-block small text-body mb-1 text-truncate">
+                                <%=realtor[i].realtor_education%>
+                              </span>
+                              <span class="d-block small experience"> Experience
+                                <i class="badge bg-soft-dark text-dark rounded-pill nav-link-badge fst-normal">
+                                  <% if(realtor[i].realtor_experience < 1) {%>
+                                    Less than a year
+                                    <%} else if (realtor[i].realtor_experience> 1) {%>
+                                      <%=realtor[i].realtor_experience%> years
+                                        <%} else {%>
+                                          <%=realtor[i].realtor_experience%> year
+                                            <%}%>
+                                </i></span>
+
+                              <hr class="my-3">
+                              <dl class="row">
+                                <dd class="col-sm-12">
+                                  <!-- Socials -->
+                                  <ul class="list-inline mb-0">
+                                    <% if(typeof user !='undefined' && user.user_role===2 ) {%>
+                                      <li class="list-inline-item float-end">
+                                        <a class="btn btn-soft-secondary btn-xs"
+                                          href="/hire-realtor/<%=realtor[i].id_user%>">
+                                          <i class="bi-envelope-fill fst-normal"> Hire me</i>
+                                        </a>
+                                      </li>
+                                      <%} else {%>
+                                        <li class="list-inline-item float-end">
+                                          <a class="btn btn-soft-secondary btn-xs"
+                                            href="tel:<%=realtor[i].user_contact%>">
+                                            <i class="bi-envelope-fill fst-normal"> Contact Me</i>
+                                          </a>
+                                        </li>
+                                        <%}%>
+                                          <li class="list-inline-item ">
+                                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                                              <i class="bi-facebook"></i>
+                                            </a>
+                                          </li>
+                                          <li class="list-inline-item ">
+                                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                                              <i class="bi-google"></i>
+                                            </a>
+                                          </li>
+                                          <li class="list-inline-item ">
+                                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                                              <i class="bi-twitter"></i>
+                                            </a>
+                                          </li>
+                                          <li class="list-inline-item ">
+                                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                                              <i class="bi-github"></i>
+                                            </a>
+                                          </li>
+                                  </ul>
+                                  <!-- End Socials -->
+                                </dd>
+                              </dl>
+                            </div>
+                            <!-- End Card Body -->
+
+                            <!-- Card Footer -->
+                            <div class="card-footer pt-0">
+                              <ul class="list-inline list-separator small text-body">
+                                <li class="list-inline-item">
+                                  <i class="bi bi-telephone"></i>
+                                  <%=realtor[i].user_contact %>
+                                </li>
+                                <li class="list-inline-item "><i class="bi bi-geo-alt"></i>
+                                  <%=realtor[i].user_address%>
+                                </li>
+
+                              </ul>
+                            </div>
+                            <!-- End Card Footer -->
+                          </div>
+                          <!-- End Card -->
+                        </div>
+                        <!-- End Col -->
+                        <%}%>
+                          <%}%>
+
+                  </div>
+                  <!-- End Row -->
+
+                  <!-- Pagination -->
+                  <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">
+                            <i class="bi-chevron-double-left small"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                      <li class="page-item"><a class="page-link" href="#">5</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">
+                            <i class="bi-chevron-double-right small"></i>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <!-- End Pagination -->
+                </div>
+                <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Card Grid -->
+      </main>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+      <script src="/js/filter.js"></script>
+
       <!-- ============== SECTION CONTENT END// ============== -->
       <%- include ('globals/footer'); %>

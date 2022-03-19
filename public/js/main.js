@@ -47,3 +47,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // Your code to run since DOM is loaded and ready
 });
 
+
+$('.editUser').on('click', function (e) {
+  e.preventDefault();
+  var tr = $(this).closest('tr');
+  var modal = $('#editUserModal');
+  $.getJSON('/edit-user/' + tr.data('id'), function (data) {
+    modal.find('#form').attr('action', '/edit-user/' + tr.data('id'))
+    modal.find('[name=title]').val(data.title);
+    modal.modal('show');
+
+  })
+})

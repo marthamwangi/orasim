@@ -28,6 +28,6 @@ router
 
 //get single realtor
 router
-  .route('/get-realtor/:agentId')
+  .route('/hire-realtor/:agentId')
   .get(poresClient.getSingleRealtor);
 module.exports = router;

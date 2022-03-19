@@ -1,0 +1,597 @@
+<%- include('dashboardPartials/head') %>
+  <%- include('dashboardPartials/header') %>
+    <!-- ========== MAIN CONTENT ========== -->
+    <!-- Navbar Vertical -->
+    <%- include('dashboardPartials/aside') %>
+
+      <!-- End Navbar Vertical -->
+
+      <main id="content" role="main" class="main">
+        <!-- Content -->
+        <div class="content container-fluid">
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h1 class="page-header-title">Dashboard</h1>
+              </div>
+              <!-- End Col -->
+
+              <div class="col-auto">
+                <a class="btn btn-primary" href="/users/users-add-user">
+                  <i class="bi-person-plus-fill me-1"></i> Add Users
+                </a>
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+          <!-- End Page Header -->
+
+          <!-- Stats -->
+          <%if(typeof all_users !=='undefined' ) {%>
+            <div class="row">
+              <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                <!-- Card -->
+                <a class="card card-hover-shadow h-100" href="#">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">Total Users</h6>
+
+                    <div class="row align-items-center mb-1">
+                      <div class="col-6">
+                        <h2 class="card-title text-inherit">
+                          <%=all_users.length %>
+                        </h2>
+                      </div>
+                      <!-- End Col -->
+                      <div class="col-6">
+                        <span class="badge bg-soft-success text-success">
+                          <i class="bi-graph-up"></i> 12.5%
+                        </span>
+                        <span class="text-body fs-6 ms-1">from 25</span>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+                </a>
+                <!-- End Card -->
+              </div>
+              <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                <!-- Card -->
+                <a class="card card-hover-shadow h-100" href="#">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">Total Realtors</h6>
+
+                    <div class="row align-items-center mb-1">
+                      <div class="col-6">
+                        <h2 class="card-title text-inherit">72,540</h2>
+                      </div>
+                      <!-- End Col -->
+                      <div class="col-6">
+                        <span class="badge bg-soft-success text-success">
+                          <i class="bi-graph-up"></i> 12.5%
+                        </span>
+                        <span class="text-body fs-6 ms-1">from 70,104</span>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+                </a>
+                <!-- End Card -->
+              </div>
+              <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                <!-- Card -->
+                <a class="card card-hover-shadow h-100" href="#">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">Total Realtors</h6>
+
+                    <div class="row align-items-center mb-1">
+                      <div class="col-6">
+                        <h2 class="card-title text-inherit">72,540</h2>
+                      </div>
+                      <!-- End Col -->
+                      <div class="col-6">
+                        <span class="badge bg-soft-success text-success">
+                          <i class="bi-graph-up"></i> 12.5%
+                        </span>
+                        <span class="text-body fs-6 ms-1">from 70,104</span>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+                </a>
+                <!-- End Card -->
+              </div>
+              <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                <!-- Card -->
+                <a class="card card-hover-shadow h-100" href="#">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">Total Realtors</h6>
+
+                    <div class="row align-items-center mb-1">
+                      <div class="col-6">
+                        <h2 class="card-title text-inherit">72,540</h2>
+                      </div>
+                      <!-- End Col -->
+                      <div class="col-6">
+                        <span class="badge bg-soft-success text-success">
+                          <i class="bi-graph-up"></i> 12.5%
+                        </span>
+                        <span class="text-body fs-6 ms-1">from 70,104</span>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+                </a>
+                <!-- End Card -->
+              </div>
+            </div>
+            <!-- End Stats -->
+            <%}%>
+              <!-- Card -->
+              <div class="card mb-3 mb-lg-5">
+                <!-- Header -->
+                <div class="card-header">
+                  <div class="row justify-content-between align-items-center flex-grow-1">
+                    <div class="col-md">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-header-title">Users</h4>
+                        <% if(typeof all_users !='undefined' ) {%>
+                          <%for (var i=0; i < all_users.length; i++){%>
+                            <!-- Datatable Info -->
+                            <div id="datatableCounterInfo" style="display: none">
+                              <div class="d-flex align-items-center">
+                                <span class="fs-6 me-3">
+                                  <span id="datatableCounter">0</span>
+                                  Selected
+                                </span>
+                                <a class="btn btn-outline-danger btn-sm" href="/delete-user/<%=all_users[i].id_user%>">
+                                  <i class="tio-delete-outlined"></i> Delete
+                                </a>
+                              </div>
+                            </div>
+                            <!-- End Datatable Info -->
+                            <%}%>
+                              <%}%>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-auto">
+                      <!-- Filter -->
+                      <div class="row align-items-sm-center">
+                        <div class="col-sm-auto">
+                          <div class="row align-items-center gx-0">
+                            <div class="col">
+                              <span class="text-secondary me-2">Role:</span>
+                            </div>
+                            <!-- End Col -->
+
+                            <div class="col-auto">
+                              <!-- Select -->
+                              <div class="tom-select-custom tom-select-custom-end">
+                                <select
+                                  class="js-select js-datatable-filter form-select form-select-sm form-select-borderless"
+                                  data-target-column-index="2" data-target-table="datatable" autocomplete="off"
+                                  data-hs-tom-select-options='{
+                                  "searchInDropdown": false,
+                                  "hideSearch": true,
+                                  "dropdownWidth": "10rem"
+                                }'>
+                                  <option value="null" selected>All</option>
+                                  <option value="realtor">Realtor</option>
+                                  <option value="client">Client</option>
+                                </select>
+                              </div>
+                              <!-- End Select -->
+                            </div>
+                            <!-- End Col -->
+                          </div>
+                          <!-- End Row -->
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-sm-auto">
+                          <div class="row align-items-center gx-0">
+                            <div class="col">
+                              <span class="text-secondary me-2">Badge:</span>
+                            </div>
+                            <!-- End Col -->
+
+                            <div class="col-auto">
+                              <!-- Select -->
+                              <div class="tom-select-custom tom-select-custom-end">
+                                <select
+                                  class="js-select js-datatable-filter form-select form-select-sm form-select-borderless"
+                                  data-target-column-index="5" data-target-table="datatable" autocomplete="off"
+                                  data-hs-tom-select-options='{
+                                  "searchInDropdown": false,
+                                  "hideSearch": true,
+                                  "dropdownWidth": "10rem"
+                                }'>
+                                  <option value="null" selected>All</option>
+                                  <option value="none">No Badge</option>
+                                  <option value="platinum">Platinum</option>
+                                  <option value="gold">Gold</option>
+                                  <option value="silver">Silver</option>
+                                  <option value="bronze">Bronze</option>
+                                </select>
+                              </div>
+                              <!-- End Select -->
+                            </div>
+                            <!-- End Col -->
+                          </div>
+                          <!-- End Row -->
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-md">
+                          <form>
+                            <!-- Search -->
+                            <div class="input-group input-group-merge input-group-flush">
+                              <div class="input-group-prepend input-group-text">
+                                <i class="bi-search"></i>
+                              </div>
+                              <input id="datatableSearch" type="search" class="form-control" placeholder="Search users"
+                                aria-label="Search users" />
+                            </div>
+                            <!-- End Search -->
+                          </form>
+                        </div>
+                        <!-- End Col -->
+                      </div>
+                      <!-- End Filter -->
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+                </div>
+                <!-- End Header -->
+
+                <!-- Table -->
+                <div class="table-responsive datatable-custom">
+                  <table id="datatable"
+                    class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                    data-hs-datatables-options='{
+                   "columnDefs": [{
+                      "targets": [0,4,6],
+                      "orderable": false
+                    }],
+                   "order": [],
+                   "info": {
+                     "totalQty": "#datatableWithPaginationInfoTotalQty"
+                   },
+                   "search": "#datatableSearch",
+                   "entries": "#datatableEntries",
+                   "pageLength": 8,
+                   "isResponsive": false,
+                   "isShowPaging": false,
+                   "pagination": "datatablePagination"
+                 }'>
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col" class="table-column-pe-0">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll" />
+                            <label class="form-check-label" for="datatableCheckAll"></label>
+                          </div>
+                        </th>
+
+                        <th class="table-column-ps-0">Full name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>User Contact</th>
+                        <th>Badge</th>
+                        <th>Edit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if(typeof all_users !='undefined' ) {%>
+                        <%for (var i=0; i < all_users.length; i++){%>
+                          <tr data-id="<%= all_users.id_user%>">
+                            <td class="table-column-pe-0">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="usersDataCheck2" />
+                                <label class="form-check-label" for="usersDataCheck2"></label>
+                              </div>
+                            </td>
+                            <td class="table-column-ps-0">
+                              <a class="d-flex align-items-center" href="#">
+                                <div class="flex-shrink-0">
+                                  <div class="avatar avatar-sm avatar-circle">
+                                    <img class="avatar-img" src="/uploads/profiles/profile-default.png"
+                                      alt="Image Description" />
+                                  </div>
+                                </div>
+                                <style>
+                                  .platinum {
+                                    color: #bc6c25;
+                                  }
+
+                                  .gold {
+                                    color: #dda15e;
+                                  }
+
+                                  .silver {
+                                    color: #a8a9ad;
+                                  }
+
+                                  .bronze {
+                                    color: #606c38;
+                                  }
+                                </style>
+                                <div class="flex-grow-1 ms-3">
+                                  <h5 class="text-inherit mb-0">
+                                    <%=all_users[i].user_name%>
+                                  </h5>
+                                </div>
+                              </a>
+                            </td>
+                            <% if(all_users[i].user_role===1) {%>
+                              <td>Realtor</td>
+                              <%} else {%>
+                                <td>Client</td>
+                                <%}%>
+                                  <td>
+                                    <%=all_users[i].user_email%>
+                                  </td>
+                                  <td>
+                                    <%=all_users[i].user_contact%>
+                                  </td>
+                                  <% if(all_users[i].badge===1) {%>
+                                    <td>
+                                      Platinum
+                                      <i class="bi-patch-check-fill platinum" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Top Realtor"></i>
+                                    </td>
+                                    <%} else if(all_users[i].badge===2){%>
+                                      <td>
+                                        Gold
+                                        <i class="bi-patch-check-fill gold" data-bs-toggle="tooltip"
+                                          data-bs-placement="top" title="Gold Realtor"></i>
+                                      </td>
+                                      <%} else if(all_users[i].badge===3){%>
+                                        <td>
+                                          Silver
+                                          <i class="bi-patch-check-fill silver" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Average Realtor"></i>
+                                        </td>
+                                        <%} else if(all_users[i].badge===4){%>
+                                          <td>
+                                            Bronze
+                                            <i class="bi-patch-check-fill bronze" data-bs-toggle="tooltip"
+                                              data-bs-placement="top" title="Bottom Realtor"></i>
+                                          </td>
+                                          <%} else{%>
+                                            <td>None</td>
+                                            <%}%>
+                                              <td>
+                                                <button type="button" class="btn btn-white btn-sm"
+                                                  data-bs-toggle="modal"
+                                                  data-bs-target="#editUserModal<%=all_users[i].id_user%>">
+                                                  <i class="bi-pencil-fill me-1"></i> Edit
+                                                </button>
+                                              </td>
+
+                                              <!--Edit User modal-->
+                                              <div class="modal fade" id="editUserModal<%=all_users[i].id_user%>"
+                                                tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="editUserModalLabel">
+                                                        Edit user
+                                                      </h5>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                    </div>
+
+                                                    <!-- Body -->
+                                                    <div class="modal-body">
+                                                      <!-- Nav Scroller -->
+                                                      <div class="js-nav-scroller hs-nav-scroller-horizontal">
+                                                        <span class="hs-nav-scroller-arrow-prev" style="display: none">
+                                                          <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+                                                            <i class="bi-chevron-left"></i>
+                                                          </a>
+                                                        </span>
+
+                                                        <span class="hs-nav-scroller-arrow-next" style="display: none">
+                                                          <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+                                                            <i class="bi-chevron-right"></i>
+                                                          </a>
+                                                        </span>
+                                                      </div>
+                                                      <!-- End Nav Scroller -->
+                                                      <!-- End Heading -->
+                                                      <!-- Tab Content -->
+
+                                                      <div class="tab-content" id="editUserModalTabContent">
+                                                        <div class="tab-pane fade show active" id="profile"
+                                                          role="tabpanel" aria-labelledby="profile-tab">
+                                                          <form action="/update-user/<%=all_users[i].id_user%>"
+                                                            method="post" id="edit">
+                                                            <!-- Form -->
+                                                            <div class="row mb-4">
+                                                              <label for="editFullNameModalLabel"
+                                                                class="col-sm-3 col-form-label form-label">Full
+                                                                name
+                                                                <i class="tio-help-outlined text-body ms-1"
+                                                                  data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                  title=""
+                                                                  data-bs-original-title="Displayed on public forums, such as Pores."
+                                                                  aria-label="Displayed on public forums, such as Pores."></i></label>
+
+                                                              <div class="col-sm-9">
+                                                                <div class="input-group input-group-sm-vertical">
+                                                                  <input type="text" class="form-control"
+                                                                    name="editFullNameModal" id="editFullNameModalLabel"
+                                                                    placeholder="Your Full name" aria-label="Full name"
+                                                                    value="<%=all_users[i].user_name%>" />
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <!-- End Form -->
+
+                                                            <!-- Form -->
+                                                            <div class="row mb-4">
+                                                              <label for="editEmailModalLabel"
+                                                                class="col-sm-3 col-form-label form-label">Email</label>
+
+                                                              <div class="col-sm-9">
+                                                                <input type="email" class="form-control"
+                                                                  name="editEmailModal" id="editEmailModalLabel"
+                                                                  placeholder="Email" aria-label="Email"
+                                                                  value="<%=all_users[i].user_email%>" />
+                                                              </div>
+                                                            </div>
+                                                            <!-- End Form -->
+
+                                                            <!-- Form -->
+                                                            <div class="row mb-4">
+                                                              <label for="editPhoneLabel"
+                                                                class="col-sm-3 col-form-label form-label">Phone</label>
+
+                                                              <div class="col-sm-9">
+                                                                <div class="input-group input-group-sm-vertical">
+                                                                  <input type="text"
+                                                                    class="js-masked-input form-control"
+                                                                    name="editPhoneModal" id="editPhoneLabel"
+                                                                    placeholder="+x(xxx)xxx-xx-xx"
+                                                                    aria-label="+x(xxx)xxx-xx-xx"
+                                                                    value="<%=all_users[i].user_contact%>"
+                                                                    data-hs-mask-options='{
+                                                                                                       "template": "+0(000)000-00-00"
+                                                                                                     }' />
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <!-- End Form -->
+
+                                                            <!-- Form -->
+                                                            <div class="row mb-4">
+                                                              <label
+                                                                class="col-sm-3 col-form-label form-label">Role</label>
+
+                                                              <div class="col-sm-9">
+                                                                <div class="input-group input-group-sm-vertical">
+                                                                  <!-- Radio Check -->
+                                                                  <label class="form-control"
+                                                                    for="editUserModalRoleModalRadio1">
+                                                                    <span class="form-check">
+                                                                      <input type="radio" class="form-check-input"
+                                                                        name="editUserModalRoleModalRadio"
+                                                                        id="editUserModalRoleModalRadio1" value="1" />
+                                                                      <span class="form-check-label">Admin</span>
+                                                                    </span>
+                                                                  </label>
+                                                                  <!-- End Radio Check -->
+
+                                                                  <!-- Radio Check -->
+                                                                  <label class="form-control"
+                                                                    for="editUserModalRoleModalRadio2">
+                                                                    <span class="form-check">
+                                                                      <input type="radio" class="form-check-input"
+                                                                        name="editUserModalRoleModalRadio"
+                                                                        id="editUserModalRoleModalRadio2" value="1" />
+                                                                      <span class="form-check-label">Realtor</span>
+                                                                    </span>
+                                                                  </label>
+                                                                  <!-- End Radio Check -->
+                                                                  <!-- Radio Check -->
+                                                                  <label class="form-control"
+                                                                    for="editUserModalRoleModalRadio3">
+                                                                    <span class="form-check">
+                                                                      <input type="radio" class="form-check-input"
+                                                                        name="editUserModalRoleModalRadio"
+                                                                        id="editUserModalRoleModalRadio3" value="2" />
+                                                                      <span class="form-check-label">Client</span>
+                                                                    </span>
+                                                                  </label>
+                                                                  <!-- End Radio Check -->
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <!-- End Form -->
+
+                                                            <div class="d-flex justify-content-end">
+                                                              <div class="d-flex gap-3">
+                                                                <button type="button" class="btn btn-white"
+                                                                  data-bs-dismiss="modal" aria-label="Close">
+                                                                  Cancel
+                                                                </button>
+                                                                <button type="submit" class="btn btn-primary">
+                                                                  Save changes
+                                                                </button>
+                                                              </div>
+                                                            </div>
+                                                          </form>
+                                                        </div>
+                                                      </div>
+                                                      <!-- End Tab Content -->
+                                                    </div>
+                                                    <!-- End Body -->
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!--end edit user-->
+                          </tr>
+                          <% } %>
+                            <%}%>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- End Table -->
+                <!-- Footer -->
+                <div class="card-footer">
+                  <!-- Pagination -->
+                  <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                    <div class="col-sm mb-2 mb-sm-0">
+                      <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                        <span class="me-2">Showing:</span>
+
+                        <!-- Select -->
+                        <div class="tom-select-custom">
+                          <select id="datatableEntries" class="js-select form-select form-select-borderless w-auto"
+                            autocomplete="off" data-hs-tom-select-options='{
+                            "searchInDropdown": false,
+                            "hideSearch": true
+                          }'>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="8" selected>8</option>
+                            <option value="12">12</option>
+                          </select>
+                        </div>
+                        <!-- End Select -->
+
+                        <span class="text-secondary me-2">of</span>
+
+                        <!-- Pagination Quantity -->
+                        <span id="datatableWithPaginationInfoTotalQty"></span>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-sm-auto">
+                      <div class="d-flex justify-content-center justify-content-sm-end">
+                        <!-- Pagination -->
+                        <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                      </div>
+                    </div>
+                    <!-- End Col -->
+                  </div>
+                  <!-- End Pagination -->
+                </div>
+                <!-- End Footer -->
+              </div>
+              <!-- End Card -->
+        </div>
+        <!-- End Content -->
+
+        <%- include('dashboardPartials/footer') %>
+      </main>

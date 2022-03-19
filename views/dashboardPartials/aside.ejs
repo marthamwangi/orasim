@@ -1,0 +1,95 @@
+<aside
+  class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered bg-white  ">
+  <div class="navbar-vertical-container">
+    <div class="navbar-vertical-footer-offset">
+      <!-- Logo -->
+
+      <a class="navbar-brand" href="/" aria-label="PORES">
+        <img class="navbar-brand-logo" src="/img/pores_logo.png" alt="Logo" data-hs-theme-appearance="default">
+        <img class="navbar-brand-logo" src="/img/pores_logo.png" alt="Logo" data-hs-theme-appearance="dark">
+        <img class="navbar-brand-logo-mini" src="/img/pores_logo.png" alt="Logo" data-hs-theme-appearance="default">
+        <img class="navbar-brand-logo-mini" src="/img/pores_logo.png" alt="Logo" data-hs-theme-appearance="dark">
+      </a>
+
+      <!-- End Logo -->
+
+      <!-- Navbar Vertical Toggle -->
+      <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-aside-toggler">
+        <i class="bi-arrow-bar-left navbar-toggler-short-align"
+          data-bs-template='<div class="tooltip d-none d-md-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+          data-bs-toggle="tooltip" data-bs-placement="right" title="Collapse"></i>
+        <i class="bi-arrow-bar-right navbar-toggler-full-align"
+          data-bs-template='<div class="tooltip d-none d-md-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+          data-bs-toggle="tooltip" data-bs-placement="right" title="Expand"></i>
+      </button>
+
+      <!-- End Navbar Vertical Toggle -->
+
+      <!-- Content -->
+      <div class="navbar-vertical-content">
+        <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
+          <!-- Collapse -->
+          <div class="nav-item">
+            <a class="nav-link active" href="/admin" role="button">
+              <i class="bi-speedometer2 nav-icon"> </i>
+              <span class="nav-link-title"> Dashboard</span>
+            </a>
+          </div>
+          <!-- End Collapse -->
+
+          <span class="dropdown-header mt-4">Users</span>
+          <small class="bi-three-dots nav-subtitle-replacer"></small>
+
+          <!-- Collapse -->
+          <div class="navbar-nav nav-compact">
+
+          </div>
+          <div id="navbarVerticalMenuPagesMenu">
+            <!-- Collapse -->
+            <div class="nav-item">
+              <a class="nav-link dropdown-toggle " href="#navbarVerticalMenuPagesUsersMenu" role="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPagesUsersMenu" aria-expanded="false"
+                aria-controls="navbarVerticalMenuPagesUsersMenu">
+                <i class="bi bi-people nav-icon"></i>
+                <span class="nav-link-title">Users</span>
+              </a>
+
+              <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse "
+                data-bs-parent="#navbarVerticalMenuPagesMenu">
+                <a class="nav-link " href="/users/realtors-leaderboard">Realtors Leadersboard</a>
+                <a class="nav-link " href="/users/users-add-user">Add User</a>
+              </div>
+            </div>
+            <!-- End Collapse -->
+          </div>
+          <span class="dropdown-header mt-4">Properties</span>
+          <small class="bi-three-dots nav-subtitle-replacer"></small>
+
+          <!-- Collapse -->
+          <div class="navbar-nav nav-compact">
+
+          </div>
+          <div id="navbarVerticalMenuPagesMenu">
+            <!-- Collapse -->
+            <div class="nav-item">
+              <a class="nav-link dropdown-toggle " href="#navbarVerticalMenuPagesPropertiesMenu" role="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPagesPropertiesMenu" aria-expanded="false"
+                aria-controls="navbarVerticalMenuPagesPropertiesMenu">
+                <i class="bi bi-house-fill nav-icon"></i>
+                <span class="nav-link-title">Properties</span>
+              </a>
+
+              <div id="navbarVerticalMenuPagesPropertiesMenu" class="nav-collapse collapse "
+                data-bs-parent="#navbarVerticalMenuPagesMenu">
+                <a class="nav-link " href="/properties">Properties Overview</a>
+                <a class="nav-link " href="/properties/properties-add-property">Add Property</a>
+              </div>
+            </div>
+            <!-- End Collapse -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Content -->
+</aside>

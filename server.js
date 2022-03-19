@@ -3,9 +3,6 @@ import path from "path";
 import open from "open";
 import webpack from "webpack";
 import config from "./webpack.config.dev";
-require("dotenv").config()
-
-const PORT = process.env.PORT
 import session from "express-session";
 const realtorRoutes = require('./routes/realtor.routes');
 const clientRoutes = require('./routes/client.routes');
